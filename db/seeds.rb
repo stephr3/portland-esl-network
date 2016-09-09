@@ -3,7 +3,6 @@ Site.create(
   address:"426 East Fourth Plain Blvd.",
   city:"Vancouver",
   state:"WA",
-  country:"USA",
   zip:"98663",
   description:"There are FREE ESL classes offered for all levels of English each Tuesday, Wednesday, and Thursday, 9:30am April 12-June 15th, 2016. (Wednesdays are conversation circle format, Tuesday and Thursdays are more structured)",
   contact:"Jeanne Stephens",
@@ -16,14 +15,13 @@ Site.create(
   notes:"Classes have been cancelled due to lack of resources, especially childcare and consistent volunteer tutors. - Stephanie 6/22/16",
   region: "Clark County",
   summer_classes: "No",
-  students_served:
+  students_served: 0
 )
 Site.create(
   name:"Kaplan International College",
   address:"600 SW 10th Ave.",
   city:"Portland",
   state:"OR",
-  country:"USA",
   zip:"97205",
   description:"Tuition Based Program",
   contact:"",
@@ -36,15 +34,14 @@ Site.create(
   notes:"",
   region: "Downtown",
   summer_classes: "Yes",
-  students_served:
+  students_served: 0
 )
 Site.create(
   name:"Rockwood Library- Multnomah County Library",
   address:"17917 SE Stark St.",
   city:"Gresham",
   state:"OR",
-  country:"USA",
-  zip:"",
+  zip:"0",
   description:"No registration required, Multi-level ESL class. Mon-Tues: 6-7:30pm Tue-Thu: 12-1:30pm",
   contact:"Reid Craig",
   phone:"503-988-5396",
@@ -56,14 +53,13 @@ Site.create(
   notes:"",
   region: "Gresham",
   summer_classes:"",
-  students_served:
+  students_served: 0
 )
 Site.create(
   name:"SOAR- Citizenship Classes",
   address:"502 State Street",
   city:"Hood River",
   state:"OR",
-  country:"USA",
   zip:"97031",
   description:"Free. Sundays. January 3-March 6. 5:30 p.m. – 8:00 p.m. Classes are designed to prepare students for the U.S. Naturalization Test, which includes an evaluation of speaking, reading, and writing abilities in English, as well as questions about U.S. history and government.",
   contact:"",
@@ -76,14 +72,13 @@ Site.create(
   notes:"Contact Jaymee Martin",
   region: "Other Areas",
   summer_classes:"",
-  students_served:
+  students_served: 0
 )
 Site.create(
   name:"Cesar Chavez Elementary",
   address:"5103 N. Willis Blvd.",
   city:"Portland",
   state:"OR",
-  country:"USA",
   zip:"97203",
   description:"Free, Open-Entry Spanish and English Classes for Adults. Check in at the front office. Classes are held every Tuesday and Friday from 8-9:30am.",
   contact:"Will Reese",
@@ -96,65 +91,62 @@ Site.create(
   notes:"",
   region: "North/Northeast",
   summer_classes:"",
-  students_served:
+  students_served: 0
 )
 Site.create(
-  name:,
-  address:,
-  city:,
-  state:,
-  country:,
-  zip:,
-  description:,
-  contact:,
-  phone:,
-  email:,
-  url:,
+  name:"African Women's Coalition",
+  address:"1125 SE Madison, Suite 210",
+  city:"Portland",
+  state:"OR",
+  zip:"97214",
+  description:"The Family Literacy and Life skills Program of the African Women’s Coalition serves African refugee women and children ages 3-10.",
+  contact:"",
+  phone:"503.972.4930",
+  email:"oakinjiola@awcportland.org ",
+  url:"http://www.awcportland.org/program_bridges.htm",
   class_resource: "Resource",
-  site_type: "",
-  happening_now:,
-  notes:,
-  region: "South/Southeast",
-  summer_classes:,
-  students_served:
-)
-Site.create(
-  name:,
-  address:,
-  city:,
-  state:,
-  country:,
-  zip:,
-  description:,
-  contact:,
-  phone:,
-  email:,
-  url:,
-  class_resource:,
-  site_type: "Community College of University",
-  happening_now:,
-  notes:,
-  region: "Southwest",
-  summer_classes:,
-  students_served:
-)
-Site.create(
-  name:,
-  address:,
-  city:,
-  state:,
-  country:,
-  zip:,
-  description:,
-  contact:,
-  phone:,
-  email:,
-  url:,
-  class_resource:,
   site_type: "Social Service/Government/Non-Profit",
-  happening_now:,
-  notes:,
+  happening_now:"Don't Know",
+  notes:"Various events held, still unsure whether or not English language classes are being offered currently. Have been unable to get a response by phone or email.",
+  region: "South/Southeast",
+  summer_classes:"",
+  students_served: 0
+)
+Site.create(
+  name:"Lewis & Clark College AES (Academic English Studies) Program",
+  address:"615 SW Palatine Hill Road",
+  city:"Portland",
+  state:"OR",
+  zip:"97219",
+  description:"Tuition-based full-time academic classes. Offers fall, spring and summer sessions. (summer session begins May 18)",
+  contact:"Co-directors: Laura Shier and Joann Geddes",
+  phone:"503-768-7310",
+  email:"",
+  url:"http://www.lclark.edu/programs/academic_english_studies/",
+  class_resource:"Class",
+  site_type: "Community College of University",
+  happening_now:"Yes",
+  notes:"",
+  region: "Southwest",
+  summer_classes:"Yes",
+  students_served: 0
+)
+Site.create(
+  name:"Adelante Mujeres - Oregon Child Development Coalition",
+  address:"1038 E Main St",
+  city:"Hillsboro",
+  state:"OR",
+  zip:"97123",
+  description:"Our Adult Education Program provides holistic education to Spanish-speaking women that includes ESL classes, as well as classes in math, computers, civics, and parenting. Students commit to the program full time for one year. The program includes an early childhood education program to prepare Adult Ed. students' 1-5 year-old children for kindergarten.  May require a small materials fee. Classes offered Monday-Friday 9:00-1:30. Register by September 22nd for fall term. Classes start September 23rd.",
+  contact:"",
+  phone:"(503) 992-0078 ext 301",
+  email:"",
+  url:"http://www.adelantemujeres.org",
+  class_resource:"Class",
+  site_type: "Social Service/Government/Non-Profit",
+  happening_now:"Yes",
+  notes:"",
   region: "Washington County",
-  summer_classes:,
-  students_served:
+  summer_classes:"No",
+  students_served: 120
 )
