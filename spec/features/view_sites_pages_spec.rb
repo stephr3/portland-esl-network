@@ -6,4 +6,11 @@ describe 'the view sites process' do
     visit root_path
     expect(page).to have_content 'ESL Classes'
   end
+
+  it 'filters sites by region' do
+    site = Site.create(name: "Joe's ESL Class", address: "123 ABC St", city: "Portland", state: "OR", zip: "97211", description: "A free class!", contact: "Joe Shmo", phone: "971-4567", email: "Joe@esl.com", url: "", class_resource: "Class", site_type: "Church", happening_now: "Yes", notes: "", region: "Southwest", summer_classes: "No", students_served: 100)
+    visit root_path
+    click_on 'Downtown'
+    expect(page).to have_no_content "Joe's ESL Class"
+  end
 end
