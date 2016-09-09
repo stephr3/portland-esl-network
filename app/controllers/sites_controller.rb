@@ -14,8 +14,10 @@ class SitesController < ApplicationController
   def create
     @site = Site.new(site_params)
     if @site.save
+      flash[:notice] = "You have successfully submitted a class!"
       redirect_to root_path
     else
+      flash[:alert] = "We're sorry, your class has not been successfully submitted."
       render :new
     end
   end
