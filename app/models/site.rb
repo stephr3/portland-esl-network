@@ -20,4 +20,36 @@ class Site < ActiveRecord::Base
   #     self.student_served=(0)
   #   end
   # end
+
+  scope(:north_northeast, -> do
+    where({:region => "North/Northeast"})
+  end)
+
+  scope(:south_southeast, -> do
+    where({:region => "South/Southeast"})
+  end)
+
+  scope(:southwest, -> do
+    where({:region => "Southwest"})
+  end)
+
+  scope(:downtown, -> do
+    where({:region => "Downtown"})
+  end)
+
+  scope(:gresham, -> do
+    where({:region => "Gresham"})
+  end)
+
+  scope(:washington_county, -> do
+    where({:region => "Washington County"})
+  end)
+
+  scope(:clark_county, -> do
+    where({:region => "Clark County"})
+  end)
+
+  scope(:other_areas, -> do
+    where({:region => "Other Areas"})
+  end)
 end

@@ -1,7 +1,15 @@
 <h1>ESL Classes in the Portland Metro Area</h1>
 
-<%= link_to 'Sort A-Z', '?sort=a-z' %>
-<%= link_to 'Sort Z-A', '?sort=z-a' %>
+<%= link_to 'North/Northeast', '?region=north-northeast' %>
+<%= link_to 'South/Southeast', '?region=south-southeast' %>
+<%= link_to 'Southwest', '?region=southwest' %>
+<%= link_to 'Downtown', '?region=downtown' %>
+<%= link_to 'Gresham', '?region=gresham' %>
+<%= link_to 'Washington County', '?region=washington-county' %>
+<%= link_to 'Clark County', '?region=clark-county' %>
+<%= link_to 'Other Areas', '?region=other-areas' %>
+<%= link_to 'All', root_path %>
+
 <ul>
   <% @sites.each do |site| %>
     <li><%= link_to site.name, site_path(site) %></li>
