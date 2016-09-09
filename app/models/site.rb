@@ -1,5 +1,5 @@
 class Site < ActiveRecord::Base
-  validates :name, :address, :city, :region, presence: true
+  validates :name, :address, :city, :state, :region, presence: true
   validates :name, :address, :contact, :email, length: { maximum: 70 }
   validates :city, length: { maximum: 30 }
   validates :state, length: { maximum: 2 }
