@@ -1,6 +1,14 @@
 class SitesController < ApplicationController
   def index
-    @sites = Site.all
+    if params[:sort].present?
+      if params[:sort] == 'a-z'
+        @sites = Site.all.order('name ASC')
+      elsif params[:sort] == 'z-a'
+        @sites = Site.all.order('name DESC')
+      end
+    else
+      @sites = Site.all
+    end
   end
 
   def show
