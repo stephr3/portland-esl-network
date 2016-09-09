@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909164011) do
+ActiveRecord::Schema.define(version: 20160909171836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20160909164011) do
     t.string   "name"
     t.string   "address"
     t.string   "city"
-    t.string   "country",         default: "USA"
     t.string   "zip"
     t.text     "description"
     t.string   "contact"
@@ -33,8 +32,8 @@ ActiveRecord::Schema.define(version: 20160909164011) do
     t.string   "region"
     t.string   "summer_classes"
     t.integer  "students_served"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "state"
   end
 
