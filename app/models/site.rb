@@ -10,4 +10,14 @@ class Site < ActiveRecord::Base
   validates :notes, length: { maximum: 2000 }
   validates :students_served, numericality: { less_than_or_equal_to: 1000000 }
   # validates :zip, numericality: true
+
+  # before_save(:convert_to_integer)
+  #
+  # def convert_to_integer
+  #   if students_served != ''
+  #     self.students_served=(students_served.to_i)
+  #   else
+  #     self.student_served=(0)
+  #   end
+  # end
 end

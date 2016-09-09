@@ -1,0 +1,42 @@
+ <%= render "layouts/errors", :object => @site %>
+
+<%= form_for @site do |f| %>
+  <h3>Class Location</h3>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, class: "form-control" %>
+  <%= f.label :region %>
+  <%= f.select :region, options_for_select(['Clark County', 'Downtown', 'Gresham', 'North/Northeast', 'Other Areas', 'South/Southeast', 'Southwest', 'Washington County']), {}, {:class => "form-control", :required => true} %>
+  <%= f.label :address %>
+  <%= f.text_field :address, required: true, class: "form-control" %>
+  <%= f.label :city %>
+  <%= f.text_field :city, required: true, class: "form-control" %>
+  <%= f.label :state %>
+  <%= f.select :state, options_for_select(['OR', 'WA']), {}, {class: "form-control", required: true} %>
+  <%= f.label :zip, 'Zip Code' %>
+  <%= f.text_field :zip, class: "form-control" %>
+  <h3>Contact Information</h3>
+  <%= f.label :contact, 'Contact Name' %>
+  <%= f.text_field :contact, class: "form-control" %>
+  <%= f.label :phone %>
+  <%= f.telephone_field :phone, class: "form-control" %>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control" %>
+  <%= f.label :url, 'Website URL' %>
+  <%= f.url_field :url, class: "form-control" %>
+  <h3>About the Class</h3>
+  <%= f.label :class_resource, 'Is this a class or resource?' %>
+  <%= f.select :class_resource, options_for_select(['', 'Class', 'Resource']), {}, {class: "form-control"} %>
+  <%= f.label :site_type, 'What type of site is it?' %>
+  <%= f.select :site_type, options_for_select(['', 'Church', 'Community College or University', 'For-Profit Business', 'Library', 'Public School', 'Social Service/Government/Non-Profit']), {}, {class: "form-control"} %>
+  <%= f.label :description, 'Description of Class' %>
+  <%= f.text_area :description, class: "form-control" %>
+  <%= f.label :happening_now, 'Is the class happening now?' %>
+  <%= f.select :happening_now, options_for_select(['', 'Yes', 'No']), {}, {class: "form-control"} %>
+  <%= f.label :summer_classes, 'Does this site offer classes during the summer?' %>
+  <%= f.select :summer_classes, options_for_select(['', 'Yes', 'No']), {}, {class: "form-control"} %>
+  <%= f.label :students_served, 'How many students are served yearly at this site?' %>
+  <%= f.number_field :students_served, class: "form-control", value: 0 %>
+  <%= f.label :notes, 'Do you have anything else you want to add?' %>
+  <%= f.text_area :notes, class: "form-control" %>
+  <%= f.submit  %>
+<% end %>
