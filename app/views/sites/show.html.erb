@@ -1,6 +1,6 @@
 <h1><%= @site.name %></h1>
 
-<p>Address: <%= @site.address %>\n<%= @site.city %>,<%= @site.state %> <%= @site.zip %></p>
+<p>Address: <%= @site.address %> <%= @site.city %>,<%= @site.state %> <%= @site.zip %></p>
 <p>Contact: <%= @site.contact %> <%= @site.phone %> <%= @site.email %></p>
 <p>Website: <%= link_to @site.url, url_with_protocol(@site.url), :target => '_blank' %></p>
 <p>Description: <%= @site.description %></p>
