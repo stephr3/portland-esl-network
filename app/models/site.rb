@@ -9,4 +9,5 @@ class Site < ActiveRecord::Base
   validates :url, length: { maximum: 200 }
   validates :notes, length: { maximum: 2000 }
   validates :students_served, numericality: { less_than_or_equal_to: 1000000 }
+  validates :zip, numericality: true
 end
