@@ -1,4 +1,5 @@
 <h1><%= @site.name %></h1>
 
 <p><%= link_to "Edit Class Information", edit_site_path(@site) %></p>
+<p><%= link_to "Delete this Class", site_path(@site), :data => {confirm: "Are you sure you'd like to delete this class?", method: "delete"} %></p>
 <p><%= link_to "Home", root_path %></p>

@@ -36,7 +36,13 @@ class SitesController < ApplicationController
       render :edit
     end
   end
-  
+
+  def destroy
+    @site = Site.find(params[:id])
+    @site.destroy
+    redirect_to sites_path
+  end
+
 private
   def site_params
     params.require(:site).permit(:name, :region, :address, :city, :state, :zip, :contact, :phone, :email, :url, :class_resource, :site_type, :description, :happening_now, :summer_classes, :students_served)
