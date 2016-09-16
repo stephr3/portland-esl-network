@@ -6,7 +6,7 @@
 Username: admin
 Password: admin
 ```
-_With this application, a user can view a list of ESL classes. An admin can add a new class, edit a class, or delete a class. The application is intended to help ESL students, teachers, and volunteers get connected and stay up to date with classes in the Portland Metro area._
+_With this application, a user can view a list of ESL classes and blog posts about classes. An admin can add, edit, and delete classes and blog posts. The application is intended to help ESL students, teachers, and volunteers get connected and stay up to date with classes in the Portland Metro area._
 
 ## Technologies Used
 

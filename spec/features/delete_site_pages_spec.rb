@@ -4,7 +4,7 @@ describe "the delete a site process" do
   it "deletes a site" do
     site = FactoryGirl.create(:site)
     FactoryGirl.create(:admin)
-    visit sites_path
+    visit root_path
     click_link 'Admin Login'
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'

@@ -14,4 +14,18 @@ describe "the edit a post process" do
     click_button 'Submit Post'
     expect(page).to have_content 'School'
   end
+
+  it 'returns error if title is not filled in' do
+    FactoryGirl.create(:post)
+    visit root_path
+    click_link 'Admin Login'
+    fill_in 'Username', :with => 'admin'
+    fill_in 'Password', :with => 'admin'
+    click_button 'Log in'
+    visit posts_path
+    click_link 'Edit Post'
+    fill_in 'Title', :with => ''
+    click_button 'Submit Post'
+    expect(page).to have_content 'your post updates have not been successfully processed'
+  end
 end
