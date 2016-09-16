@@ -1,16 +1,14 @@
 require 'rails_helper'
 
-describe "the delete a site process" do
-  it "deletes a site" do
-    site = FactoryGirl.create(:site)
+describe "the admin logout process" do
+  it "allows the admin to logout" do
     FactoryGirl.create(:admin)
     visit sites_path
     click_link 'Admin Login'
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'
     click_button 'Log in'
-    visit site_path(site)
-    click_on "Delete this Class"
-    expect(page).to have_content 'ESL Classes'
+    click_link 'Log out'
+    expect(page).to have_content 'Admin Login'
   end
 end
