@@ -1,5 +1,6 @@
 class Admin < ActiveRecord::Base
   attr_accessor :password
+  has_many :posts
   validates :username, :password, presence: true, on: :create
   validates :password, length: { minimum: 4 }, on: :create
   before_save :encrypt_password
