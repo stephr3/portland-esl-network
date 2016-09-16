@@ -14,6 +14,7 @@
         <div class="navbar-header">
           <ul class="nav navbar-nav">
             <li class="navbar-left"><%= link_to "Home", root_path %></li>
+            <li class="navbar-left"><%= link_to "Blog", posts_path %></li>
             <% if current_admin %>
               <li class="navbar-right"><%= link_to 'Log out', log_out_path %></li>
               <li class="navbar-right"><a href=#>Logged in as <%= current_admin.username %></a></li>

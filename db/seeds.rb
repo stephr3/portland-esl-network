@@ -150,3 +150,19 @@ Site.create(
   summer_classes:"No",
   students_served: 120
 )
+Admin.create(username: "admin", password: "admin")
+Admin.create(username: "Stephanie", password: "eslnetwork")
+Admin.create(username: "Heidi", password: "eslnetwork")
+Post.create(
+  title: "Free English Classes at Bridger Elementary",
+  content: "This fall Rachel Kimbrow is teaching a free series of English Classes for parents (and the public) at Bridger Elementary, using materials provided by Intercambio Uniting Communities.
+  BEGINS: Oct. 5 5:30-7
+  WHERE: 7910 SE Market Street, Portland
+  QUESTIONS? Contact coordinator Melany Desrochers at 503-502-1485",
+  admin_id: 3
+)
+Post.create(
+  title: "Open Forum: Refugees in Portland",
+  content: "Oregon folks, you are welcome to join Lutheran Community Services Northwest in a facilitated open dialogue on refugee resettlement here in Portland. This forum is free to attend and we look forward to addressing the challenges, opportunities and problems that our community is experiencing in welcoming refugees.",
+  admin_id: 2
+)
