@@ -2,15 +2,15 @@ require 'rails_helper'
 
 describe 'the view sites process' do
   it 'views all sites' do
-    site = Site.create(name: "ESL Class", address: "123 ABC St", city: "Portland", state: "OR", zip: "97211", description: "A free class!", contact: "Joe Shmo", phone: "971-4567", email: "Joe@esl.com", url: "", class_resource: "Class", site_type: "Church", happening_now: "Yes", notes: "", region: "Downtown", summer_classes: "No", students_served: 100)
+    FactoryGirl.create(:site)
     visit root_path
-    expect(page).to have_content 'ESL Classes'
+    expect(page).to have_content 'Sunshine ESL Class'
   end
 
   it 'filters sites by region' do
-    site = Site.create(name: "Joe's ESL Class", address: "123 ABC St", city: "Portland", state: "OR", zip: "97211", description: "A free class!", contact: "Joe Shmo", phone: "971-4567", email: "Joe@esl.com", url: "", class_resource: "Class", site_type: "Church", happening_now: "Yes", notes: "", region: "Southwest", summer_classes: "No", students_served: 100)
+    FactoryGirl.create(:site)
     visit root_path
-    click_on 'Downtown'
-    expect(page).to have_no_content "Joe's ESL Class"
+    click_on 'Gresham'
+    expect(page).to have_no_content 'Sunshine ESL Class'
   end
 end
