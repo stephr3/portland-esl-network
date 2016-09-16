@@ -17,6 +17,4 @@ describe Site do
   it { should validate_length_of(:phone).is_at_most(25) }
   it { should validate_length_of(:url).is_at_most(200) }
   it { should validate_length_of(:notes).is_at_most(2000) }
-  it { should validate_numericality_of(:students_served).is_less_than_or_equal_to(1000000) }
-  # it { should validate_numericality_of(:zip) }
 end

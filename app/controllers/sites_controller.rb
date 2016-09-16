@@ -1,23 +1,23 @@
 class SitesController < ApplicationController
-  
+
   def index
     if params[:region].present?
       if params[:region] == 'north-northeast'
-        @sites = Site.north_northeast
+        @sites = Site.north_northeast.order('name ASC')
       elsif params[:region] == 'south-southeast'
-        @sites = Site.south_southeast
+        @sites = Site.south_southeast.order('name ASC')
       elsif params[:region] == 'southwest'
-        @sites = Site.southwest
+        @sites = Site.southwest.order('name ASC')
       elsif params[:region] == 'downtown'
-        @sites = Site.downtown
+        @sites = Site.downtown.order('name ASC')
       elsif params[:region] == 'gresham'
-        @sites = Site.gresham
+        @sites = Site.gresham.order('name ASC')
       elsif params[:region] == 'washington-county'
-        @sites = Site.washington_county
+        @sites = Site.washington_county.order('name ASC')
       elsif params[:region] == 'clark-county'
-        @sites = Site.clark_county
+        @sites = Site.clark_county.order('name ASC')
       elsif params[:region] == 'other-areas'
-        @sites = Site.other_areas
+        @sites = Site.other_areas.order('name ASC')
       end
     else
       @sites = Site.all.order('name ASC')

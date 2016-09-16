@@ -8,7 +8,7 @@ describe "the edit a site process" do
     fill_in 'Name', with: 'Best ESL Class'
     select('OR', from: 'site_state')
     select('Downtown', from: 'site_region')
-    click_on 'Update Site'
+    click_on 'Submit Class'
     expect(page).to have_content 'Best ESL Class'
   end
 
@@ -17,7 +17,7 @@ describe "the edit a site process" do
     visit site_path(site)
     click_on 'Edit Class Information'
     fill_in 'Name', :with => ''
-    click_button 'Update Site'
+    click_button 'Submit Class'
     expect(page).to have_content 'errors'
   end
 end
