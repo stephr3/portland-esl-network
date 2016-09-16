@@ -1,5 +1,4 @@
 class SitesController < ApplicationController
-
   before_filter :is_admin, only:[:new, :edit, :destroy]
   def index
     if params[:region].present?

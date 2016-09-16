@@ -3,7 +3,7 @@
 <%= form_for [current_admin, @post] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, class: "form-control" %>
-  <%= f.label :text %>
+  <%= f.label :content %>
   <%= f.text_area :content, class: "form-control" %>
   <%= f.submit 'Submit Post', :class => "btn btn-primary" %>
 <% end %>
