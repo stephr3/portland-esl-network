@@ -12,5 +12,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :current_admin
+  def is_author(post)
+    current_admin && current_admin.id == post.admin_id
+  end
+
+  helper_method :current_admin, :is_author
 end
