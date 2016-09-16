@@ -11,6 +11,13 @@
   <body>
     <%= flash[:alert] %>
     <%= flash[:notice] %>
+    <%= link_to 'Home', root_path %>
+    <% if current_admin %>
+      <p>You are logged in as <%= current_admin.username %></p>
+      <%= link_to 'Log out', log_out_path %>
+    <% else %>
+      <%= link_to 'Admin Login', log_in_path %>
+    <% end %>
     <div class="container">
       <%= yield %>
     </div>
