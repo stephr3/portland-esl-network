@@ -1,6 +1,6 @@
 <h1>ESL Classes in the Portland Metro Area</h1>
 
-<%= form_tag sites_path, method: 'get' do %>
+<%= form_tag sites_path, method: 'get', role: 'search' do %>
   <%= text_field_tag :search, params[:search], class: 'form-control' %>
   <%= submit_tag 'Search Classes', name: nil, class: 'btn btn-primary' %>
   <%= link_to 'See All Classes', root_path, class: 'btn btn-success' %>
