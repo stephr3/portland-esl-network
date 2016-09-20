@@ -40,4 +40,8 @@ class Site < ActiveRecord::Base
   scope(:other_areas, -> do
     where({:region => "Other Areas"})
   end)
+
+  def self.searchable_columns
+    [:name, :region, :city, :address, :zip, :state]
+  end
 end

@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  before_filter :is_admin, only:[:new, :edit, :destroy]
+  before_action :is_admin, only:[:new, :edit, :destroy]
   def index
     if params[:region].present?
       if params[:region] == 'north-northeast'
@@ -19,6 +19,12 @@ class SitesController < ApplicationController
       elsif params[:region] == 'other-areas'
         @sites = Site.other_areas.order('name ASC')
       end
+    else
+      @sites = Site.all.order('name ASC')
+    end
+
+    if params[:search].present?
+      @sites = Site.fuzzy_search(name: params[:search])
     else
       @sites = Site.all.order('name ASC')
     end
