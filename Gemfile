@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 gem 'textacular', git: 'git://github.com/textacular/textacular.git'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platform: :mri

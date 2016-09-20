@@ -3,6 +3,7 @@
 <%= form_tag sites_path, method: 'get' do %>
   <%= text_field_tag :search, params[:search], class: 'form-control' %>
   <%= submit_tag 'Search Classes', name: nil, class: 'btn btn-primary' %>
+  <%= link_to 'See All Classes', root_path, class: 'btn btn-success' %>
 <% end %>
 
 <div class="dropdown">
@@ -31,5 +32,6 @@
 <% else %>
   <p> Sorry, no classes matched your search. </p>
 <% end %>
-
+<%= paginate @sites %>
+<br>
 <%= link_to 'Add a New Class', new_site_path, :class => "btn btn-primary"  %>

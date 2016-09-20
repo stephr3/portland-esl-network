@@ -3,30 +3,28 @@ class SitesController < ApplicationController
   def index
     if params[:region].present?
       if params[:region] == 'north-northeast'
-        @sites = Site.north_northeast.order('name ASC')
+        @sites = Site.north_northeast.order('name ASC').page(params[:page])
       elsif params[:region] == 'south-southeast'
-        @sites = Site.south_southeast.order('name ASC')
+        @sites = Site.south_southeast.order('name ASC').page(params[:page])
       elsif params[:region] == 'southwest'
-        @sites = Site.southwest.order('name ASC')
+        @sites = Site.southwest.order('name ASC').page(params[:page])
       elsif params[:region] == 'downtown'
-        @sites = Site.downtown.order('name ASC')
+        @sites = Site.downtown.order('name ASC').page(params[:page])
       elsif params[:region] == 'gresham'
-        @sites = Site.gresham.order('name ASC')
+        @sites = Site.gresham.order('name ASC').page(params[:page])
       elsif params[:region] == 'washington-county'
-        @sites = Site.washington_county.order('name ASC')
+        @sites = Site.washington_county.order('name ASC').page(params[:page])
       elsif params[:region] == 'clark-county'
-        @sites = Site.clark_county.order('name ASC')
+        @sites = Site.clark_county.order('name ASC').page(params[:page])
       elsif params[:region] == 'other-areas'
-        @sites = Site.other_areas.order('name ASC')
+        @sites = Site.other_areas.order('name ASC').page(params[:page])
       end
     else
-      @sites = Site.all.order('name ASC')
+      @sites = Site.all.order('name ASC').page(params[:page])
     end
 
     if params[:search].present?
-      @sites = Site.fuzzy_search(name: params[:search])
-    else
-      @sites = Site.all.order('name ASC')
+      @sites = Site.fuzzy_search(name: params[:search]).page(params[:page])
     end
   end
 
