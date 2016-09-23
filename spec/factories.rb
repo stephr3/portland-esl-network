@@ -24,7 +24,6 @@ FactoryGirl.define do
     password('admin')
   end
 
-
   factory(:post) do
     title('New Class at Bridger Elementary')
     content('There is a new class at Bridger Elementary. Contact Stephanie for further information.')

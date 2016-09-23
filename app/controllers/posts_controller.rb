@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.all.order('created_at DESC').page(params[:page])
   end
 
   def new
@@ -12,7 +12,10 @@ class PostsController < ApplicationController
     @post = @admin.posts.new(post_params)
     if @post.save
       flash[:notice] = "You have successfully created your blog post!"
-      redirect_to posts_path
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
+      end
     else
       flash[:alert] = "We're sorry, your post has not been successfully created."
       render :new
@@ -29,7 +32,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:notice] = "You have successfully submitted your edits for this post."
-      redirect_to posts_path
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
+      end
     else
       flash[:alert] = "We're sorry, your post updates have not been successfully processed."
       render :edit

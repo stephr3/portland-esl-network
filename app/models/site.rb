@@ -41,7 +41,7 @@ class Site < ActiveRecord::Base
     where({:region => "Other Areas"})
   end)
 
-  paginates_per 10
+  paginates_per 5
 
   def self.searchable_columns
     [:name, :region, :city, :address, :zip, :state]
