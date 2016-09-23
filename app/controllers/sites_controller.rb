@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  before_filter :is_admin, only:[:new, :edit, :destroy]
+  before_action :is_admin, only:[:new, :edit, :destroy]
   def index
     if params[:region].present?
       if params[:region] == 'north-northeast'
