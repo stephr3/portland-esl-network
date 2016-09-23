@@ -1,9 +1,9 @@
 <h1>Portland ESL Network Blog</h1>
 <% if current_admin %>
-<%= link_to 'Add a New Post', new_admin_post_path(current_admin), id: "new-post-link", :class => "btn btn-primary", remote: true  %>
+<%= link_to 'Add a New Post', new_admin_post_path(current_admin), id: 'new-post-link', class: "btn btn-primary", remote: true  %>
 <% end %>
 <ul id="posts-display">
   <% @posts.each do |post| %>
-  <li id="post-display-<%=post.id%>"><%= render partial: 'post', locals: {post: post} %></li>
+  <li id="post-display-<%=post.id%>"><%= render partial: 'post', locals: { post: post } %></li>
   <% end %>
 </ul>
