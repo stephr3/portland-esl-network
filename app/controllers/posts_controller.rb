@@ -32,7 +32,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:notice] = "You have successfully submitted your edits for this post."
-      redirect_to posts_path
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
+      end
     else
       flash[:alert] = "We're sorry, your post updates have not been successfully processed."
       render :edit

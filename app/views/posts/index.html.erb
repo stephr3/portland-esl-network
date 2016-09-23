@@ -4,6 +4,6 @@
 <% end %>
 <ul id="posts-display">
   <% @posts.each do |post| %>
-  <li><%= render partial: 'post', locals: {post: post} %></li>
+  <li id="post-display-<%=post.id%>"><%= render partial: 'post', locals: {post: post} %></li>
   <% end %>
 </ul>
