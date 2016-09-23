@@ -55,4 +55,9 @@ describe 'the view sites process' do
     click_on 'Other Areas'
     expect(page).to have_no_content 'Sunshine ESL Class'
   end
+  it 'paginates sites' do
+    FactoryGirl.create_list(:site, 6)
+    visit root_path
+    expect(page).to have_content 'Next ›'
+  end
 end

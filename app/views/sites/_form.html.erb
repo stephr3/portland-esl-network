@@ -3,20 +3,20 @@
 <%= form_for @site do |f| %>
   <h3>Class Location</h3>
   <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control" %>
+  <%= f.text_field :name, class: "form-control", autocomplete: 'off' %>
   <%= f.label :region %>
   <%= f.select :region, options_for_select(['', 'Clark County', 'Downtown', 'Gresham', 'North/Northeast', 'Other Areas', 'South/Southeast', 'Southwest', 'Washington County'], selected: f.object.region), {}, {class: "form-control"} %>
   <%= f.label :address %>
-  <%= f.text_field :address, class: "form-control" %>
+  <%= f.text_field :address, class: "form-control", autocomplete: 'off' %>
   <%= f.label :city %>
-  <%= f.text_field :city, class: "form-control" %>
+  <%= f.text_field :city, class: "form-control", autocomplete: 'off' %>
   <%= f.label :state %>
   <%= f.select :state, options_for_select(['', 'OR', 'WA'], selected: f.object.state), {}, {class: "form-control"} %>
   <%= f.label :zip, 'Zip Code' %>
-  <%= f.text_field :zip, class: "form-control" %>
+  <%= f.text_field :zip, class: "form-control", autocomplete: 'off' %>
   <h3>Contact Information</h3>
   <%= f.label :contact, 'Contact Name' %>
-  <%= f.text_field :contact, class: "form-control" %>
+  <%= f.text_field :contact, class: "form-control", autocomplete: 'off' %>
   <%= f.label :phone %>
   <%= f.telephone_field :phone, class: "form-control" %>
   <%= f.label :email %>

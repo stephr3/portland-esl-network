@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 gem 'textacular', git: 'git://github.com/textacular/textacular.git'
 gem 'kaminari'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

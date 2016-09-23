@@ -1,7 +1,7 @@
 <h1>ESL Classes in the Portland Metro Area</h1>
 
 <%= form_tag sites_path, method: 'get', role: 'search' do %>
-  <%= text_field_tag :search, params[:search], class: 'form-control' %>
+  <%= text_field_tag :site, params[:site], class: 'form-control', id: 'site-search' %>
   <%= submit_tag 'Search Classes', name: nil, class: 'btn btn-primary' %>
   <%= link_to 'See All Classes', root_path, class: 'btn btn-success' %>
 <% end %>
@@ -28,9 +28,9 @@
       <li><%= link_to site.name, site_path(site) %></li>
     <% end %>
   </ul>
+  <%= paginate @sites %>
 <% else %>
   <p> Sorry, no classes matched your search. </p>
 <% end %>
-<%= paginate @sites %>
 <br>
 <%= link_to 'Add a New Class', new_site_path, :class => "btn btn-primary"  %>

@@ -23,8 +23,8 @@ class SitesController < ApplicationController
       @sites = Site.all.order('name ASC').page(params[:page])
     end
 
-    if params[:search].present?
-      @sites = Site.fuzzy_search(name: params[:search]).page(params[:page])
+    if params[:site].present?
+      @sites = Site.fuzzy_search(name: params[:site]).page(params[:page])
     end
   end
 
@@ -66,6 +66,16 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
     @site.destroy
     redirect_to sites_path
+  end
+
+  def autocomplete
+    @site_search = Site.order(:name).where("name ILIKE ?", "%#{ params[:term] }%")
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: @site_search.map(&:name).to_json
+      }
+    end
   end
 
 private
