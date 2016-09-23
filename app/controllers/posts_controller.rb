@@ -12,7 +12,10 @@ class PostsController < ApplicationController
     @post = @admin.posts.new(post_params)
     if @post.save
       flash[:notice] = "You have successfully created your blog post!"
-      redirect_to posts_path
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
+      end
     else
       flash[:alert] = "We're sorry, your post has not been successfully created."
       render :new
