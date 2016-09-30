@@ -7,6 +7,9 @@
 <%= submit_tag 'Search', name: nil, class: 'btn btn-primary' %>
 <% end %>
 
+<% if @center %>
+<h5> Your search: <%= @center %></h5>
+<% end %>
 
 <div id="map-container">
   <div id="map"></div>
