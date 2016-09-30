@@ -1,6 +1,9 @@
 class SitesController < ApplicationController
   before_action :is_admin, only:[:new, :edit, :destroy]
+
   def index
+
+    # Sort Sites by Region
     if params[:region].present?
       if params[:region] == 'north-northeast'
         @sites = Site.north_northeast.order('name ASC')
@@ -21,6 +24,12 @@ class SitesController < ApplicationController
       end
     else
       @sites = Site.all.order('name ASC')
+    end
+    
+    #Init Gmaps
+    @hash = Gmaps4rails.build_markers(@sites) do |site, marker|
+      marker.lat site.latitude
+      marker.lng site.longitude
     end
   end
 

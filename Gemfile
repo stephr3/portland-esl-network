@@ -12,6 +12,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -25,6 +27,7 @@ group :development, :test do
   gem 'poltergeist'
   gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'database_cleaner'
+  gem 'dotenv-rails'
 end
 
 group :development do
