@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the delete a site process" do
+describe "the delete a site process", vcr: true do
   it "deletes a site" do
     site = FactoryGirl.create(:site)
     FactoryGirl.create(:admin)

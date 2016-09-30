@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the edit a site process" do
+describe "the edit a site process", vcr: true do
   it "edits a site" do
     site = FactoryGirl.create(:site)
     FactoryGirl.create(:admin)

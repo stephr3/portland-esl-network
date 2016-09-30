@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the add a site process" do
-  it "adds a new site" do
+  it "adds a new site", vcr: true do
     FactoryGirl.create(:admin)
     visit sites_path
     click_link 'Admin Login'
@@ -18,7 +18,7 @@ describe "the add a site process" do
     expect(page).to have_content 'ESL Classes'
   end
 
-  it "gives error when no name is entered" do
+  it "gives error when no name is entered", vcr: true do
     FactoryGirl.create(:admin)
     visit sites_path
     click_link 'Admin Login'
@@ -36,7 +36,7 @@ describe "the add a site process" do
     expect(page).to have_content 'Username'
   end
 
-  it "gives an error when an invalid address is entered" do
+  it "gives an error when an invalid address is entered", vcr: true do
     FactoryGirl.create(:admin)
     visit sites_path
     click_link 'Admin Login'

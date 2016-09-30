@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the edit a post process" do
-  it "edits a post", js: true do
+  it "edits a post", :js, :vcr do
     FactoryGirl.create(:post)
     visit root_path
     click_link 'Admin Login'

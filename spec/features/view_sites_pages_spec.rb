@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'the view sites process' do
+describe 'the view sites process', vcr: true do
   it 'views all sites' do
     FactoryGirl.create(:site)
     visit root_path

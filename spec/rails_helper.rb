@@ -75,3 +75,11 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassettes'
+  c.ignore_hosts '127.0.0.1', 'localhost'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+  c.filter_sensitive_data('<google api key>') { ENV['GOOGLE_API_KEY'] }
+end
