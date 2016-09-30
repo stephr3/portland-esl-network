@@ -29,11 +29,6 @@ GOOGLE_API_KEY=YOUR TOKEN HERE
 
 ```
 
-Add the .env file to your .gitignore file.
-```
-.env
-```
-
 ## Description
 
 _With this application, a user can view a list of ESL classes and blog posts about classes. An admin can add, edit, and delete classes and blog posts. The application is intended to help ESL students, teachers, and volunteers get connected and stay up to date with classes in the Portland Metro area._
@@ -71,8 +66,13 @@ $ postgres
 
 Navigate to project file and migrate database:
 ```
-$ rake db: create
-$ rake db: migrate
+$ rake db:create
+$ rake db:migrate
+```
+
+If you already have the database created on your machine:
+```
+$rake db:reset
 ```
 
 Start the Rails webserver:
