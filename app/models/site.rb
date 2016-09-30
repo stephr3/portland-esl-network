@@ -1,4 +1,5 @@
 class Site < ActiveRecord::Base
+
   validates :name, :address, :city, :state, :region, presence: true
   validates :name, :address, :contact, :email, length: { maximum: 70 }
   validates :city, length: { maximum: 30 }
@@ -40,4 +41,12 @@ class Site < ActiveRecord::Base
   scope(:other_areas, -> do
     where({:region => "Other Areas"})
   end)
+
+  #For Geocoder Functionality
+  geocoded_by :geocoder_address
+  after_validation :geocode, if: ->(obj){ obj.geocoder_address.present? }
+
+  def geocoder_address
+    [address, city, state, zip].compact.join(', ')
+  end
 end
