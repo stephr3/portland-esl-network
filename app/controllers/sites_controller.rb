@@ -25,9 +25,10 @@ class SitesController < ApplicationController
     else
       @sites = Site.all.order('name ASC')
     end
-    
+
     #Init Gmaps
     @hash = Gmaps4rails.build_markers(@sites) do |site, marker|
+      marker.infowindow "<b>#{site.name}</b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.phone}</p>"
       marker.lat site.latitude
       marker.lng site.longitude
     end

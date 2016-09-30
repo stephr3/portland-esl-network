@@ -10,12 +10,17 @@ li {
   list-style: none;
 }
 
+h1 {
+  text-align: center;
+}
+
 .btn {
   margin: 10px 0;
 }
 
 #map-container {
   width: 600px;
+  margin: 20px auto;
 }
 
 #map {
