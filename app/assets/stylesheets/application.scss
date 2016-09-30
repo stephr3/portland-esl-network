@@ -10,17 +10,18 @@ li {
   list-style: none;
 }
 
-h1 {
-  text-align: center;
-}
-
 .btn {
   margin: 10px 0;
 }
 
+#center-map {
+  width: 50%;
+  display: inline-block;
+}
+
 #map-container {
   width: 600px;
-  margin: 20px auto;
+  margin: 20px;
 }
 
 #map {
