@@ -52,12 +52,12 @@ class Site < ActiveRecord::Base
   end
 
   def lat_changed?
-    if (self.address_changed?) or (self.city_changed?) or (self.state_changed?) or (self.zip_changed?)
+    if (self.address_changed?) or (self.city_changed?) or (self.zip_changed?)
         if !(self.latitude_changed?)
-            self.errors.add(:address, "is not valid")
+            self.errors.add(:address, "is not valid.")
             return false
         end
-    end
+      end
     return true
   end
 end
