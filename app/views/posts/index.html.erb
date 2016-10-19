@@ -6,4 +6,5 @@
   <% @posts.each do |post| %>
   <li id="post-display-<%=post.id%>"><%= render partial: 'post', locals: { post: post } %></li>
   <% end %>
+  <%= paginate @posts %>
 </ul>
