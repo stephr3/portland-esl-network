@@ -6,24 +6,28 @@ class SitesController < ApplicationController
     # Sort Sites by Region
     if params[:region].present?
       if params[:region] == 'north-northeast'
-        @sites = Site.north_northeast.order('name ASC')
+        @sites = Site.north_northeast.order('name ASC').page(params[:page])
       elsif params[:region] == 'south-southeast'
-        @sites = Site.south_southeast.order('name ASC')
+        @sites = Site.south_southeast.order('name ASC').page(params[:page])
       elsif params[:region] == 'southwest'
-        @sites = Site.southwest.order('name ASC')
+        @sites = Site.southwest.order('name ASC').page(params[:page])
       elsif params[:region] == 'downtown'
-        @sites = Site.downtown.order('name ASC')
+        @sites = Site.downtown.order('name ASC').page(params[:page])
       elsif params[:region] == 'gresham'
-        @sites = Site.gresham.order('name ASC')
+        @sites = Site.gresham.order('name ASC').page(params[:page])
       elsif params[:region] == 'washington-county'
-        @sites = Site.washington_county.order('name ASC')
+        @sites = Site.washington_county.order('name ASC').page(params[:page])
       elsif params[:region] == 'clark-county'
-        @sites = Site.clark_county.order('name ASC')
+        @sites = Site.clark_county.order('name ASC').page(params[:page])
       elsif params[:region] == 'other-areas'
-        @sites = Site.other_areas.order('name ASC')
+        @sites = Site.other_areas.order('name ASC').page(params[:page])
       end
     else
-      @sites = Site.all.order('name ASC')
+      @sites = Site.all.order('name ASC').page(params[:page])
+    end
+
+    if params[:site].present?
+      @sites = Site.fuzzy_search(name: params[:site]).page(params[:page])
     end
 
     #Init Gmaps
@@ -32,7 +36,7 @@ class SitesController < ApplicationController
       marker.lat site.latitude
       marker.lng site.longitude
     end
-    if params[:center] && params[:center] != ''
+    if params[:center] && params[:gcenter] != ''
       @center = params[:center]
       if (0 < @center.length) and (@center.length < 6) and (@center.is_number?)
         lat = Geocoder.search(@center).first.coordinates.first
@@ -89,6 +93,16 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
     @site.destroy
     redirect_to sites_path
+  end
+
+  def autocomplete
+    @site_search = Site.order(:name).where("name ILIKE ?", "%#{ params[:term] }%")
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: @site_search.map(&:name).to_json
+      }
+    end
   end
 
 private

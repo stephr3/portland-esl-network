@@ -42,6 +42,12 @@ class Site < ActiveRecord::Base
     where({:region => "Other Areas"})
   end)
 
+  paginates_per 5
+
+  def self.searchable_columns
+    [:name, :region, :city, :address, :zip, :state]
+  end
+
   #For Geocoder Functionality
   geocoded_by :geocoder_address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? or obj.city_changed? or obj.state_changed? or obj.zip_changed? }

@@ -1,7 +1,9 @@
 <h3><%= post.title %></h3>
 <h5>By <%= post.admin.username %></h5>
 <h6>Posted <%= post.created_at.strftime('%B %d, %Y') %></h6>
-<p><%= post.content %></p>
+<article role="article">
+  <p><%= post.content %></p>
+</article>
 <% if is_author(post) %>
   <span id="edit_post_link_<%=post.id%>"><%= link_to "Edit Post", edit_admin_post_path(current_admin, post), class: "btn btn-success", remote: true %></span>
   <%= link_to "Delete Post", admin_post_path(current_admin, post), :class => "btn btn-danger", :data => {confirm: "Are you sure you'd like to delete this post?", method: "delete"} %>

@@ -17,3 +17,15 @@
 //= require gmaps/google
 //= require underscore
 //= require_tree .
+//= require jquery-ui
+//= require jquery-ui/autocomplete
+
+$(function(){
+  $("#site-search").autocomplete({
+    source: '/sites/autocomplete.json',
+    messages: {
+      noResults: '',
+      results: function() {}
+    }
+  });
+})

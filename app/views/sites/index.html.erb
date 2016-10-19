@@ -1,5 +1,10 @@
 <h1>ESL Classes in the Portland Metro Area</h1>
 
+<%= form_tag sites_path, method: 'get', role: 'search' do %>
+  <%= text_field_tag :site, params[:site], class: 'form-control', id: 'site-search' %>
+  <%= submit_tag 'Search Classes', name: nil, class: 'btn btn-primary' %>
+  <%= link_to 'See All Classes', root_path, class: 'btn btn-success' %>
+<% end %>
 
 <%= form_tag sites_path, method: 'get', role: 'search' do %>
 <%= label_tag :center, 'Find a Class Near You:' %>
@@ -31,14 +36,18 @@
   </ul>
 </div>
 
-
-<ul>
-  <% @sites.each do |site| %>
-    <li><%= link_to site.name, site_path(site) %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'Add a New Class', new_site_path, class: "btn btn-primary"  %>
+<% if @sites.length > 0 %>
+  <ul>
+    <% @sites.each do |site| %>
+      <li><%= link_to site.name, site_path(site) %></li>
+    <% end %>
+  </ul>
+  <%= paginate @sites %>
+<% else %>
+  <p> Sorry, no classes matched your search. </p>
+<% end %>
+<br>
+<%= link_to 'Add a New Class', new_site_path, :class => "btn btn-primary"  %>
 
 <script src="//maps.google.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>"></script>
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
