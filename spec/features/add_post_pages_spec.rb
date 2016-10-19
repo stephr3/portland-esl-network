@@ -3,8 +3,7 @@ require 'rails_helper'
 describe "the add a post process" do
   it "adds a new post", vcr: true, js: true do
     FactoryGirl.create(:admin)
-    visit sites_path
-    click_link 'Admin Login'
+    visit admin_path
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'
     click_button 'Log in'
@@ -25,8 +24,7 @@ describe "the add a post process" do
 
   it 'will return error if title is not filled out' do
     FactoryGirl.create(:admin)
-    visit sites_path
-    click_link 'Admin Login'
+    visit admin_path
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'
     click_button 'Log in'

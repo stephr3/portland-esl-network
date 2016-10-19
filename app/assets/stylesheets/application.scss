@@ -2,34 +2,54 @@
 @import "bootstrap";
 @import "jquery-ui/autocomplete.css";
 
-ul {
-  margin-left: 0;
-  padding-left: 0;
+$blue: #1E6B9F;
+$light-blue: #247EBB;
+
+// GENERAL STYLING
+body {
+  background-color: $blue;
+}
+
+h1 {
+  margin-top: 0;
 }
 
 li {
   list-style: none;
 }
 
-.navbar .nav li {
-  padding-left: 10px;
+ul {
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .btn {
   margin: 10px 0;
 }
 
+// HERO IMAGE STYLING
+.logo {
+  height: 30%;
+  background-color: white;
+}
+
+.logo img{
+  width: 100%;
+  height: auto;
+  padding: 3%;
+}
+
+// MAP STYLING
 #center-map {
   width: 50%;
   display: inline-block;
 }
 
 #map-container {
-  width: 600px;
-  margin: 20px;
+  width: 80%;
 }
 
 #map {
-  width: 600px;
+  width: 100%;
   height: 300px;
 }

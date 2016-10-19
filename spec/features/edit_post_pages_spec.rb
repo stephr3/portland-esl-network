@@ -3,8 +3,7 @@ require 'rails_helper'
 describe "the edit a post process" do
   it "edits a post", :js, :vcr do
     FactoryGirl.create(:post)
-    visit root_path
-    click_link 'Admin Login'
+    visit admin_path
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'
     click_button 'Log in'
@@ -19,8 +18,7 @@ describe "the edit a post process" do
 
   it 'returns error if title is not filled in' do
     FactoryGirl.create(:post)
-    visit root_path
-    click_link 'Admin Login'
+    visit admin_path
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'
     click_button 'Log in'

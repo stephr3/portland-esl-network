@@ -3,8 +3,7 @@ require 'rails_helper'
 describe "the add a site process" do
   it "adds a new site", vcr: true do
     FactoryGirl.create(:admin)
-    visit sites_path
-    click_link 'Admin Login'
+    visit admin_path
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'
     click_button 'Log in'
@@ -20,8 +19,7 @@ describe "the add a site process" do
 
   it "gives error when no name is entered", vcr: true do
     FactoryGirl.create(:admin)
-    visit sites_path
-    click_link 'Admin Login'
+    visit admin_path
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'
     click_button 'Log in'
@@ -32,14 +30,12 @@ describe "the add a site process" do
 
   it "requires an admin login to create a new class" do
     visit root_path
-    click_link 'Add a New Class'
-    expect(page).to have_content 'Username'
+    expect(page).to have_no_content 'Add a New Class'
   end
 
   it "gives an error when an invalid address is entered", vcr: true do
     FactoryGirl.create(:admin)
-    visit sites_path
-    click_link 'Admin Login'
+    visit admin_path
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'
     click_button 'Log in'

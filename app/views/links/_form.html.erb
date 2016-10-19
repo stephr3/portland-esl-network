@@ -1,0 +1,14 @@
+<%= render "layouts/errors", :object => @link %>
+<%= form_for @link do |f| %>
+  <%= f.label :page, 'Link Page:' %>
+  <%= f.select :page, options_for_select(['', 'Student Learning Resources', 'Refugee Backgrounders', 'Teaching Resources'], selected: f.object.page), {}, {class: "form-control"} %>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true, class: "form-control" %>
+  <%= f.label :url %>
+  <%= f.url_field :url, required: true, class: "form-control" %>
+  <%= f.label :description %>
+  <%= f.text_area :description, required: true, class: "form-control" %>
+  <%= f.label :tag, 'Link Category:' %>
+  <%= f.text_field :tag, class: "form-control" %>
+  <%= f.submit 'Submit Link', class: "btn btn-primary" %>
+<% end %>
