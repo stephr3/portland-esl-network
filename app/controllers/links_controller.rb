@@ -19,17 +19,13 @@ class LinksController < ApplicationController
     @link = Link.new
   end
 
-  def show
-    @link = Link.find(params[:id])
-  end
-
   def create
     @link = Link.new(link_params)
     if @link.save
       flash[:notice] = "You have successfully submitted a link!"
       redirect_to admin_path
     else
-      flash[:alert] = "We're sorry, your class has not been successfully submitted."
+      flash[:alert] = "We're sorry, your link has not been successfully submitted."
       render :new
     end
   end

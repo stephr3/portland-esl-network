@@ -29,4 +29,12 @@ FactoryGirl.define do
     content('There is a new class at Bridger Elementary. Contact Stephanie for further information.')
     admin
   end
+
+  factory(:link) do
+    title('Multnomah County Library Web Resources')
+    url('https://multcolib.org/learn-english')
+    description("Multnomah Public Library's links to multiple websites.")
+    tag('General Resources')
+    page('Student Learning Resources')
+  end
 end

@@ -1,1 +1,6 @@
-<h1>Links#Teaching</h1>
+<h1>Teaching Resources</h1>
+<ul class="links-display">
+  <% @links.each do |link| %>
+  <li id="link_display_<%=link.id%>"><%= render partial: 'display_link', locals: { link: link } %></li>
+  <% end %>
+</ul>
