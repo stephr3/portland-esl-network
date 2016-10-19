@@ -4,8 +4,7 @@ describe "the edit a site process", vcr: true do
   it "edits a site" do
     site = FactoryGirl.create(:site)
     FactoryGirl.create(:admin)
-    visit sites_path
-    click_link 'Admin Login'
+    visit admin_path
     fill_in 'Username', with: 'admin'
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
@@ -21,8 +20,7 @@ describe "the edit a site process", vcr: true do
   it "gives error when no name is entered" do
     site = FactoryGirl.create(:site)
     FactoryGirl.create(:admin)
-    visit sites_path
-    click_link 'Admin Login'
+    visit admin_path
     fill_in 'Username', with: 'admin'
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
@@ -36,8 +34,7 @@ describe "the edit a site process", vcr: true do
   it "gives an error when an invalid address is entered" do
     site = FactoryGirl.create(:site)
     FactoryGirl.create(:admin)
-    visit sites_path
-    click_link 'Admin Login'
+    visit admin_path
     fill_in 'Username', with: 'admin'
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
