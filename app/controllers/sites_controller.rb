@@ -1,6 +1,9 @@
 class SitesController < ApplicationController
   before_action :is_admin, only:[:new, :edit, :destroy]
+
   def index
+
+    # Sort Sites by Region
     if params[:region].present?
       if params[:region] == 'north-northeast'
         @sites = Site.north_northeast.order('name ASC').page(params[:page])
@@ -25,6 +28,30 @@ class SitesController < ApplicationController
 
     if params[:site].present?
       @sites = Site.fuzzy_search(name: params[:site]).page(params[:page])
+    end
+
+    #Init Gmaps
+    @hash = Gmaps4rails.build_markers(@sites) do |site, marker|
+      marker.infowindow "<b>#{site.name}</b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.phone}</p>"
+      marker.lat site.latitude
+      marker.lng site.longitude
+    end
+    if params[:center] && params[:gcenter] != ''
+      @center = params[:center]
+      if (0 < @center.length) and (@center.length < 6) and (@center.is_number?)
+        lat = Geocoder.search(@center).first.coordinates.first
+        lng = Geocoder.search(@center).first.coordinates.last
+        @center_on = [lat, lng]
+        @zoom = 13
+      else
+        flash[:alert] = "Please enter a valid zip code."
+        @center_on = [45.543897, -122.655977]
+        @zoom = 9
+        redirect_to root_path
+      end
+    else
+      @center_on = [45.543897, -122.655977]
+      @zoom = 9
     end
   end
 

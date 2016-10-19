@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-describe "the edit a site process" do
+describe "the edit a site process", vcr: true do
   it "edits a site" do
     site = FactoryGirl.create(:site)
     FactoryGirl.create(:admin)
     visit sites_path
     click_link 'Admin Login'
-    fill_in 'Username', :with => 'admin'
-    fill_in 'Password', :with => 'admin'
+    fill_in 'Username', with: 'admin'
+    fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit site_path(site)
     click_on 'Edit Class Information'
@@ -23,13 +23,30 @@ describe "the edit a site process" do
     FactoryGirl.create(:admin)
     visit sites_path
     click_link 'Admin Login'
-    fill_in 'Username', :with => 'admin'
-    fill_in 'Password', :with => 'admin'
+    fill_in 'Username', with: 'admin'
+    fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit site_path(site)
     click_on 'Edit Class Information'
-    fill_in 'Name', :with => ''
+    fill_in 'Name', with: ''
     click_button 'Submit Class'
     expect(page).to have_content 'errors'
+  end
+
+  it "gives an error when an invalid address is entered" do
+    site = FactoryGirl.create(:site)
+    FactoryGirl.create(:admin)
+    visit sites_path
+    click_link 'Admin Login'
+    fill_in 'Username', with: 'admin'
+    fill_in 'Password', with: 'admin'
+    click_button 'Log in'
+    visit site_path(site)
+    click_on 'Edit Class Information'
+    fill_in 'Address', with: 'not a real address'
+    fill_in 'City', with: 'not a real city'
+    fill_in 'Zip Code', with: '00000'
+    click_button 'Submit Class'
+    expect(page).to have_content 'Address is not valid.'
   end
 end
