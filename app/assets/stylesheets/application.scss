@@ -19,14 +19,17 @@ li {
   margin: 10px 0;
 }
 
-.flash-alert {
-  font-size: 1.5em;
-  color: #FFFFFF;
-  background-color: red;
+#center-map {
+  width: 50%;
+  display: inline-block;
 }
 
-.flash-notice {
-  font-size: 1.5em;
-  color: #FFFFFF;
-  background-color: green;
+#map-container {
+  width: 600px;
+  margin: 20px;
+}
+
+#map {
+  width: 600px;
+  height: 300px;
 }

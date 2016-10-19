@@ -1,4 +1,5 @@
 class Site < ActiveRecord::Base
+
   validates :name, :address, :city, :state, :region, presence: true
   validates :name, :address, :contact, :email, length: { maximum: 70 }
   validates :city, length: { maximum: 30 }
@@ -45,5 +46,24 @@ class Site < ActiveRecord::Base
 
   def self.searchable_columns
     [:name, :region, :city, :address, :zip, :state]
+  end
+
+  #For Geocoder Functionality
+  geocoded_by :geocoder_address
+  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? or obj.city_changed? or obj.state_changed? or obj.zip_changed? }
+  after_validation :lat_changed?
+
+  def geocoder_address
+    [address, city, state, zip].compact.join(', ')
+  end
+
+  def lat_changed?
+    if (self.address_changed?) or (self.city_changed?) or (self.zip_changed?)
+        if !(self.latitude_changed?)
+            self.errors.add(:address, "is not valid.")
+            return false
+        end
+      end
+    return true
   end
 end

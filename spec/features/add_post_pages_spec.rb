@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the add a post process" do
-  it "adds a new post", js: true do
+  it "adds a new post", vcr: true, js: true do
     FactoryGirl.create(:admin)
     visit sites_path
     click_link 'Admin Login'

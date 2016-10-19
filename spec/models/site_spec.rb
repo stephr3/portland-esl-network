@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Site do
+describe Site, vcr: true do
   it { should validate_presence_of :name }
   it { should validate_presence_of :address }
   it { should validate_presence_of :city }

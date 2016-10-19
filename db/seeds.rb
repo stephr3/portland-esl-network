@@ -15,7 +15,9 @@ Site.create(
   notes:"Classes have been cancelled due to lack of resources, especially childcare and consistent volunteer tutors. - Stephanie 6/22/16",
   region: "Clark County",
   summer_classes: "No",
-  students_served: 0
+  students_served: 0,
+  latitude: 45.6407332,
+  longitude: -122.6693969
 )
 Site.create(
   name:"Kaplan International College",
@@ -34,7 +36,9 @@ Site.create(
   notes:"",
   region: "Downtown",
   summer_classes: "Yes",
-  students_served: 0
+  students_served: 0,
+  latitude: 45.5203397,
+  longitude: -122.6837441
 )
 Site.create(
   name:"Rockwood Library- Multnomah County Library",
@@ -53,7 +57,9 @@ Site.create(
   notes:"",
   region: "Gresham",
   summer_classes:"",
-  students_served: 0
+  students_served: 0,
+  latitude: 45.51952,
+  longitude: -122.4812287
 )
 Site.create(
   name:"SOAR- Citizenship Classes",
@@ -72,7 +78,9 @@ Site.create(
   notes:"Contact Jaymee Martin",
   region: "Other Areas",
   summer_classes:"",
-  students_served: 0
+  students_served: 0,
+  latitude: 45.7084053,
+  longitude: -121.5172743
 )
 Site.create(
   name:"Cesar Chavez Elementary",
@@ -91,7 +99,9 @@ Site.create(
   notes:"",
   region: "North/Northeast",
   summer_classes:"",
-  students_served: 0
+  students_served: 0,
+  latitude: 45.5844237,
+  longitude: -122.7211754
 )
 Site.create(
   name:"African Women's Coalition",
@@ -110,7 +120,9 @@ Site.create(
   notes:"Various events held, still unsure whether or not English language classes are being offered currently. Have been unable to get a response by phone or email.",
   region: "South/Southeast",
   summer_classes:"",
-  students_served: 0
+  students_served: 0,
+  latitude: 45.513338,
+  longitude: -122.6562676
 )
 Site.create(
   name:"Lewis & Clark College AES (Academic English Studies) Program",
@@ -129,7 +141,9 @@ Site.create(
   notes:"",
   region: "Southwest",
   summer_classes:"Yes",
-  students_served: 0
+  students_served: 0,
+  latitude: 45.4523952,
+  longitude: -122.6796722
 )
 Site.create(
   name:"Adelante Mujeres - Oregon Child Development Coalition",
@@ -148,7 +162,9 @@ Site.create(
   notes:"",
   region: "Washington County",
   summer_classes:"No",
-  students_served: 120
+  students_served: 120,
+  latitude: 45.521557,
+  longitude: -122.9750844
 )
 Admin.create(username: "admin", password: "admin")
 Admin.create(username: "Stephanie", password: "eslnetwork")
