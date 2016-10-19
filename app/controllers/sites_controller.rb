@@ -32,7 +32,7 @@ class SitesController < ApplicationController
       marker.lat site.latitude
       marker.lng site.longitude
     end
-    if params[:center] && params[:center] != ''
+    if params[:center] && params[:gcenter] != ''
       @center = params[:center]
       if (0 < @center.length) and (@center.length < 6) and (@center.is_number?)
         lat = Geocoder.search(@center).first.coordinates.first
