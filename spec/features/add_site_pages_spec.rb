@@ -7,6 +7,7 @@ describe "the add a site process" do
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'
     click_button 'Log in'
+    visit root_path
     click_link 'Add a New Class'
     fill_in 'Name', with: 'ESL Class'
     fill_in 'Address', with: "123 ABC Street"
@@ -17,7 +18,7 @@ describe "the add a site process" do
     expect(page).to have_content 'ESL Classes'
   end
 
-  it "gives error when no name is entered", vcr: true do
+  it "gives error when no name is entered" do
     FactoryGirl.create(:admin)
     visit admin_path
     fill_in 'Username', :with => 'admin'
@@ -33,7 +34,7 @@ describe "the add a site process" do
     expect(page).to have_no_content 'Add a New Class'
   end
 
-  it "gives an error when an invalid address is entered", vcr: true do
+  it "gives an error when an invalid address is entered" do
     FactoryGirl.create(:admin)
     visit admin_path
     fill_in 'Username', :with => 'admin'
