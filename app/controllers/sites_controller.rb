@@ -91,8 +91,13 @@ class SitesController < ApplicationController
 
   def destroy
     @site = Site.find(params[:id])
-    @site.destroy
-    redirect_to sites_path
+    if @site.destroy
+      flash[:notice] = "You have successfully deleted this class."
+      redirect_to sites_path
+    else
+      flash[:alert] = "There was a problem. The class has not been deleted."
+      redirect_to sites_path
+    end
   end
 
   def autocomplete

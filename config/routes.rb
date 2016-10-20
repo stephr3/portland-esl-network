@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/posts' => 'posts#index'
 
   resources :links
+  resources :volunteer_sites
   get "/real-world" => "volunteer_sites#index"
 
   get "/about" => "pages#about"

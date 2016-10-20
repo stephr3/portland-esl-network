@@ -37,4 +37,13 @@ FactoryGirl.define do
     tag('General Resources')
     page('Student Learning Resources')
   end
+
+  factory(:volunteer_site) do
+    name('Birch Community Services')
+    url('http://www.birchcommunityservices.org/participate/volunteer/individual-volunteers/')
+    address('17780 NE San Rafael Street Portland, Oregon 97230')
+    level('All')
+    contact('Andrew Rowlett: 971.506.5673, Andrew@BirchCommunityServices.org')
+    description('Opportunities: Food Sorting, Preparing for classes.  Birch can use individual volunteers on M/W/F from 9 am to 5 pm without prior scheduling.  Please plan to volunteer for at least two hours at a time so that we can make the most out of your travel and time commitments. Scheduling is required at all other times by contacting the office at 503.251.5431.')
+  end
 end

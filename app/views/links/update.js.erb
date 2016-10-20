@@ -1,0 +1,3 @@
+$('#edit_link_button_<%=@link.id%>').show();
+$('#edit_link_<%=@link.id%>').remove();
+$('.links-display').html("<%= j render partial: 'display_link', locals: {link: @link} %>");

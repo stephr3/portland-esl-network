@@ -1,0 +1,3 @@
+$('#edit_volunteer_site_button_<%=@site.id%>').show();
+$('#edit_volunteer_site_<%=@site.id%>').remove();
+$('.volunteer-sites-display').html("<%= j render partial: 'display_volunteer_site', locals: {site: @site} %>");
