@@ -1,0 +1,16 @@
+<%= render "layouts/errors", :object => @site %>
+<%= form_for @site do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, class: "form-control" %>
+  <%= f.label :url %>
+  <%= f.url_field :url, required: true, class: "form-control" %>
+  <%= f.label :contact %>
+  <%= f.text_field :contact, required: true, class: "form-control" %>
+  <%= f.label :address %>
+  <%= f.text_field :address, required: true, class: "form-control" %>
+  <%= f.label :description %>
+  <%= f.text_area :description, required: true, class: "form-control" %>
+  <%= f.label :level, 'Appropriate Language Level' %>
+  <%= f.select :level, options_for_select(['', 'All', 'Beginner', 'Intermediate', 'Advanced'], selected: f.object.level), {}, {class: "form-control"} %>
+  <%= f.submit 'Submit Volunteer Site', class: "btn btn-primary" %>
+<% end %>

@@ -37,6 +37,7 @@ class LinksController < ApplicationController
   def update
     @link = Link.find(params[:id])
     if @link.update(link_params)
+      flash[:notice] = "Your link updates have been successfully submitted."
       respond_to do |format|
         format.html { redirect_to :back }
         format.js
@@ -49,8 +50,13 @@ class LinksController < ApplicationController
 
   def destroy
     @link = Link.find(params[:id])
-    @link.destroy
-    redirect_to admin_path
+    if @link.destroy
+      flash[:notice] = "You have successfully deleted your link."
+      redirect_to admin_path
+    else
+      flash[:alert] = "There was a problem. Your link has not been deleted."
+      redirect_to :back
+    end
   end
 private
   def link_params
