@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe "the add a site process" do
-  it "adds a new site", vcr: true do
+describe "the add a site process", vcr: true do
+  it "adds a new site" do
     FactoryGirl.create(:admin)
     visit admin_path
     fill_in 'Username', :with => 'admin'
@@ -30,7 +30,7 @@ describe "the add a site process" do
   end
 
   it "requires an admin login to create a new class" do
-    visit root_path
+    visit sites_path
     expect(page).to have_no_content 'Add a New Class'
   end
 

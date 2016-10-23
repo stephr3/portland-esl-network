@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe VolunteerSite do
+describe VolunteerSite, vcr: true do
   it { should validate_presence_of :name }
   it { should validate_presence_of :url }
   it { should validate_presence_of :address }

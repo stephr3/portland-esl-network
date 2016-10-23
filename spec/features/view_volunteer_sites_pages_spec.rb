@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'the view volunteer sites process' do
+describe 'the view volunteer sites process', vcr: true do
   it 'views volunteer sites' do
     FactoryGirl.create(:volunteer_site)
     visit '/real-world'
