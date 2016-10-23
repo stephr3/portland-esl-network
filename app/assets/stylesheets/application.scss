@@ -45,11 +45,11 @@ ul {
   display: inline-block;
 }
 
-#map-container {
+#map-container, #volunteer-map-container {
   width: 80%;
 }
 
-#map {
+#map, #volunteer-map {
   width: 100%;
   height: 300px;
 }

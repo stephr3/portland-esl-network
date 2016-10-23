@@ -15,6 +15,15 @@ class VolunteerSitesController < ApplicationController
     else
       @sites = VolunteerSite.all.order('name ASC').page(params[:page])
     end
+
+    #Init Gmaps
+    @hash = Gmaps4rails.build_markers(@sites) do |site, marker|
+      marker.infowindow "<b>#{site.name}</b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.contact}</p>"
+      marker.lat site.latitude
+      marker.lng site.longitude
+    end
+    @center_on = [45.543897, -122.655977]
+    @zoom = 9
   end
 
   def new
@@ -66,6 +75,6 @@ class VolunteerSitesController < ApplicationController
   end
 private
   def volunteer_site_params
-    params.require(:volunteer_site).permit(:name, :address, :url, :description, :level, :contact)
+    params.require(:volunteer_site).permit(:name, :address, :city, :state, :zip, :url, :description, :level, :contact)
   end
 end
