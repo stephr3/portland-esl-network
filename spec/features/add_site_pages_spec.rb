@@ -7,7 +7,7 @@ describe "the add a site process" do
     fill_in 'Username', :with => 'admin'
     fill_in 'Password', :with => 'admin'
     click_button 'Log in'
-    visit root_path
+    visit sites_path
     click_link 'Add a New Class'
     fill_in 'Name', with: 'ESL Class'
     fill_in 'Address', with: "123 ABC Street"
