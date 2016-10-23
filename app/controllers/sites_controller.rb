@@ -33,6 +33,14 @@ class SitesController < ApplicationController
 
   def show
     @site = Site.find(params[:id])
+    #Init Gmaps
+    @hash = Gmaps4rails.build_markers(@site) do |site, marker|
+      marker.infowindow "<b>#{site.name}</b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.contact}</p>"
+      marker.lat site.latitude
+      marker.lng site.longitude
+    end
+    @center_on = [@site.latitude, @site.longitude]
+    @zoom = 13
   end
 
   def new

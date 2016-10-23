@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the edit a volunteer site process" do
+describe "the edit a volunteer site process", vcr: true do
   it "edits a volunteer site", js: true do
     FactoryGirl.create(:admin)
     FactoryGirl.create(:volunteer_site)

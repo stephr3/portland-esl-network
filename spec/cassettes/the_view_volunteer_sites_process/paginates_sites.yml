@@ -1,0 +1,705 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=17780%20NE%20San%20Rafael%20Street,%20Portland,%20OR,%2097230&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sun, 23 Oct 2016 23:12:17 GMT
+      Expires:
+      - Mon, 24 Oct 2016 23:12:17 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '576'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '13'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "17780",
+                       "short_name" : "17780",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Northeast San Rafael Street",
+                       "short_name" : "NE San Rafael St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Wilkes East",
+                       "short_name" : "Wilkes East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Portland",
+                       "short_name" : "Portland",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Multnomah County",
+                       "short_name" : "Multnomah County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Oregon",
+                       "short_name" : "OR",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "97230",
+                       "short_name" : "97230",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "5927",
+                       "short_name" : "5927",
+                       "types" : [ "postal_code_suffix" ]
+                    }
+                 ],
+                 "formatted_address" : "17780 NE San Rafael St, Portland, OR 97230, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 45.5370082,
+                       "lng" : -122.479278
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 45.53835718029149,
+                          "lng" : -122.4779290197085
+                       },
+                       "southwest" : {
+                          "lat" : 45.5356592197085,
+                          "lng" : -122.4806269802915
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJRc23H1qilVQR1psO_KThvd4",
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Sun, 23 Oct 2016 23:12:30 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=17780%20NE%20San%20Rafael%20Street,%20Portland,%20OR,%2097230&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sun, 23 Oct 2016 23:12:17 GMT
+      Expires:
+      - Mon, 24 Oct 2016 23:12:17 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '576'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '13'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "17780",
+                       "short_name" : "17780",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Northeast San Rafael Street",
+                       "short_name" : "NE San Rafael St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Wilkes East",
+                       "short_name" : "Wilkes East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Portland",
+                       "short_name" : "Portland",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Multnomah County",
+                       "short_name" : "Multnomah County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Oregon",
+                       "short_name" : "OR",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "97230",
+                       "short_name" : "97230",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "5927",
+                       "short_name" : "5927",
+                       "types" : [ "postal_code_suffix" ]
+                    }
+                 ],
+                 "formatted_address" : "17780 NE San Rafael St, Portland, OR 97230, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 45.5370082,
+                       "lng" : -122.479278
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 45.53835718029149,
+                          "lng" : -122.4779290197085
+                       },
+                       "southwest" : {
+                          "lat" : 45.5356592197085,
+                          "lng" : -122.4806269802915
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJRc23H1qilVQR1psO_KThvd4",
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Sun, 23 Oct 2016 23:12:30 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=17780%20NE%20San%20Rafael%20Street,%20Portland,%20OR,%2097230&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sun, 23 Oct 2016 23:12:17 GMT
+      Expires:
+      - Mon, 24 Oct 2016 23:12:17 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '576'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '13'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "17780",
+                       "short_name" : "17780",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Northeast San Rafael Street",
+                       "short_name" : "NE San Rafael St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Wilkes East",
+                       "short_name" : "Wilkes East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Portland",
+                       "short_name" : "Portland",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Multnomah County",
+                       "short_name" : "Multnomah County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Oregon",
+                       "short_name" : "OR",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "97230",
+                       "short_name" : "97230",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "5927",
+                       "short_name" : "5927",
+                       "types" : [ "postal_code_suffix" ]
+                    }
+                 ],
+                 "formatted_address" : "17780 NE San Rafael St, Portland, OR 97230, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 45.5370082,
+                       "lng" : -122.479278
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 45.53835718029149,
+                          "lng" : -122.4779290197085
+                       },
+                       "southwest" : {
+                          "lat" : 45.5356592197085,
+                          "lng" : -122.4806269802915
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJRc23H1qilVQR1psO_KThvd4",
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Sun, 23 Oct 2016 23:12:30 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=17780%20NE%20San%20Rafael%20Street,%20Portland,%20OR,%2097230&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sun, 23 Oct 2016 23:12:17 GMT
+      Expires:
+      - Mon, 24 Oct 2016 23:12:17 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '576'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '13'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "17780",
+                       "short_name" : "17780",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Northeast San Rafael Street",
+                       "short_name" : "NE San Rafael St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Wilkes East",
+                       "short_name" : "Wilkes East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Portland",
+                       "short_name" : "Portland",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Multnomah County",
+                       "short_name" : "Multnomah County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Oregon",
+                       "short_name" : "OR",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "97230",
+                       "short_name" : "97230",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "5927",
+                       "short_name" : "5927",
+                       "types" : [ "postal_code_suffix" ]
+                    }
+                 ],
+                 "formatted_address" : "17780 NE San Rafael St, Portland, OR 97230, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 45.5370082,
+                       "lng" : -122.479278
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 45.53835718029149,
+                          "lng" : -122.4779290197085
+                       },
+                       "southwest" : {
+                          "lat" : 45.5356592197085,
+                          "lng" : -122.4806269802915
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJRc23H1qilVQR1psO_KThvd4",
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Sun, 23 Oct 2016 23:12:30 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=17780%20NE%20San%20Rafael%20Street,%20Portland,%20OR,%2097230&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sun, 23 Oct 2016 23:12:17 GMT
+      Expires:
+      - Mon, 24 Oct 2016 23:12:17 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '576'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '13'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "17780",
+                       "short_name" : "17780",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Northeast San Rafael Street",
+                       "short_name" : "NE San Rafael St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Wilkes East",
+                       "short_name" : "Wilkes East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Portland",
+                       "short_name" : "Portland",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Multnomah County",
+                       "short_name" : "Multnomah County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Oregon",
+                       "short_name" : "OR",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "97230",
+                       "short_name" : "97230",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "5927",
+                       "short_name" : "5927",
+                       "types" : [ "postal_code_suffix" ]
+                    }
+                 ],
+                 "formatted_address" : "17780 NE San Rafael St, Portland, OR 97230, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 45.5370082,
+                       "lng" : -122.479278
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 45.53835718029149,
+                          "lng" : -122.4779290197085
+                       },
+                       "southwest" : {
+                          "lat" : 45.5356592197085,
+                          "lng" : -122.4806269802915
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJRc23H1qilVQR1psO_KThvd4",
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Sun, 23 Oct 2016 23:12:30 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=17780%20NE%20San%20Rafael%20Street,%20Portland,%20OR,%2097230&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sun, 23 Oct 2016 23:12:17 GMT
+      Expires:
+      - Mon, 24 Oct 2016 23:12:17 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '576'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '13'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "17780",
+                       "short_name" : "17780",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Northeast San Rafael Street",
+                       "short_name" : "NE San Rafael St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Wilkes East",
+                       "short_name" : "Wilkes East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Portland",
+                       "short_name" : "Portland",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Multnomah County",
+                       "short_name" : "Multnomah County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Oregon",
+                       "short_name" : "OR",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "97230",
+                       "short_name" : "97230",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "5927",
+                       "short_name" : "5927",
+                       "types" : [ "postal_code_suffix" ]
+                    }
+                 ],
+                 "formatted_address" : "17780 NE San Rafael St, Portland, OR 97230, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 45.5370082,
+                       "lng" : -122.479278
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 45.53835718029149,
+                          "lng" : -122.4779290197085
+                       },
+                       "southwest" : {
+                          "lat" : 45.5356592197085,
+                          "lng" : -122.4806269802915
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJRc23H1qilVQR1psO_KThvd4",
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Sun, 23 Oct 2016 23:12:30 GMT
+recorded_with: VCR 3.0.3
