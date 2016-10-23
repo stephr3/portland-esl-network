@@ -1,4 +1,4 @@
-<%= form_tag sites_path, method: 'get', role: 'search' do %>
+<%= form_tag root_path, method: 'get', role: 'search' do %>
 <%= label_tag :center, 'Find a Class Near You:' %>
 <%= text_field_tag :center, params[:center], placeholder: 'Enter Zip Code', class: 'form-control', id: 'center-map' %>
 <%= submit_tag 'Search', name: nil, class: 'btn btn-primary' %>
