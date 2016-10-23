@@ -1,4 +1,22 @@
 <h1>Learn English in the Real World</h1>
+<br>
+<% if current_admin %>
+<%= link_to 'Add a New Volunteer Site', new_volunteer_site_path, :class => "btn btn-primary"  %>
+<% end %>
+
+<div class="dropdown">
+  <button class="dropdown-toggle btn btn-primary" type="button" data-toggle="dropdown">Choose a Level
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><%= link_to 'All Sites', volunteer_sites_path %></li>
+    <li><a href="?level=all">All Levels Accepted</a></li>
+    <li><a href="?level=beginner">Beginner</a></li>
+    <li><a href="?level=intermediate">Intermediate</a></li>
+    <li><a href="?level=advanced">Advanced</a></li>
+  </ul>
+  <%= paginate @sites %>
+</div>
+
 <ul class="volunteer-sites-display">
   <% @sites.each do |site| %>
   <li id="volunteer_site_display_<%=site.id%>"><%= render partial: 'display_volunteer_site', locals: { site: site } %></li>

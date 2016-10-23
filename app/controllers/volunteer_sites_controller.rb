@@ -1,7 +1,20 @@
 class VolunteerSitesController < ApplicationController
   before_action :is_admin, only:[:new, :edit, :destroy]
   def index
-    @sites = VolunteerSite.all.order('name ASC').page(params[:page])
+    # Sort Sites by Level
+    if params[:level].present?
+      if params[:level] == 'all'
+        @sites = VolunteerSite.where(level: 'All').order('name ASC').page(params[:page])
+      elsif params[:level] == 'beginner'
+        @sites = VolunteerSite.where(level: 'Beginner').order('name ASC').page(params[:page])
+      elsif params[:level] == 'intermediate'
+        @sites = VolunteerSite.where(level: 'Intermediate').order('name ASC').page(params[:page])
+      elsif params[:level] == 'advanced'
+        @sites = VolunteerSite.where(level: 'Advanced').order('name ASC').page(params[:page])
+      end
+    else
+      @sites = VolunteerSite.all.order('name ASC').page(params[:page])
+    end
   end
 
   def new
