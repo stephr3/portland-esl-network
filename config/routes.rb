@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root :to => 'sites#index'
+  get '/' => 'pages#map'
+  root :to => 'pages#map'
   resources :sites do
     collection do
       get 'autocomplete'
