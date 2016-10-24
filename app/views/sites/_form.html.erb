@@ -1,4 +1,4 @@
- <%= render "layouts/errors", :object => @site %>
+ <%= render "layouts/errors", object: @site %>
 
 <%= form_for @site do |f| %>
   <h3>Class Location</h3>
@@ -38,5 +38,5 @@
   <%= f.number_field :students_served, class: "form-control" %>
   <%= f.label :notes, 'Do you have anything else you want to add?' %>
   <%= f.text_area :notes, class: "form-control" %>
-  <%= f.submit 'Submit Class', :class => "btn btn-primary" %>
+  <%= f.submit 'Submit Class', class: "btn btn-primary" %>
 <% end %>

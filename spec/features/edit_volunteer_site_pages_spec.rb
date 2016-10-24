@@ -5,13 +5,13 @@ describe "the edit a volunteer site process", vcr: true do
     FactoryGirl.create(:admin)
     FactoryGirl.create(:volunteer_site)
     visit admin_path
-    fill_in 'Username', :with => 'admin'
-    fill_in 'Password', :with => 'admin'
+    fill_in 'Username', with: 'admin'
+    fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit '/real-world'
     click_link 'Edit Volunteer Site'
     expect(page).to have_no_content 'Edit Volunteer Site'
-    fill_in 'Name', :with => 'Updated Volunteer Site Name'
+    fill_in 'Name', with: 'Updated Volunteer Site Name'
     click_button 'Submit Volunteer Site'
     expect(page).to have_content 'Updated Volunteer Site Name'
     expect(page).to have_content 'Edit Volunteer Site'
@@ -21,12 +21,12 @@ describe "the edit a volunteer site process", vcr: true do
     FactoryGirl.create(:volunteer_site)
     FactoryGirl.create(:admin)
     visit admin_path
-    fill_in 'Username', :with => 'admin'
-    fill_in 'Password', :with => 'admin'
+    fill_in 'Username', with: 'admin'
+    fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit '/real-world'
     click_link 'Edit Volunteer Site'
-    fill_in 'Name', :with => ''
+    fill_in 'Name', with: ''
     click_button 'Submit Volunteer Site'
     expect(page).to have_content 'your volunteer site updates have not been successfully submitted'
   end

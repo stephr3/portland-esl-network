@@ -1,4 +1,4 @@
-<%= render "layouts/errors", :object => @link %>
+<%= render "layouts/errors", object: @link %>
 <%= form_for @link do |f| %>
   <%= f.label :page, 'Link Page:' %>
   <%= f.select :page, options_for_select(['', 'Student Learning Resources', 'Refugee Backgrounders', 'Teaching Resources'], selected: f.object.page), {}, {class: "form-control"} %>

@@ -25,7 +25,7 @@ class LinksController < ApplicationController
       flash[:notice] = "You have successfully submitted a link!"
       redirect_to admin_path
     else
-      flash[:alert] = "We're sorry, your link has not been successfully submitted."
+      flash[:alert] = "Sorry, your link has not been successfully submitted."
       render :new
     end
   end
@@ -39,11 +39,11 @@ class LinksController < ApplicationController
     if @link.update(link_params)
       flash[:notice] = "Your link updates have been successfully submitted."
       respond_to do |format|
-        format.html { redirect_to :back }
+        format.html { redirect_back(fallback_location: root_path) }
         format.js
       end
     else
-      flash[:alert] = "We're sorry, your link updates have not been successfully submitted."
+      flash[:alert] = "Sorry, your link updates have not been successfully submitted."
       render :edit
     end
   end
@@ -55,7 +55,7 @@ class LinksController < ApplicationController
       redirect_to admin_path
     else
       flash[:alert] = "There was a problem. Your link has not been deleted."
-      redirect_to :back
+      redirect_back(fallback_location: admin_path)
     end
   end
 private

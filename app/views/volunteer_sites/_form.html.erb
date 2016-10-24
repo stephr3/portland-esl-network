@@ -1,4 +1,4 @@
-<%= render "layouts/errors", :object => @site %>
+<%= render "layouts/errors", object: @site %>
 <%= form_for @site do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, required: true, class: "form-control" %>
