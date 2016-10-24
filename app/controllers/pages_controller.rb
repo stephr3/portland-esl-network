@@ -7,6 +7,11 @@ class PagesController < ApplicationController
       marker.infowindow "<b>#{site.name}</b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.phone}</p>"
       marker.lat site.latitude
       marker.lng site.longitude
+      marker.picture({
+                      :url => site.markers_url,
+                      :width   => 32,
+                      :height  => 32
+                     })
     end
     if params[:center] && params[:center] != ''
       @center = params[:center]

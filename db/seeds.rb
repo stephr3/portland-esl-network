@@ -136,7 +136,7 @@ Site.create(
   email:"",
   url:"http://www.lclark.edu/programs/academic_english_studies/",
   class_resource:"Class",
-  site_type: "Community College of University",
+  site_type: "Community College or University",
   happening_now:"Yes",
   notes:"",
   region: "Southwest",
