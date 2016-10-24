@@ -10,6 +10,27 @@ class Site < ActiveRecord::Base
   validates :url, length: { maximum: 200 }
   validates :notes, length: { maximum: 2000 }
 
+# Set Marker Colors
+  before_save :set_marker_color , if: ->(obj){ obj.site_type.present? and obj.site_type_changed? }
+
+  def set_marker_color
+    if self.site_type === 'Church'
+      self.markers_url = 'http://www.googlemapsmarkers.com/v1/990000/'
+    elsif self.site_type === 'Community College or University'
+      self.markers_url = 'http://www.googlemapsmarkers.com/v1/000099/'
+    elsif self.site_type === 'For-Profit Business'
+      self.markers_url = 'http://www.googlemapsmarkers.com/v1/660066/'
+    elsif self.site_type === 'Library'
+      self.markers_url = 'http://www.googlemapsmarkers.com/v1/FFFF00/'
+    elsif self.site_type === 'Public School'
+      self.markers_url = 'http://www.googlemapsmarkers.com/v1/00CCCC/'
+    elsif self.site_type === 'Social Service/Government/Non-Profit'
+      self.markers_url = 'http://www.googlemapsmarkers.com/v1/009900/'
+    else
+      self.markers_url = 'http://www.googlemapsmarkers.com/v1/FFFFFF/'
+    end
+  end
+# Set Region Scopes
   scope(:north_northeast, -> do
     where({:region => "North/Northeast"})
   end)
