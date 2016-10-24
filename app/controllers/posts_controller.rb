@@ -17,7 +17,7 @@ class PostsController < ApplicationController
         format.js
       end
     else
-      flash[:alert] = "We're sorry, your post has not been successfully created."
+      flash[:alert] = "Sorry, your post has not been successfully created."
       render :new
     end
   end
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
         format.js
       end
     else
-      flash[:alert] = "We're sorry, your post updates have not been successfully processed."
+      flash[:alert] = "Sorry, your post updates have not been successfully processed."
       render :edit
     end
   end

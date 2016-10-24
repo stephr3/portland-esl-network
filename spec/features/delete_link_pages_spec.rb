@@ -5,8 +5,8 @@ describe "the delete a link process" do
     link = FactoryGirl.create(:link)
     FactoryGirl.create(:admin)
     visit admin_path
-    fill_in 'Username', :with => 'admin'
-    fill_in 'Password', :with => 'admin'
+    fill_in 'Username', with: 'admin'
+    fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit 'links?type=learning'
     click_on "Delete Link"

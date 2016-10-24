@@ -1,7 +1,7 @@
 <h1><%= @site.name %></h1>
 <% if current_admin %>
 <%= link_to "Edit Class Information", edit_site_path(@site), class: "btn btn-success" %>
-<%= link_to "Delete this Class", site_path(@site), class: "btn btn-danger", :data => {confirm: "Are you sure you'd like to delete this class?", method: "delete"} %>
+<%= link_to "Delete this Class", site_path(@site), class: "btn btn-danger", data: {confirm: "Are you sure you'd like to delete this class?", method: "delete"} %>
 <% end %>
 <p>Address: <%= @site.address %> <%= @site.city %>,<%= @site.state %> <%= @site.zip %></p>
 <p>Contact: <%= @site.contact %> <%= @site.phone %> <%= @site.email %></p>

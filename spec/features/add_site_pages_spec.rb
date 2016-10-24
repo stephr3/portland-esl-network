@@ -4,8 +4,8 @@ describe "the add a site process", vcr: true do
   it "adds a new site" do
     FactoryGirl.create(:admin)
     visit admin_path
-    fill_in 'Username', :with => 'admin'
-    fill_in 'Password', :with => 'admin'
+    fill_in 'Username', with: 'admin'
+    fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit sites_path
     click_link 'Add a New Class'
@@ -21,8 +21,8 @@ describe "the add a site process", vcr: true do
   it "gives error when no name is entered" do
     FactoryGirl.create(:admin)
     visit admin_path
-    fill_in 'Username', :with => 'admin'
-    fill_in 'Password', :with => 'admin'
+    fill_in 'Username', with: 'admin'
+    fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit new_site_path
     click_on 'Submit Class'
@@ -37,8 +37,8 @@ describe "the add a site process", vcr: true do
   it "gives an error when an invalid address is entered" do
     FactoryGirl.create(:admin)
     visit admin_path
-    fill_in 'Username', :with => 'admin'
-    fill_in 'Password', :with => 'admin'
+    fill_in 'Username', with: 'admin'
+    fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit new_site_path
     fill_in 'Name', with: 'ESL Class'

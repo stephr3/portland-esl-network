@@ -5,8 +5,8 @@ describe "the delete a volunteer site process", vcr: true do
     FactoryGirl.create(:volunteer_site)
     FactoryGirl.create(:admin)
     visit admin_path
-    fill_in 'Username', :with => 'admin'
-    fill_in 'Password', :with => 'admin'
+    fill_in 'Username', with: 'admin'
+    fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit '/real-world'
     click_on "Delete Volunteer Site"

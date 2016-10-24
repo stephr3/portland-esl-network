@@ -2,6 +2,6 @@
 <p><%= site.description %></p>
 <p><%= site.level %></p>
 <% if current_admin %>
-  <span id="edit_volunteer_site_button_<%=site.id%>"><%= link_to "Edit Volunteer Site", edit_volunteer_site_path(site), :class => "btn btn-success", remote: true %></span>
-  <%= link_to "Delete Volunteer Site", volunteer_site_path(site), :class => "btn btn-danger", :data => {confirm: "Are you sure you'd like to delete this volunteer site?", method: "delete"} %>
+  <span id="edit_volunteer_site_button_<%=site.id%>"><%= link_to "Edit Volunteer Site", edit_volunteer_site_path(site), class: "btn btn-success", remote: true %></span>
+  <%= link_to "Delete Volunteer Site", volunteer_site_path(site), class: "btn btn-danger", data: {confirm: "Are you sure you'd like to delete this volunteer site?", method: "delete"} %>
 <% end %>

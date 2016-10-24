@@ -53,7 +53,7 @@ class SitesController < ApplicationController
       flash[:notice] = "You have successfully submitted a class!"
       redirect_to sites_path
     else
-      flash[:alert] = "We're sorry, your class has not been successfully submitted."
+      flash[:alert] = "Sorry, your class has not been successfully submitted."
       render :new
     end
   end
@@ -68,7 +68,7 @@ class SitesController < ApplicationController
       flash[:notice] = "You have successfully submitted your updates for this class."
       redirect_to site_path(@site)
     else
-      flash[:alert] = "We're sorry, your class updates have not been successfully submitted."
+      flash[:alert] = "Sorry, your class updates have not been successfully submitted."
       render :edit
     end
   end

@@ -10,7 +10,7 @@ class Site < ActiveRecord::Base
   validates :url, length: { maximum: 200 }
   validates :notes, length: { maximum: 2000 }
 
-# Set Marker Colors
+  # Set Marker Colors
   before_save :set_marker_color , if: ->(obj){ obj.site_type.present? and obj.site_type_changed? }
 
   def set_marker_color
@@ -32,35 +32,35 @@ class Site < ActiveRecord::Base
   end
 # Set Region Scopes
   scope(:north_northeast, -> do
-    where({:region => "North/Northeast"})
+    where({region: "North/Northeast"})
   end)
 
   scope(:south_southeast, -> do
-    where({:region => "South/Southeast"})
+    where({region: "South/Southeast"})
   end)
 
   scope(:southwest, -> do
-    where({:region => "Southwest"})
+    where({region: "Southwest"})
   end)
 
   scope(:downtown, -> do
-    where({:region => "Downtown"})
+    where({region: "Downtown"})
   end)
 
   scope(:gresham, -> do
-    where({:region => "Gresham"})
+    where({region: "Gresham"})
   end)
 
   scope(:washington_county, -> do
-    where({:region => "Washington County"})
+    where({region: "Washington County"})
   end)
 
   scope(:clark_county, -> do
-    where({:region => "Clark County"})
+    where({region: "Clark County"})
   end)
 
   scope(:other_areas, -> do
-    where({:region => "Other Areas"})
+    where({region: "Other Areas"})
   end)
 
   paginates_per 5

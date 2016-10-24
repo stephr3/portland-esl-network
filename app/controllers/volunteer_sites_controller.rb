@@ -36,7 +36,7 @@ class VolunteerSitesController < ApplicationController
       flash[:notice] = "You have successfully submitted a volunteer site!"
       redirect_to admin_path
     else
-      flash[:alert] = "We're sorry, your volunteer site has not been successfully submitted."
+      flash[:alert] = "Sorry, your volunteer site has not been successfully submitted."
       render :new
     end
   end
@@ -54,11 +54,11 @@ class VolunteerSitesController < ApplicationController
     if @site.update(volunteer_site_params)
       flash[:notice] = "Your volunteer site has been successfully updated."
       respond_to do |format|
-        format.html { redirect_to :back }
+        format.html { redirect_back(fallback_location: volunteer_sites_path) }
         format.js
       end
     else
-      flash[:alert] = "We're sorry, your volunteer site updates have not been successfully submitted."
+      flash[:alert] = "Sorry, your volunteer site updates have not been successfully submitted."
       render :edit
     end
   end
@@ -69,7 +69,7 @@ class VolunteerSitesController < ApplicationController
       flash[:notice] = "You have successfully deleted your volunteer site."
       redirect_to volunteer_sites_path
     else
-      flash[:alert] = "We're sorry, your volunteer site has not been deleted."
+      flash[:alert] = "Sorry, your volunteer site has not been deleted."
       redirect_to volunteer_sites_path
     end
   end
