@@ -2,6 +2,7 @@
 
 <%= form_for @site do |f| %>
   <h3>Class Location</h3>
+  <p>*These fields are required.</p>
   <%= f.label :name %>
   <%= f.text_field :name, class: "form-control", autocomplete: 'off' %>
   <%= f.label :region %>
@@ -22,7 +23,7 @@
   <%= f.label :email %>
   <%= f.email_field :email, class: "form-control" %>
   <%= f.label :url, 'Website URL' %>
-  <%= f.url_field :url, class: "form-control" %>
+  <%= f.url_field :url, placeholder: "http://", class: "form-control" %>
   <h3>About the Class</h3>
   <%= f.label :class_resource, 'Is this a class or resource?' %>
   <%= f.select :class_resource, options_for_select(['', 'Class', 'Resource'], selected: f.object.class_resource), {}, {class: "form-control"} %>

@@ -6,28 +6,68 @@ class SitesController < ApplicationController
     # Sort Sites by Region
     if params[:region].present?
       if params[:region] == 'north-northeast'
-        @sites = Site.north_northeast.order('name ASC').page(params[:page])
+        if current_admin
+          @sites = Site.north_northeast.order('name ASC').page(params[:page])
+        else
+          @sites = Site.north_northeast.where(happening_now: 'Yes').order('name ASC').page(params[:page])
+        end
       elsif params[:region] == 'south-southeast'
-        @sites = Site.south_southeast.order('name ASC').page(params[:page])
+        if current_admin
+          @sites = Site.south_southeast.order('name ASC').page(params[:page])
+        else
+          @sites = Site.south_southeast.where(happening_now: 'Yes').order('name ASC').page(params[:page])
+        end
       elsif params[:region] == 'southwest'
-        @sites = Site.southwest.order('name ASC').page(params[:page])
+        if current_admin
+          @sites = Site.southwest.order('name ASC').page(params[:page])
+        else
+          @sites = Site.southwest.where(happening_now: 'Yes').order('name ASC').page(params[:page])
+        end
       elsif params[:region] == 'downtown'
-        @sites = Site.downtown.order('name ASC').page(params[:page])
+        if current_admin
+          @sites = Site.downtown.order('name ASC').page(params[:page])
+        else
+          @sites = Site.downtown.where(happening_now: 'Yes').order('name ASC').page(params[:page])
+        end
       elsif params[:region] == 'gresham'
-        @sites = Site.gresham.order('name ASC').page(params[:page])
+        if current_admin
+          @sites = Site.gresham.order('name ASC').page(params[:page])
+        else
+          @sites = Site.gresham.where(happening_now: 'Yes').order('name ASC').page(params[:page])
+        end
       elsif params[:region] == 'washington-county'
-        @sites = Site.washington_county.order('name ASC').page(params[:page])
+        if current_admin
+          @sites = Site.washington_county.order('name ASC').page(params[:page])
+        else
+          @sites = Site.washington_county.where(happening_now: 'Yes').order('name ASC').page(params[:page])
+        end
       elsif params[:region] == 'clark-county'
-        @sites = Site.clark_county.order('name ASC').page(params[:page])
+        if current_admin
+          @sites = Site.clark_county.order('name ASC').page(params[:page])
+        else
+          @sites = Site.clark_county.where(happening_now: 'Yes').order('name ASC').page(params[:page])
+        end
       elsif params[:region] == 'other-areas'
-        @sites = Site.other_areas.order('name ASC').page(params[:page])
+        if current_admin
+          @sites = Site.other_areas.order('name ASC').page(params[:page])
+        else
+          @sites = Site.other_areas.where(happening_now: 'Yes').order('name ASC').page(params[:page])
+        end
       end
     else
-      @sites = Site.all.order('name ASC').page(params[:page])
+      if current_admin
+        @sites = Site.all.order('name ASC').page(params[:page])
+      else
+        @sites = Site.where(happening_now: 'Yes').order('name ASC').page(params[:page])
+      end
     end
 
     if params[:site].present?
-      @sites = Site.fuzzy_search(name: params[:site]).page(params[:page])
+      if current_admin
+        @sites = Site.all.fuzzy_search(name: params[:site]).page(params[:page])
+      else
+        @sites = Site.where(happening_now: 'Yes').fuzzy_search(name: params[:site]).page(params[:page])
+      end
     end
   end
 
@@ -85,7 +125,11 @@ class SitesController < ApplicationController
   end
 
   def autocomplete
-    @site_search = Site.order(:name).where("name ILIKE ?", "%#{ params[:term] }%")
+    if current_admin
+      @site_search = Site.all.order(:name).where("name ILIKE ?", "%#{ params[:term] }%")
+    else
+      @site_search = Site.where(happening_now: 'Yes').order(:name).where("name ILIKE ?", "%#{ params[:term] }%")
+    end
     respond_to do |format|
       format.html
       format.json {
