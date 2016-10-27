@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   before_action :is_admin, only:[:admin]
   def map
-    @sites = Site.all
+    @sites = Site.where(happening_now: 'Yes')
     #Init Gmaps
     @hash = Gmaps4rails.build_markers(@sites) do |site, marker|
       marker.infowindow "<b><a href='#{site.url}' target='_blank'>#{site.name}</a></b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.phone}</p>"
