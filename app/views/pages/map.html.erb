@@ -1,8 +1,10 @@
-<%= form_tag root_path, method: 'get', role: 'search' do %>
-<%= label_tag :center, 'Find a Class Near You:' %>
-<%= text_field_tag :center, params[:center], placeholder: 'Enter Zip Code', class: 'form-control', id: 'center-map' %>
-<%= submit_tag 'Search', name: nil, class: 'btn btn-primary' %>
-<% end %>
+<div class="search-nav">
+  <%= form_tag root_path, method: 'get', role: 'search' do %>
+    <%= label_tag :center, 'Find a Class Near You:' %>
+    <%= text_field_tag :center, params[:center], placeholder: 'Enter Zip Code', class: 'form-control', id: 'center-map' %>
+    <%= submit_tag 'Search', name: nil, class: 'btn btn-primary' %>
+  <% end %>
+</div>
 
 <% if @center %>
 <h5> Your search: <%= @center %></h5>
