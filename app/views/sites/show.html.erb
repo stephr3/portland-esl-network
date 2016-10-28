@@ -1,21 +1,29 @@
 <h1><%= @site.name %></h1>
 <% if current_admin %>
-<%= link_to "Edit Class Information", edit_site_path(@site), class: "btn btn-success" %>
-<%= link_to "Delete this Class", site_path(@site), class: "btn btn-danger", data: {confirm: "Are you sure you'd like to delete this class?", method: "delete"} %>
+  <%= link_to "Edit Class Information", edit_site_path(@site), class: "btn btn-success" %>
+  <%= link_to "Delete this Class", site_path(@site), class: "btn btn-danger", data: {confirm: "Are you sure you'd like to delete this class?", method: "delete"} %>
 <% end %>
 <p>Address: <%= @site.address %> <%= @site.city %>,<%= @site.state %> <%= @site.zip %></p>
-<p>Contact: <%= @site.contact %> <%= @site.phone %> <%= @site.email %></p>
-<p>Website: <%= link_to @site.url, url_with_protocol(@site.url), target: '_blank' %></p>
-<p>Description: <%= @site.description %></p>
+<% if @site.phone %>
+  <p>Phone: <%= @site.phone %></p>
+<% end %>
+<% if @site.url %>
+  <p>Website: <%= link_to @site.url, url_with_protocol(@site.url), target: '_blank' %></p>
+<% end %>
+<% if @site.description %>
+  <p>Description: <%= @site.description %></p>
+<% else %>
+  <p>Description: No description provided yet.</p>
+<% end %>
 <% if current_admin %>
-<h3>Admin Information</h3>
-<p>Class or Resource: <%= @site.class_resource %></p>
-<p>Site type: <%= @site.site_type %></p>
-<p>Happening now?: <%= @site.happening_now %></p>
-<p>Notes: <%= @site.notes %></p>
-<p>Region: <%= @site.region %></p>
-<p>Summer classes?: <%= @site.summer_classes %></p>
-<p>Students served?: <%= @site.students_served %></p>
+  <h3>Admin Information</h3>
+  <p>Class or Resource: <%= @site.class_resource %></p>
+  <p>Site type: <%= @site.site_type %></p>
+  <p>Happening now?: <%= @site.happening_now %></p>
+  <p>Notes: <%= @site.notes %></p>
+  <p>Region: <%= @site.region %></p>
+  <p>Summer classes?: <%= @site.summer_classes %></p>
+  <p>Students served?: <%= @site.students_served %></p>
 <% end %>
 <div id="site-map-container">
   <div id="site-map"></div>
