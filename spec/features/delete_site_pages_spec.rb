@@ -9,7 +9,7 @@ describe "the delete a site process", vcr: true do
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit site_path(site)
-    click_on "Delete this Class"
+    click_on "delete-site"
     expect(page).to have_content 'ESL Classes'
   end
 end

@@ -9,12 +9,10 @@ describe "the edit a volunteer site process", vcr: true do
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit '/real-world'
-    click_link 'Edit Volunteer Site'
-    expect(page).to have_no_content 'Edit Volunteer Site'
+    click_link 'edit-volunteer-site'
     fill_in 'Name', with: 'Updated Volunteer Site Name'
     click_button 'Submit Volunteer Site'
     expect(page).to have_content 'Updated Volunteer Site Name'
-    expect(page).to have_content 'Edit Volunteer Site'
   end
 
   it 'returns error if name is not filled in' do
@@ -25,7 +23,7 @@ describe "the edit a volunteer site process", vcr: true do
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit '/real-world'
-    click_link 'Edit Volunteer Site'
+    click_link 'edit-volunteer-site'
     fill_in 'Name', with: ''
     click_button 'Submit Volunteer Site'
     expect(page).to have_content 'your volunteer site updates have not been successfully submitted'

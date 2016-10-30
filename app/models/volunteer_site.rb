@@ -1,6 +1,6 @@
 class VolunteerSite < ActiveRecord::Base
   paginates_per 5
-  validates :name, :url, :address, :city, :state, :level, :contact, :description, presence: true
+  validates :name, :url, :level, :contact, :description, presence: true
   validates :name, length: { maximum: 200 }
   validates :url, length: { maximum: 200 }
   validates :address, length: { maximum: 70 }

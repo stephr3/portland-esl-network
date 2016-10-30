@@ -325,7 +325,7 @@ Site.create(
   address: "18009 SE Brooklyn",
   city: "Portland",
   state: "OR",
-  zip:,
+  zip: "",
   description: "Free, Open-Entry, Multilevel, ChildcareThursdays 6-7:30pm (April 3 - May 29)",
   contact: "Amber Moore Metropolitan Family Service SUN  Coordinator",
   phone: "",

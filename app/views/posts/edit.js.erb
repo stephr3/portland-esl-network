@@ -1,1 +1,6 @@
 $('#edit_post_link_<%=@post.id%>').hide().after('<%= j render "form" %>')
+
+$('cancel-edit-post').click(function(){
+  $('#edit_post_link_<%=@post.id%>').show();
+  $('#edit_post_<%=@post.id%>').remove();
+});

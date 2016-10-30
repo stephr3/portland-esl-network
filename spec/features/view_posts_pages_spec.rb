@@ -8,7 +8,7 @@ describe 'the view posts process' do
   end
 
   it 'paginates posts' do
-    FactoryGirl.create_list(:post, 3)
+    FactoryGirl.create_list(:post, 4)
     visit posts_path
     expect(page).to have_content 'Next ›'
   end
