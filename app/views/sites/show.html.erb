@@ -8,13 +8,13 @@
   <% end %>
 <% end %>
 <p>Address: <%= @site.address %> <%= @site.city %>,<%= @site.state %> <%= @site.zip %></p>
-<% if @site.phone %>
+<% if @site.phone.present? %>
   <p>Phone: <%= @site.phone %></p>
 <% end %>
-<% if @site.url %>
+<% if @site.url.present? %>
   <p>Website: <%= link_to @site.url, url_with_protocol(@site.url), target: '_blank' %></p>
 <% end %>
-<% if @site.description %>
+<% if @site.description.present? %>
   <p>Description: <%= @site.description %></p>
 <% else %>
   <p>Description: No description provided yet.</p>
