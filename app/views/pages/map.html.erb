@@ -4,11 +4,11 @@
     <%= text_field_tag :center, params[:center], placeholder: 'Enter Zip Code', class: 'form-control', id: 'center-map' %>
     <%= submit_tag 'Search', name: nil, class: 'btn btn-primary' %>
   <% end %>
+  <% if @center %>
+  <p> Your search: <%= @center %></p>
+  <% end %>
 </div>
 
-<% if @center %>
-<h5> Your search: <%= @center %></h5>
-<% end %>
 
 <div id="map-container">
   <div id="map"></div>
