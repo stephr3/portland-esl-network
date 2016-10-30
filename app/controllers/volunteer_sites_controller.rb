@@ -54,7 +54,7 @@ class VolunteerSitesController < ApplicationController
     if @site.update(volunteer_site_params)
       flash[:notice] = "Your volunteer site has been successfully updated."
       respond_to do |format|
-        format.html { redirect_back(fallback_location: volunteer_sites_path) }
+        format.html { redirect_to volunteer_sites_path }
         format.js
       end
     else

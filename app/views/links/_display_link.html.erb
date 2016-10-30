@@ -2,11 +2,11 @@
 <p><%= link.description %></p>
 <% if current_admin %>
   <span id="edit_link_button_<%=link.id%>">
-    <%= link_to edit_link_path(link), class: "btn btn-success", id: "edit-link", remote: true do %>
+    <%= link_to edit_link_path(link), class: "btn btn-primary", id: "edit-link", remote: true do %>
       <i class="glyphicon glyphicon-pencil"></i>
     <% end %>
   </span>
-  <%= link_to link_path(link), class: "btn btn-danger", id: "delete-link", data: {confirm: "Are you sure you'd like to delete this link?", method: "delete"} do %>
+  <%= link_to link_path(link), class: "btn btn-primary", id: "delete-link", data: {confirm: "Are you sure you'd like to delete this link?", method: "delete"} do %>
     <i class="glyphicon glyphicon-trash"></i>
   <% end %>
 <% end %>
