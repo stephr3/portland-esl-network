@@ -9,7 +9,7 @@ describe "the delete a link process" do
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit 'links?type=learning'
-    click_on "Delete Link"
+    click_on "delete-link"
     expect(page).to have_no_content 'Multnomah County Library Web Resources'
   end
 end

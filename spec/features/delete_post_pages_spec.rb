@@ -8,7 +8,7 @@ describe "the delete a post process" do
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit posts_path
-    click_on "Delete Post"
+    click_on "delete-post"
     expect(page).to have_no_content 'Bridger Elementary'
   end
 end

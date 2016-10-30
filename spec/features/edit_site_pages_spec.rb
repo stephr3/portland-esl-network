@@ -9,7 +9,7 @@ describe "the edit a site process", vcr: true do
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit site_path(site)
-    click_on 'Edit Class Information'
+    click_on 'edit-site'
     fill_in 'Name', with: 'Best ESL Class'
     select('OR', from: 'site_state')
     select('Downtown', from: 'site_region')
@@ -25,7 +25,7 @@ describe "the edit a site process", vcr: true do
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit site_path(site)
-    click_on 'Edit Class Information'
+    click_on 'edit-site'
     fill_in 'Name', with: ''
     click_button 'Submit Class'
     expect(page).to have_content 'errors'
@@ -39,7 +39,7 @@ describe "the edit a site process", vcr: true do
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit site_path(site)
-    click_on 'Edit Class Information'
+    click_on 'edit-site'
     fill_in 'Address', with: 'not a real address'
     fill_in 'City', with: 'not a real city'
     fill_in 'Zip Code', with: '00000'

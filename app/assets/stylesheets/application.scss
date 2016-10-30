@@ -4,10 +4,16 @@
 
 $blue: #1E6B9F;
 $light-blue: #247EBB;
+$gray: #E5E5E5;
+$dark-gray: #CCCCCC;
 
 // GENERAL STYLING
 body {
   background-color: $blue;
+}
+
+a {
+  color: #a9a9a9;
 }
 
 h1 {
@@ -27,9 +33,33 @@ ul {
   margin: 10px 0;
 }
 
+.btn.btn-primary {
+  background-color: $gray;
+  color: $blue;
+}
+
+.btn.btn-primary:hover {
+  background-color: $dark-gray;
+  cursor: pointer;
+}
+
+.btn.admin {
+  min-width: 200px;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+a.site-link {
+  font-size: 1.3em;
+  font-color: #a9a9a9;
+}
+
 // HERO IMAGE STYLING
+
 .logo {
-  height: 30%;
+  max-height: 20%;
   background-color: white;
 }
 
@@ -47,9 +77,43 @@ ul {
 
 #map-container, #volunteer-map-container, #site-map-container {
   width: 80%;
+  margin: auto;
 }
 
 #map, #volunteer-map, #site-map {
   width: 100%;
-  height: 300px;
+  height: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.search-nav {
+  width: 80%;
+  margin: auto;
+}
+
+//MOBILE STYLING
+
+@media screen and (max-width: 540px) {
+  input {
+    display: inline-block;
+    width: 100%;
+  }
+  input#center-map.form-control {
+    width: 100%;
+  }
+  .search-nav {
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+  }
+  #map-container, #volunteer-map-container, #site-map-container {
+    width: 100%;
+    margin: auto;
+  }
+  .half-size {
+    width: 49%;
+    display: inline-block;
+  }
 }

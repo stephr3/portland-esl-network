@@ -9,6 +9,8 @@ class Site < ActiveRecord::Base
   validates :phone, length: { maximum: 25 }
   validates :notes, length: { maximum: 2000 }
 
+  paginates_per 10
+
   # Set Marker Colors
   before_save :set_marker_color , if: ->(obj){ obj.site_type.present? and obj.site_type_changed? }
 
@@ -61,8 +63,6 @@ class Site < ActiveRecord::Base
   scope(:other_areas, -> do
     where({region: "Other Areas"})
   end)
-
-  paginates_per 5
 
   def self.searchable_columns
     [:name, :region, :city, :address, :zip, :state]
