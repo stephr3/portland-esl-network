@@ -14,7 +14,7 @@
     <li><a href="?level=intermediate">Intermediate</a></li>
     <li><a href="?level=advanced">Advanced</a></li>
   </ul>
-  <%= paginate @sites %>
+  <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
 </div>
 
 <ul class="volunteer-sites-display">

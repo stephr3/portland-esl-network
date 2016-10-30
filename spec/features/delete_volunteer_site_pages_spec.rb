@@ -9,7 +9,7 @@ describe "the delete a volunteer site process", vcr: true do
     fill_in 'Password', with: 'admin'
     click_button 'Log in'
     visit '/real-world'
-    click_on "Delete Volunteer Site"
+    click_on "delete-volunteer-site"
     expect(page).to have_no_content 'Birch Community Services'
   end
 end

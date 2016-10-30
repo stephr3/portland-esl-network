@@ -79,9 +79,9 @@ describe 'the view sites process', vcr: true do
     click_on 'Other Areas'
     expect(page).to have_no_content 'Sunshine ESL Class'
   end
-  
+
   it 'paginates sites' do
-    FactoryGirl.create_list(:site, 6)
+    FactoryGirl.create_list(:site, 11)
     visit sites_path
     expect(page).to have_content 'Next ›'
   end
