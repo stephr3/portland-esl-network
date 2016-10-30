@@ -13,3 +13,10 @@
   <%= f.submit 'Submit Link', class: "btn btn-primary" %>
 <% end %>
 <%= link_to 'Cancel', '#', class: "btn btn-primary", id: "cancel-edit-link" %>
+
+<script>
+$('cancel-edit-link').click(function(){
+  $('#edit_link_button_<%=@link.id%>').show();
+  $('#edit_link_<%=@link.id%>').remove()
+});
+</script>
