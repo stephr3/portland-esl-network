@@ -1,9 +1,9 @@
 <h1><%= @site.name %></h1>
 <% if current_admin %>
-  <%= link_to edit_site_path(@site), class: "btn btn-success", id: "edit-site" do %>
+  <%= link_to edit_site_path(@site), class: "btn btn-primary", id: "edit-site" do %>
     <i class="glyphicon glyphicon-pencil"></i>
   <% end %>
-  <%= link_to site_path(@site), class: "btn btn-danger", id: "delete-site", data: {confirm: "Are you sure you'd like to delete this class?", method: "delete"} do %>
+  <%= link_to site_path(@site), class: "btn btn-primary", id: "delete-site", data: {confirm: "Are you sure you'd like to delete this class?", method: "delete"} do %>
     <i class="glyphicon glyphicon-trash"></i>
   <% end %>
 <% end %>

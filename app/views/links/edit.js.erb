@@ -1,1 +1,6 @@
 $('#edit_link_button_<%=@link.id%>').hide().after('<%= j render "form" %>')
+
+$('cancel-edit-link').click(function(){
+  $('#edit_link_button_<%=@link.id%>').show();
+  $('#edit_link_<%=@link.id%>').remove()
+});

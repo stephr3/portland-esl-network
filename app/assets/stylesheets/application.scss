@@ -4,6 +4,8 @@
 
 $blue: #1E6B9F;
 $light-blue: #247EBB;
+$gray: #E5E5E5;
+$dark-gray: #CCCCCC;
 
 // GENERAL STYLING
 body {
@@ -29,6 +31,16 @@ ul {
 
 .btn {
   margin: 10px 0;
+}
+
+.btn.btn-primary {
+  background-color: $gray;
+  color: $blue;
+}
+
+.btn.btn-primary:hover {
+  background-color: $dark-gray;
+  cursor: pointer;
 }
 
 .btn.admin {

@@ -6,11 +6,11 @@
 </article>
 <% if is_author(post) %>
   <span id="edit_post_link_<%=post.id%>">
-    <%= link_to edit_admin_post_path(current_admin, post), class: "btn btn-success", id: 'edit-post', remote: true do %>
+    <%= link_to edit_admin_post_path(current_admin, post), class: "btn btn-primary", id: 'edit-post', remote: true do %>
       <i class="glyphicon glyphicon-pencil"></i>
     <% end %>
   </span>
-  <%= link_to admin_post_path(current_admin, post), class: "btn btn-danger", id: 'delete-post', data: {confirm: "Are you sure you'd like to delete this post?", method: "delete"} do %>
+  <%= link_to admin_post_path(current_admin, post), class: "btn btn-primary", id: 'delete-post', data: {confirm: "Are you sure you'd like to delete this post?", method: "delete"} do %>
     <i class="glyphicon glyphicon-trash"></i>
   <% end %>
 <% end %>
