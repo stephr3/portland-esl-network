@@ -108,6 +108,9 @@ a.site-link {
   .btn {
     width: 100%;
   }
+  #map, #volunteer-map, #site-map {
+    height: 275px;
+  }
   #map-container, #volunteer-map-container, #site-map-container {
     width: 100%;
     margin: auto;
@@ -115,5 +118,11 @@ a.site-link {
   .half-size {
     width: 49%;
     display: inline-block;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 860) {
+  #map, #volunteer-map, #site-map {
+    height: 350px;
   }
 }
