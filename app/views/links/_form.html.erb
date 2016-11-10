@@ -12,7 +12,10 @@
   <%= f.text_field :tag, class: "form-control" %>
   <%= f.submit 'Submit Link', class: "btn btn-primary" %>
 <% end %>
-<%= link_to 'Cancel', '#', class: "btn btn-primary", id: "cancel-edit-link" %>
+
+<% if !current_page?('/links/new') %>
+  <%= link_to 'Cancel', '#', class: "btn btn-primary", id: "cancel-edit-link" %>
+<% end %>
 
 <script>
 $('cancel-edit-link').click(function(){
