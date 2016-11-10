@@ -3,10 +3,6 @@ require 'rails_helper'
 describe VolunteerSite, vcr: true do
   it { should validate_presence_of :name }
   it { should validate_presence_of :url }
-  it { should validate_presence_of :address }
-  it { should validate_presence_of :city }
-  it { should validate_presence_of :state }
-  it { should validate_presence_of :level }
   it { should validate_presence_of :contact }
   it { should validate_presence_of :description }
   it { should validate_length_of(:name).is_at_most(200) }
