@@ -24,9 +24,28 @@ li {
   list-style: none;
 }
 
+p {
+  font-size: 1.3em;
+}
+
 ul {
   margin-left: 0;
   padding-left: 0;
+}
+
+ul.bullets {
+  margin-left: 10px;
+  padding-left: 5px;
+  font-size: 16px;
+}
+
+ul.bullets li {
+  list-style: circle;
+}
+
+a.site-link {
+  font-size: 1.3em;
+  font-color: #a9a9a9;
 }
 
 .btn {
@@ -47,13 +66,12 @@ ul {
   min-width: 200px;
 }
 
-p {
-  font-size: 1.3em;
-}
 
-a.site-link {
-  font-size: 1.3em;
-  font-color: #a9a9a9;
+.content-image {
+  border: 2px solid black;
+  display: block;
+  margin: 20px auto;
+  width: 80%;
 }
 
 // HERO IMAGE STYLING
