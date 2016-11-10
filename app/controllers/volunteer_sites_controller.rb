@@ -18,7 +18,13 @@ class VolunteerSitesController < ApplicationController
 
     #Init Gmaps
     @hash = Gmaps4rails.build_markers(@sites) do |site, marker|
-      marker.infowindow "<b><a href='#{site.url}' target='_blank'>#{site.name}</a></b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.contact}</p>"
+      if site.url != ""
+        marker.infowindow "<b>" +
+        "<a href='#{site.url}' target='_blank'>" +
+         "#{site.name}</a></b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.contact}</p>"
+      else
+        marker.infowindow "<b>#{site.name}</b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.contact}</p>"
+      end
       marker.lat site.latitude
       marker.lng site.longitude
     end
