@@ -23,6 +23,9 @@
   <li id="volunteer_site_display_<%=site.id%>"><%= render partial: 'display_volunteer_site', locals: { site: site } %></li>
   <% end %>
 </ul>
+<% else %>
+  <p>There are no volunteer sites for your selected level.</p>
+<% end %>
 
 <br>
 <div id="volunteer-map-container">
