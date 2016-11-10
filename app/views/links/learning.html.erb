@@ -5,6 +5,7 @@
 <% end %>
 <ul class="links-display">
   <% @links.each do |link| %>
-  <li id="link_display_<%=link.id%>"><%= render partial: 'display_link', locals: { link: link } %></li>
+    <li id="link_display_<%=link.id%>"><%= render partial: 'display_link', locals: { link: link } %></li>
   <% end %>
 </ul>
+<%= paginate @links, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>

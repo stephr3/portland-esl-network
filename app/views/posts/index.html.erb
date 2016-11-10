@@ -6,5 +6,5 @@
   <% @posts.each do |post| %>
   <li id="post-display-<%=post.id%>"><%= render partial: 'post', locals: { post: post } %></li>
   <% end %>
-  <%= paginate @posts, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
 </ul>
+<%= paginate @posts, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>

@@ -301,6 +301,18 @@ Post.create(
   content: "Oregon folks, you are welcome to join Lutheran Community Services Northwest in a facilitated open dialogue on refugee resettlement here in Portland. This forum is free to attend and we look forward to addressing the challenges, opportunities and problems that our community is experiencing in welcoming refugees.",
   admin_id: 2
 )
+Post.create(
+  title: "Goodwill Classes",
+  content: "Goodwill has tons of new classes being offered starting this week! They are at many different locations. Check out their new schedule! Check out their website: http://goodwilljobconnection.org/esl/free-classes/",
+  admin_id: 3
+)
+Post.create(
+  title: "Holgate Baptist Church ESL Classes",
+  content: "Holgate Baptist Church is now offering ESL Classes- starting THIS week!
+Address: 11242 SE Holgate Blvd. Portland, OR 97266
+Description: Thursdays from 6-8. Call the church office to register or for more information. First Class is Thursday, Sept 22nd, 2016. Contact: Church Office: 503-761-4554",
+  admin_id: 2
+)
 
 Link.create(
   title: "Multnomah County Library Web Resources",
@@ -348,23 +360,23 @@ Link.create(
 
 Link.create(
   title: "Refugees from Burma: Their Backgrounds & Experiences.pdf",
-  url: "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiTosWlqYPQAhVM-mMKHRe2ALcQFgggMAA&url=http%3A%2F%2Fwww.culturalorientation.net%2Fcontent%2Fdownload%2F1338%2F7825%2Fversion%2F2%2Ffile%2Frefugeesfromburma.pdf&usg=AFQjCNEJcMN1e_-gS3yg7_WLjMR5euR3Mw&sig2=xfqoddlH0PoDi6VlDY1W7g",
-  description: "",
-  tag: "",
+  url: "www.brycs.org/documents/upload/burmese-cultural-backgrounder.pdf",
+  description: "An article about refugees from Burma.",
+  tag: "Refugees",
   page: "Refugee Backgrounders"
 )
 Link.create(
   title: "The Somali Bantu: Their History and Culture.pdf",
-  url: "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjzgqq_qYPQAhVU_WMKHeD1D20QFggcMAA&url=http%3A%2F%2Fwww.culturalorientation.net%2Fcontent%2Fdownload%2F1359%2F7917%2Fversion%2F2%2Ffile%2FThe%2BSomali%2BBantu.pdf&usg=AFQjCNG4Hu3fv4RpNeoTXwYZ_YBfsCRToQ&sig2=4pCFK8CYcDpsTcxDC9SliQ&bvm=bv.136811127,d.cGc",
-  description: "",
-  tag: "",
+  url: "www.hartfordinfo.org/issues/wsd/immigrants/somali_bantu.pdf",
+  description: "An article about refugees from Somalia.",
+  tag: "Refugees",
   page: "Refugee Backgrounders"
 )
 Link.create(
   title: "Liberians: An Introduction to Their History and Culture.pdf",
-  url: "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjUhoHaqYPQAhVQ92MKHYt3CfcQFggcMAA&url=http%3A%2F%2Fwww.culturalorientation.net%2Fcontent%2Fdownload%2F1358%2F7913%2Fversion%2F2%2Ffile%2FLiberians.pdf&usg=AFQjCNHkkmV2WoINDJZfrO8FiAQjA8g8-g&sig2=beZLZ_Dgx0kbudGRHWlR5A&bvm=bv.136811127,d.cGc",
-  description: "",
-  tag: "",
+  url: "www.culturalorientation.net/content/download/1358/.../Liberians.pdf",
+  description: "An article about refugees from Liberia.",
+  tag: "Refugees",
   page: "Refugee Backgrounders"
 )
 VolunteerSite.create(
