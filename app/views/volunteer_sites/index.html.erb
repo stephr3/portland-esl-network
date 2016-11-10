@@ -23,6 +23,7 @@
   <li id="volunteer_site_display_<%=site.id%>"><%= render partial: 'display_volunteer_site', locals: { site: site } %></li>
   <% end %>
 </ul>
+<%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
 <% else %>
   <p>There are no volunteer sites for your selected level.</p>
 <% end %>
@@ -31,9 +32,6 @@
 <div id="volunteer-map-container">
   <div id="volunteer-map"></div>
 </div>
-<% else %>
-<p> There are no volunteer sites for this level.</p>
-<% end %>
 
 <script type="text/javascript">
   handler = Gmaps.build('Google');

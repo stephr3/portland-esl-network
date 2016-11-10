@@ -3,13 +3,13 @@ class LinksController < ApplicationController
   def index
     if params[:type].present?
       if params[:type] == 'learning'
-        @links = Link.where(page: 'Student Learning Resources')
+        @links = Link.where(page: 'Student Learning Resources').page(params[:page])
         render :learning
       elsif params[:type] == 'teaching'
-        @links = Link.where(page: 'Teaching Resources')
+        @links = Link.where(page: 'Teaching Resources').page(params[:page])
         render :teaching
       elsif params[:type] == 'refugees'
-        @links = Link.where(page: 'Refugee Backgrounders')
+        @links = Link.where(page: 'Refugee Backgrounders').page(params[:page])
         render :refugees
       end
     end
