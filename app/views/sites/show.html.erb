@@ -15,7 +15,7 @@
   <p>Website: <%= link_to @site.url, url_with_protocol(@site.url), target: '_blank' %></p>
 <% end %>
 <% if @site.description.present? %>
-  <p>Description: <%= @site.description %></p>
+  <p>Description: <%= simple_format(@site.description) %></p>
 <% else %>
   <p>Description: No description provided yet.</p>
 <% end %>
