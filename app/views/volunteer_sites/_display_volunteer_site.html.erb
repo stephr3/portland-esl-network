@@ -6,7 +6,7 @@
 <p>Contact: <%= site.contact %>
 <% end %>
 <% if site.description.present? %>
-<p>Description: <%= site.description %></p>
+<p>Description: <%= simple_format(site.description) %></p>
 <% end %>
 <% if site.description.present? %>
 <p>Level: <%= site.level %></p>

@@ -1,5 +1,5 @@
 <h2><%= link_to link.title, link.url %></h2>
-<p><%= link.description %></p>
+<p><%= simple_format(link.description) %></p>
 <% if current_admin %>
   <span id="edit_link_button_<%=link.id%>">
     <%= link_to edit_link_path(link), class: "btn btn-primary", id: "edit-link", remote: true do %>
