@@ -17,16 +17,18 @@
   <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
 </div>
 
-<% if @sites.length > 0 %>
-<ul class="volunteer-sites-display">
-  <% @sites.each do |site| %>
-  <li id="volunteer_site_display_<%=site.id%>"><%= render partial: 'display_volunteer_site', locals: { site: site } %></li>
-  <% end %>
-</ul>
-<%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
-<% else %>
+<div class="content-bg">
+  <% if @sites.length > 0 %>
+  <ul class="volunteer-sites-display">
+    <% @sites.each do |site| %>
+    <li id="volunteer_site_display_<%=site.id%>"><%= render partial: 'display_volunteer_site', locals: { site: site } %></li>
+    <% end %>
+  </ul>
+  <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
+  <% else %>
   <p>There are no volunteer sites for your selected level.</p>
-<% end %>
+  <% end %>
+</div>
 
 <br>
 <div id="volunteer-map-container">
