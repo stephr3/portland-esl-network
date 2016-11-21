@@ -25,7 +25,8 @@
   </ul>
 </div>
 <br>
-<% if @sites.length > 0 %>
+<div class="content-bg">
+  <% if @sites.length > 0 %>
   <ul>
     <% @sites.each do |site| %>
     <li><%= link_to site.name, site_path(site), class: 'site-link' %></li>
@@ -34,4 +35,5 @@
   <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
   <% else %>
   <p> Sorry, no classes matched your search. </p>
-<% end %>
+  <% end %>
+</div>

@@ -1,25 +1,26 @@
 <h1><%= @site.name %></h1>
-<% if current_admin %>
+<div class="content-bg">
+  <% if current_admin %>
   <%= link_to edit_site_path(@site), class: "btn btn-primary", id: "edit-site" do %>
-    <i class="glyphicon glyphicon-pencil"></i>
+  <i class="glyphicon glyphicon-pencil"></i>
   <% end %>
   <%= link_to site_path(@site), class: "btn btn-primary", id: "delete-site", data: {confirm: "Are you sure you'd like to delete this class?", method: "delete"} do %>
-    <i class="glyphicon glyphicon-trash"></i>
+  <i class="glyphicon glyphicon-trash"></i>
   <% end %>
-<% end %>
-<p>Address: <%= @site.address %> <%= @site.city %>,<%= @site.state %> <%= @site.zip %></p>
-<% if @site.phone.present? %>
+  <% end %>
+  <p>Address: <%= @site.address %> <%= @site.city %>,<%= @site.state %> <%= @site.zip %></p>
+  <% if @site.phone.present? %>
   <p>Phone: <%= @site.phone %></p>
-<% end %>
-<% if @site.url.present? %>
+  <% end %>
+  <% if @site.url.present? %>
   <p>Website: <%= link_to @site.url, url_with_protocol(@site.url), target: '_blank' %></p>
-<% end %>
-<% if @site.description.present? %>
+  <% end %>
+  <% if @site.description.present? %>
   <p>Description: <%= simple_format(@site.description) %></p>
-<% else %>
+  <% else %>
   <p>Description: No description provided yet.</p>
-<% end %>
-<% if current_admin %>
+  <% end %>
+  <% if current_admin %>
   <h3>Admin Information</h3>
   <p>Class or Resource: <%= @site.class_resource %></p>
   <p>Site type: <%= @site.site_type %></p>
@@ -28,7 +29,8 @@
   <p>Region: <%= @site.region %></p>
   <p>Summer classes?: <%= @site.summer_classes %></p>
   <p>Students served?: <%= @site.students_served %></p>
-<% end %>
+  <% end %>
+</div>
 <div id="site-map-container">
   <div id="site-map"></div>
 </div>

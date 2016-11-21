@@ -1,11 +1,12 @@
 <h1>Student Learning Resources</h1>
-<br>
-<% if current_admin %>
-<%= link_to 'Add a New Link', new_link_path, class: "btn btn-primary"  %>
-<% end %>
-<ul class="links-display">
-  <% @links.each do |link| %>
-    <li id="link_display_<%=link.id%>"><%= render partial: 'display_link', locals: { link: link } %></li>
+<div class="content-bg">
+  <% if current_admin %>
+  <%= link_to 'Add a New Link', new_link_path, class: "btn btn-primary"  %>
   <% end %>
-</ul>
-<%= paginate @links, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
+  <ul class="links-display">
+    <% @links.each do |link| %>
+    <li id="link_display_<%=link.id%>"><%= render partial: 'display_link', locals: { link: link } %></li>
+    <% end %>
+  </ul>
+  <%= paginate @links, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
+</div>
