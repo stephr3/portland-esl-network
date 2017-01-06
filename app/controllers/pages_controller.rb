@@ -15,8 +15,8 @@ class PagesController < ApplicationController
       marker.lng site.longitude
       marker.picture({
                       url: site.markers_url,
-                      width: 10,
-                      height: 10
+                      width: 50,
+                      height: 60
                      })
     end
     if params[:center] && params[:center] != ''
