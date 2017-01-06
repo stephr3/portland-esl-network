@@ -9,7 +9,7 @@ class Site < ActiveRecord::Base
   validates :phone, length: { maximum: 25 }
   validates :notes, length: { maximum: 2000 }
 
-  paginates_per 10
+  paginates_per 20
 
   # Set Marker Colors
   before_save :set_marker_color , if: ->(obj){ obj.site_type.present? and obj.site_type_changed? }
