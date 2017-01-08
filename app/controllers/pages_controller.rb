@@ -13,11 +13,6 @@ class PagesController < ApplicationController
       end
       marker.lat site.latitude
       marker.lng site.longitude
-      marker.picture({
-                      url: site.markers_url,
-                      width: 50,
-                      height: 60
-                     })
     end
     if params[:center] && params[:center] != ''
       @center = params[:center]
@@ -29,12 +24,12 @@ class PagesController < ApplicationController
       else
         flash[:alert] = "Please enter a valid zip code."
         @center_on = [45.543897, -122.655977]
-        @zoom = 9
+        @zoom = 11
         redirect_to root_path
       end
     else
       @center_on = [45.543897, -122.655977]
-      @zoom = 9
+      @zoom = 11
     end
   end
 

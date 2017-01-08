@@ -1,4 +1,4 @@
-<h2><%= link_to link.title, link.url %></h2>
+<h2><%= link_to link.title, url_with_protocol(link.url), target:'_blank' %></h2>
 <p><%= simple_format(link.description) %></p>
 <% if current_admin %>
   <span id="edit_link_button_<%=link.id%>">
