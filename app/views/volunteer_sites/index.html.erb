@@ -4,7 +4,7 @@
   <%= link_to 'Add a New Volunteer Site', new_volunteer_site_path, class: "btn btn-primary"  %>
 <% end %>
 
-<div class="dropdown">
+<!-- <div class="dropdown">
   <button class="dropdown-toggle btn btn-primary" type="button" data-toggle="dropdown">Choose a Level
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
@@ -14,8 +14,7 @@
     <li><a href="?level=intermediate">Intermediate</a></li>
     <li><a href="?level=advanced">Advanced</a></li>
   </ul>
-  <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
-</div>
+</div> -->
 
 <div class="content-bg">
   <% if @sites.length > 0 %>

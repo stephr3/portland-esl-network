@@ -6,48 +6,56 @@ class SitesController < ApplicationController
     # Sort Sites by Region
     if params[:region].present?
       if params[:region] == 'north-northeast'
+        @selected_search = 'North/Northeast'
         if current_admin
           @sites = Site.north_northeast.order('name ASC').page(params[:page])
         else
           @sites = Site.north_northeast.where(happening_now: 'Yes').order('name ASC').page(params[:page])
         end
       elsif params[:region] == 'south-southeast'
+        @selected_search = 'South/Southeast'
         if current_admin
           @sites = Site.south_southeast.order('name ASC').page(params[:page])
         else
           @sites = Site.south_southeast.where(happening_now: 'Yes').order('name ASC').page(params[:page])
         end
       elsif params[:region] == 'southwest'
+        @selected_search = 'Southwest'
         if current_admin
           @sites = Site.southwest.order('name ASC').page(params[:page])
         else
           @sites = Site.southwest.where(happening_now: 'Yes').order('name ASC').page(params[:page])
         end
       elsif params[:region] == 'downtown'
+        @selected_search = 'Downtown'
         if current_admin
           @sites = Site.downtown.order('name ASC').page(params[:page])
         else
           @sites = Site.downtown.where(happening_now: 'Yes').order('name ASC').page(params[:page])
         end
       elsif params[:region] == 'gresham'
+        @selected_search = 'Gresham'
         if current_admin
           @sites = Site.gresham.order('name ASC').page(params[:page])
         else
           @sites = Site.gresham.where(happening_now: 'Yes').order('name ASC').page(params[:page])
         end
       elsif params[:region] == 'washington-county'
+        @selected_search = 'Washington County'
         if current_admin
           @sites = Site.washington_county.order('name ASC').page(params[:page])
         else
           @sites = Site.washington_county.where(happening_now: 'Yes').order('name ASC').page(params[:page])
         end
       elsif params[:region] == 'clark-county'
+        @selected_search = 'Clark County'
         if current_admin
           @sites = Site.clark_county.order('name ASC').page(params[:page])
         else
           @sites = Site.clark_county.where(happening_now: 'Yes').order('name ASC').page(params[:page])
         end
       elsif params[:region] == 'other-areas'
+        @selected_search = 'Other Areas'
         if current_admin
           @sites = Site.other_areas.order('name ASC').page(params[:page])
         else
@@ -55,6 +63,7 @@ class SitesController < ApplicationController
         end
       end
     else
+      @selected_search = 'Choose a Region'
       if current_admin
         @sites = Site.all.order('name ASC').page(params[:page])
       else

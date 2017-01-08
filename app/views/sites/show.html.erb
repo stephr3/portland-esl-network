@@ -8,9 +8,13 @@
   <i class="glyphicon glyphicon-trash"></i>
   <% end %>
   <% end %>
-  <p>Address: <%= @site.address %> <%= @site.city %>,<%= @site.state %> <%= @site.zip %></p>
+  <p>Address:
+    <%= link_to "http://www.google.com/maps/search/#{@site.address}#{@site.city}#{@site.state}#{@site.zip}", target:"_blank" do %>
+      <%= @site.address %> <%= @site.city %>,<%= @site.state %> <%= @site.zip %>
+    <% end %>
+  </p>
   <% if @site.phone.present? %>
-  <p>Phone: <%= @site.phone %></p>
+  <p>Phone: <%= tel_to(@site.phone) %></p>
   <% end %>
   <% if @site.url.present? %>
   <p>Website: <%= link_to @site.url, url_with_protocol(@site.url), target: '_blank' %></p>

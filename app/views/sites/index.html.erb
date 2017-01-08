@@ -10,10 +10,10 @@
   <%= link_to 'See All Classes', sites_path, class: 'btn btn-success half-size' %>
 <% end %>
 <div class="dropdown">
-  <button class="dropdown-toggle btn btn-primary" type="button" data-toggle="dropdown">Choose a Region
+  <button class="dropdown-toggle btn btn-primary" type="button" data-toggle="dropdown"><%= @selected_search %>
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
-    <li><a href="/">All</a></li>
+    <li><a href="/sites">All</a></li>
     <li><a href="?region=north-northeast">North/Northeast</a></li>
     <li><a href="?region=south-southeast">South/Southeast</a></li>
     <li><a href="?region=southwest">Southwest</a></li>
@@ -27,12 +27,30 @@
 <br>
 <div class="content-bg">
   <% if @sites.length > 0 %>
-  <ul>
-    <% @sites.each do |site| %>
-    <li><%= link_to site.name, site_path(site), class: 'site-link' %></li>
+    <% if current_admin %>
+        <ul>
+          <% @sites.each do |site| %>
+            <div class="col-sm-1" style="padding-right:0">
+              <% if site.happening_now == 'Yes' %>
+                <i class="glyphicon glyphicon-ok" style="color:green"></i>
+              <% else %>
+                <i class="glyphicon glyphicon-remove" style="color:red"></i>
+              <% end %>
+            </div>
+            <div class="col-sm-11" style="padding-left:0">
+              <li><%= link_to site.name, site_path(site), class: 'site-link' %></li>
+            </div>
+          <% end %>
+        </ul>
+        <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
+    <% else %>
+      <ul>
+        <% @sites.each do |site| %>
+        <li><%= link_to site.name, site_path(site), class: 'site-link' %></li>
+        <% end %>
+      </ul>
+      <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
     <% end %>
-  </ul>
-  <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
   <% else %>
   <p> Sorry, no classes matched your search. </p>
   <% end %>

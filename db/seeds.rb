@@ -396,25 +396,25 @@ Site.create(
   summer_classes: "",
   students_served: ""
 )
-Site.create(
-  name: "PCC MAP (Multicultural Academic Program)",
-  address: "2305 SE 82nd",
-  city: "Portland",
-  state: "OR",
-  zip: "97216",
-  description: "Must be 16 to 20 years old, Participants must live in a participating school district: Portland Public, David Douglas, Beaverton, Hillsboro, Lake Oswego or Tigard/Tualatin, have dropped out of high school or never attended highschool in the US, have a first language other than English.",
-  contact: "Outreach and Intake Coordinator: pccprep@pcc.edu or 971-722-6213 In Portland area: Esperanza Beck (Spanish-speaking) 971-722-6231 Mathilda Lee (Chinese-speaking) 971-722-6110 http://www.pcc.edu/prepare/head-start/prep/map/Emma Zwaschka (Russian-speaking) 971-722-6029 In Washington County - Vanessa Hernandez (Spanish-speaking) 971-722-2915",
-  phone: "971-722-6213",
-  email: "pccprep@pcc.edu",
-  url:"http://www.pcc.edu/schedule/default.cfm?fa=dspTopicDetails&thisTerm=201404&topicid=MAP&type=Non-Credit",
-  class_resource: "Class",
-  site_type: "Community College or University",
-  happening_now: "Yes",
-  notes: "",
-  region: "South/Southeast",
-  summer_classes: "",
-  students_served: ""
-)
+# Site.create(
+#   name: "PCC MAP (Multicultural Academic Program)",
+#   address: "2305 SE 82nd",
+#   city: "Portland",
+#   state: "OR",
+#   zip: "97216",
+#   description: "Must be 16 to 20 years old, Participants must live in a participating school district: Portland Public, David Douglas, Beaverton, Hillsboro, Lake Oswego or Tigard/Tualatin, have dropped out of high school or never attended highschool in the US, have a first language other than English.",
+#   contact: "Outreach and Intake Coordinator: pccprep@pcc.edu or 971-722-6213 In Portland area: Esperanza Beck (Spanish-speaking) 971-722-6231 Mathilda Lee (Chinese-speaking) 971-722-6110 http://www.pcc.edu/prepare/head-start/prep/map/Emma Zwaschka (Russian-speaking) 971-722-6029 In Washington County - Vanessa Hernandez (Spanish-speaking) 971-722-2915",
+#   phone: "971-722-6213",
+#   email: "pccprep@pcc.edu",
+#   url:"http://www.pcc.edu/schedule/default.cfm?fa=dspTopicDetails&thisTerm=201404&topicid=MAP&type=Non-Credit",
+#   class_resource: "Class",
+#   site_type: "Community College or University",
+#   happening_now: "Yes",
+#   notes: "",
+#   region: "South/Southeast",
+#   summer_classes: "",
+#   students_served: ""
+# )
 Site.create(
   name: "YES to College - Willow Creek Center",
   address: "241 SW Edgeway Dr",
@@ -548,25 +548,25 @@ Site.create(
   summer_classes: "",
   students_served: ""
 )
-Site.create(
-  name: "Portland State University Intensive English Language Program",
-  address: "527 SW Hall Street University Center Building, Suite 400",
-  city:"Portland",
-  state:"OR",
-  zip:"97201",
-  description: "Full-time, tuition based program",
-  contact: "See website for details http://ielp.pdx.edu or call 503-725-4088 Email: ielpadm@pdx.eduhttp://ielp.pdx.edu",
-  phone: "503-725-4088",
-  email: "ielpadm@pdx.edu",
-  url: "http://ielp.pdx.edu",
-  class_resource: "Class",
-  site_type: "Community College or University",
-  happening_now: "Yes",
-  notes: "",
-  region: "Downtown",
-  summer_classes: "Yes",
-  students_served: ""
-)
+# Site.create(
+#   name: "Portland State University Intensive English Language Program",
+#   address: "527 SW Hall Street University Center Building, Suite 400",
+#   city:"Portland",
+#   state:"OR",
+#   zip:"97201",
+#   description: "Full-time, tuition based program",
+#   contact: "See website for details http://ielp.pdx.edu or call 503-725-4088 Email: ielpadm@pdx.eduhttp://ielp.pdx.edu",
+#   phone: "503-725-4088",
+#   email: "ielpadm@pdx.edu",
+#   url: "http://ielp.pdx.edu",
+#   class_resource: "Class",
+#   site_type: "Community College or University",
+#   happening_now: "Yes",
+#   notes: "",
+#   region: "Downtown",
+#   summer_classes: "Yes",
+#   students_served: ""
+# )
 Site.create(
   name: "Sisters of St. Mary",
   address: "4440 SW 148th Ave.",
@@ -871,25 +871,25 @@ Site.create(
   summer_classes: "No",
   students_served: ""
 )
-Site.create(
-  name: "Mission:Citizen - Tualitan",
-  address: "Tualatin Public Library",
-  city: "18878 SW Martinazzi Ave",
-  state: "Tualatin",
-  zip: "OR",
-  description: "Classes will begin on Monday, January 4th, and will run once a week on Mondays from 6:00pm – 7:30pm. There is free parking available.The classes will be held every Monday for eight weeks.NOTE: There will be no class Monday, January 18th, or Monday, March 7th.No need to register, just show up on the first day with a pencil, paper, and your brain!Free classes to prepare for the US citizenship process. On-going registration.",
-  contact: "missioncitizen@gmail.com",
-  phone: "",
-  email: "missioncitizen@gmail.com",
-  url: "www.missioncitizen.org",
-  class_resource: "Class",
-  site_type: "Social Service/Government/Non-Profit",
-  happening_now: "Yes",
-  notes: "",
-  region: "Washington County",
-  summer_classes: "No",
-  students_served: "Fall- 10Winter- 48Spring- 17"
-)
+# Site.create(
+#   name: "Mission:Citizen - Tualitan",
+#   address: "Tualatin Public Library",
+#   city: "18878 SW Martinazzi Ave",
+#   state: "Tualatin",
+#   zip: "OR",
+#   description: "Classes will begin on Monday, January 4th, and will run once a week on Mondays from 6:00pm – 7:30pm. There is free parking available.The classes will be held every Monday for eight weeks.NOTE: There will be no class Monday, January 18th, or Monday, March 7th.No need to register, just show up on the first day with a pencil, paper, and your brain!Free classes to prepare for the US citizenship process. On-going registration.",
+#   contact: "missioncitizen@gmail.com",
+#   phone: "",
+#   email: "missioncitizen@gmail.com",
+#   url: "www.missioncitizen.org",
+#   class_resource: "Class",
+#   site_type: "Social Service/Government/Non-Profit",
+#   happening_now: "Yes",
+#   notes: "",
+#   region: "Washington County",
+#   summer_classes: "No",
+#   students_served: "Fall- 10Winter- 48Spring- 17"
+# )
 Site.create(
   name: "Londer Learning Center",
   address: "421 SW 5th Ave",
@@ -1042,25 +1042,25 @@ Site.create(
   summer_classes: "Yes",
   students_served: ""
 )
-Site.create(
-  name: "Pacific International Academy (PIA) at Marylhurst University",
-  address: "17600 Pacific Highway",
-  city: "Marylhurst",
-  state: "OR",
-  zip: "97036-0261",
-  description: "Tuition-based academic classes, 3 month sessions all year-round. Application required.",
-  contact: "info@piaschools.edu 503-699-6310",
-  phone: "503-699-6310",
-  email: "info@piaschools.edu",
-  url: "http://www.piaschools.edu/",
-  class_resource: "Class",
-  site_type: "Community College or University",
-  happening_now: "Yes",
-  notes: "",
-  region: "Southwest",
-  summer_classes: "Yes",
-  students_served: ""
-)
+# Site.create(
+#   name: "Pacific International Academy (PIA) at Marylhurst University",
+#   address: "17600 Pacific Highway",
+#   city: "Marylhurst",
+#   state: "OR",
+#   zip: "97036-0261",
+#   description: "Tuition-based academic classes, 3 month sessions all year-round. Application required.",
+#   contact: "info@piaschools.edu 503-699-6310",
+#   phone: "503-699-6310",
+#   email: "info@piaschools.edu",
+#   url: "http://www.piaschools.edu/",
+#   class_resource: "Class",
+#   site_type: "Community College or University",
+#   happening_now: "Yes",
+#   notes: "",
+#   region: "Southwest",
+#   summer_classes: "Yes",
+#   students_served: ""
+# )
 Site.create(
   name: "Oregon Somali Family Education Center at Merlo Station",
   address: "2032 SW Merlo Court",
@@ -1802,25 +1802,25 @@ Site.create(
   summer_classes: "No",
   students_served: "July 2014-July 2015) 223 students No Tutoring, No ESL Services, Blair's last day to work there was in June 2016."
 )
-Site.create(
-  name: "Eastside Church of Christ",
-  address: "9030 NE Glisan",
-  city: "Portland",
-  state: "OR",
-  zip: "97200",
-  description: "Free, Multilevel, Open-Entry Class times- by appointment- 1 to 2 hour private/semi-private lessons Child care possible if meeting during church’s children classes on Wednesdays at 7pm",
-  contact: "Contact: Eastside Church office- 503-252-5192 or email Steve Merryman smerryman41@gmail.com",
-  phone: "503-252-5192",
-  email: "smerryman41@gmail.com",
-  url: "",
-  class_resource: "Class",
-  site_type: "Church",
-  happening_now: "Yes",
-  notes: "",
-  region: "North/Northeast",
-  summer_classes: "Yes",
-  students_served: "2014-2015 students from Ukraine (2), Cuba (6) and for a longer time from Ukraine (2), Japan (1), and Mexico (1). No students over summer. 2 students starting in Fall (Korean and Japanese)"
-)
+# Site.create(
+#   name: "Eastside Church of Christ",
+#   address: "9030 NE Glisan",
+#   city: "Portland",
+#   state: "OR",
+#   zip: "97200",
+#   description: "Free, Multilevel, Open-Entry Class times- by appointment- 1 to 2 hour private/semi-private lessons Child care possible if meeting during church’s children classes on Wednesdays at 7pm",
+#   contact: "Contact: Eastside Church office- 503-252-5192 or email Steve Merryman smerryman41@gmail.com",
+#   phone: "503-252-5192",
+#   email: "smerryman41@gmail.com",
+#   url: "",
+#   class_resource: "Class",
+#   site_type: "Church",
+#   happening_now: "Yes",
+#   notes: "",
+#   region: "North/Northeast",
+#   summer_classes: "Yes",
+#   students_served: "2014-2015 students from Ukraine (2), Cuba (6) and for a longer time from Ukraine (2), Japan (1), and Mexico (1). No students over summer. 2 students starting in Fall (Korean and Japanese)"
+# )
 Site.create(
   name: "Portland English Language Academy",
   address: "2007 Lloyd Center",
@@ -1992,25 +1992,25 @@ Site.create(
   summer_classes: "No",
   students_served: ""
 )
-Site.create(
-  name: "Mt. Hood Community College - Maywood Park Campus",
-  address: "10100 NE Prescott",
-  city: "Portland",
-  state: "OR",
-  zip: "97213",
-  description: "Quarterly classes. All levels.Integrated Class- $30/termWriting - $15Speaking & Listen - $20Citizen Classes - FreeCall ahead to schedule placement test. Classes are 11 weeks long during the fall term, 10 weeks during winter and spring terms, and eight weeks during the summer. Fall classes begin in September, Winter classes begin in January and Spring classes begin in March.",
-  contact: "Information:Español 503-491-7675 English 503-491-7333 Coordinator:Cecilia Pelayo-Martinez 503-491-7406",
-  phone: "503-491-7333",
-  email: "",
-  url: "",
-  class_resource: "Class",
-  site_type: "Community College or University",
-  happening_now: "Yes",
-  notes: "",
-  region: "North/Northeast",
-  summer_classes: "Yes",
-  students_served: ""
-)
+# Site.create(
+#   name: "Mt. Hood Community College - Maywood Park Campus",
+#   address: "10100 NE Prescott",
+#   city: "Portland",
+#   state: "OR",
+#   zip: "97213",
+#   description: "Quarterly classes. All levels.Integrated Class- $30/termWriting - $15Speaking & Listen - $20Citizen Classes - FreeCall ahead to schedule placement test. Classes are 11 weeks long during the fall term, 10 weeks during winter and spring terms, and eight weeks during the summer. Fall classes begin in September, Winter classes begin in January and Spring classes begin in March.",
+#   contact: "Information:Español 503-491-7675 English 503-491-7333 Coordinator:Cecilia Pelayo-Martinez 503-491-7406",
+#   phone: "503-491-7333",
+#   email: "",
+#   url: "",
+#   class_resource: "Class",
+#   site_type: "Community College or University",
+#   happening_now: "Yes",
+#   notes: "",
+#   region: "North/Northeast",
+#   summer_classes: "Yes",
+#   students_served: ""
+# )
 Site.create(
   name: "Mt. Hood Community College Main Campus",
   address: "26000 SE Stark St.",
@@ -2787,13 +2787,13 @@ Link.create(
   page: "Student Learning Resources"
 )
 
-Link.create(
-  title: "Immigrant and Refugee Portland Resource Directory",
-  url: "http://lcsnw.org/portland/pathways/ResourceDirectory.pdf",
-  description: "",
-  tag: "Immigrants and Refugees",
-  page: "Teaching Resources"
-)
+# Link.create(
+#   title: "Immigrant and Refugee Portland Resource Directory",
+#   url: "http://lcsnw.org/portland/pathways/ResourceDirectory.pdf",
+#   description: "",
+#   tag: "Immigrants and Refugees",
+#   page: "Teaching Resources"
+# )
 Link.create(
   title: "Portland Literacy",
   url: "http://www.portlandliteracy.org/",
@@ -2811,21 +2811,21 @@ Link.create(
 
 Link.create(
   title: "Refugees from Burma: Their Backgrounds & Experiences.pdf",
-  url: "www.brycs.org/documents/upload/burmese-cultural-backgrounder.pdf",
+  url: "http://www.brycs.org/documents/upload/burmese-cultural-backgrounder.pdf",
   description: "An article about refugees from Burma.",
   tag: "Refugees",
   page: "Refugee Backgrounders"
 )
 Link.create(
   title: "The Somali Bantu: Their History and Culture.pdf",
-  url: "www.hartfordinfo.org/issues/wsd/immigrants/somali_bantu.pdf",
+  url: "http://www.hartfordinfo.org/issues/wsd/immigrants/somali_bantu.pdf",
   description: "An article about refugees from Somalia.",
   tag: "Refugees",
   page: "Refugee Backgrounders"
 )
 Link.create(
   title: "Liberians: An Introduction to Their History and Culture.pdf",
-  url: "www.culturalorientation.net/content/download/1358/.../Liberians.pdf",
+  url: "http://www.culturalorientation.net/content/download/1358/.../Liberians.pdf",
   description: "An article about refugees from Liberia.",
   tag: "Refugees",
   page: "Refugee Backgrounders"
