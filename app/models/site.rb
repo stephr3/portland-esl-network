@@ -31,6 +31,15 @@ class Site < ActiveRecord::Base
       self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/wht-circle.png'
     end
   end
+
+# Set In Session Scopes
+  scope(:in_session, -> do
+    where({happening_now: "Yes"})
+  end)
+  scope(:not_in_session, -> do
+    where("happening_now=? OR happening_now=? OR happening_now=?", "No", "Don't Know", "")
+  end)
+  
 # Set Region Scopes
   scope(:north_northeast, -> do
     where({region: "North/Northeast"})

@@ -2,7 +2,15 @@ class SitesController < ApplicationController
   before_action :is_admin, only:[:new, :edit, :destroy]
 
   def index
-
+    # Sort Sites by In Session
+    if params[:region].present?
+      if params[:region] == 'in-session'
+        @sites = Site.in_session.order('name ASC').page(params[:page])
+      elsif params[:region] = 'not-in-session'
+        @sites = Site.not_in_session.order('name ASC').page(params[:page])
+      end
+    end
+    
     # Sort Sites by Region
     if params[:region].present?
       if params[:region] == 'north-northeast'
