@@ -3,14 +3,14 @@ class SitesController < ApplicationController
 
   def index
     # Sort Sites by In Session
-    if params[:region].present?
-      if params[:region] == 'in-session'
+    if params[:session].present?
+      if params[:session] == 'in-session'
         @sites = Site.in_session.order('name ASC').page(params[:page])
-      elsif params[:region] = 'not-in-session'
+      elsif params[:session] = 'not-in-session'
         @sites = Site.not_in_session.order('name ASC').page(params[:page])
       end
     end
-    
+
     # Sort Sites by Region
     if params[:region].present?
       if params[:region] == 'north-northeast'
