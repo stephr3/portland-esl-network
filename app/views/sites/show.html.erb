@@ -10,7 +10,7 @@
   <% end %>
   <p>Address:
     <%= link_to "http://www.google.com/maps/search/#{@site.address}#{@site.city}#{@site.state}#{@site.zip}", target:"_blank" do %>
-      <%= @site.address %> <%= @site.city %>,<%= @site.state %> <%= @site.zip %>
+      <%= @site.address %> <%= @site.city %>, <%= @site.state %> <%= @site.zip %>
     <% end %>
   </p>
   <% if @site.phone.present? %>
@@ -24,6 +24,7 @@
   <% else %>
   <p>Description: No description provided yet.</p>
   <% end %>
+  <p>Last updated: <%= @site.updated_at.strftime('%B %d, %Y') %></p>
   <% if current_admin %>
   <h3>Admin Information</h3>
   <p>Class or Resource: <%= @site.class_resource %></p>

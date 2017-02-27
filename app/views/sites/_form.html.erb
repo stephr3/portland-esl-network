@@ -4,20 +4,20 @@
   <h3>Class Location</h3>
   <p>*These fields are required.</p>
   <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control", autocomplete: 'off' %>
+  <%= f.text_field :name, class: "form-control" %>
   <%= f.label :region %>
   <%= f.select :region, options_for_select(['', 'Clark County', 'Downtown', 'Gresham', 'North/Northeast', 'Other Areas', 'South/Southeast', 'Southwest', 'Washington County'], selected: f.object.region), {}, {class: "form-control"} %>
   <%= f.label :address %>
-  <%= f.text_field :address, class: "form-control", autocomplete: 'off' %>
+  <%= f.text_field :address, class: "form-control" %>
   <%= f.label :city %>
-  <%= f.text_field :city, class: "form-control", autocomplete: 'off' %>
+  <%= f.text_field :city, class: "form-control" %>
   <%= f.label :state %>
   <%= f.select :state, options_for_select(['', 'OR', 'WA'], selected: f.object.state), {}, {class: "form-control"} %>
   <%= f.label :zip, 'Zip Code' %>
-  <%= f.text_field :zip, class: "form-control", autocomplete: 'off' %>
+  <%= f.text_field :zip, class: "form-control" %>
   <h3>Contact Information</h3>
   <%= f.label :contact, 'Contact Name' %>
-  <%= f.text_field :contact, class: "form-control", autocomplete: 'off' %>
+  <%= f.text_field :contact, class: "form-control" %>
   <%= f.label :phone %>
   <%= f.telephone_field :phone, class: "form-control" %>
   <%= f.label :email %>

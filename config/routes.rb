@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   get '/' => 'pages#map'
   root :to => 'pages#map'
-  resources :sites do
-    collection do
-      get 'autocomplete'
-    end
-  end
+  resources :sites
 
   get '/log-in' => 'sessions#new'
   post '/log-in' => 'sessions#create'

@@ -7,7 +7,9 @@ class PagesController < ApplicationController
       if site.url != ""
         marker.infowindow "<b>" +
         "<a href='#{site.url}' target='_blank'>" +
-         "#{site.name}</a></b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.phone}</p>"
+         "#{site.name}</a></b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>" +
+         "#{site.phone}<br>" +
+         "<a href='/sites/#{site.id}' target='_blank'>More Details</a></p>"
       else
         marker.infowindow "<b>#{site.name}</b><p>#{site.address} #{site.city}, #{site.state} #{site.zip}<br>#{site.phone}</p>"
       end

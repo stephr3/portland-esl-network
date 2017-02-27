@@ -3,7 +3,14 @@ class LinksController < ApplicationController
   def index
     if params[:type].present?
       if params[:type] == 'learning'
-        @links = Link.where(page: 'Student Learning Resources').page(params[:page])
+        @general = Link.where(page: 'Student Learning Resources').where(tag: 'General')
+        @listening = Link.where(page: 'Student Learning Resources').where(tag: 'Listening')
+        @pronunciation = Link.where(page: 'Student Learning Resources').where(tag: 'Pronunciation')
+        @writing = Link.where(page: 'Student Learning Resources').where(tag: 'Writing')
+        @literacy = Link.where(page: 'Student Learning Resources').where(tag: 'Literacy')
+        @GED = Link.where(page: 'Student Learning Resources').where(tag: 'GED')
+        @computer = Link.where(page: 'Student Learning Resources').where(tag: 'Computer Skills')
+        @citizenship = Link.where(page: 'Student Learning Resources').where(tag: 'Citizenship Classes')
         render :learning
       elsif params[:type] == 'teaching'
         @links = Link.where(page: 'Teaching Resources').page(params[:page])
