@@ -2,14 +2,6 @@ class SitesController < ApplicationController
   before_action :is_admin, only:[:new, :edit, :destroy]
 
   def index
-    # Sort Sites by In Session
-    if params[:session].present?
-      if params[:session] == 'in-session'
-        @sites = Site.in_session.order('name ASC').page(params[:page])
-      elsif params[:session] = 'not-in-session'
-        @sites = Site.not_in_session.order('name ASC').page(params[:page])
-      end
-    end
 
     # Sort Sites by Region
     if params[:region].present?
@@ -69,6 +61,14 @@ class SitesController < ApplicationController
         else
           @sites = Site.other_areas.where(happening_now: 'Yes').order('name ASC').page(params[:page])
         end
+      end
+    # Sort Sites by In Session
+    elsif params[:happening].present?
+      @selected_search = 'Choose a Region'
+      if params[:happening] == 'in-session'
+        @sites = Site.in_session.order('name ASC').page(params[:page])
+      elsif params[:happening] == 'not-in-session'
+        @sites = Site.not_in_session.order('name ASC').page(params[:page])
       end
     else
       @selected_search = 'Choose a Region'
@@ -144,20 +144,6 @@ class SitesController < ApplicationController
     else
       flash[:alert] = "There was a problem. The class has not been deleted."
       redirect_to sites_path
-    end
-  end
-
-  def autocomplete
-    if current_admin
-      @site_search = Site.all.order(:name).where("name ILIKE ?", "%#{ params[:term] }%")
-    else
-      @site_search = Site.where(happening_now: 'Yes').order(:name).where("name ILIKE ?", "%#{ params[:term] }%")
-    end
-    respond_to do |format|
-      format.html
-      format.json {
-        render json: @site_search.map(&:name).to_json
-      }
     end
   end
 

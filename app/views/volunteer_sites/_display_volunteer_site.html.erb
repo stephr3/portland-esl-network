@@ -8,9 +8,6 @@
 <% if site.description.present? %>
 <p>Description: <%= simple_format(site.description) %></p>
 <% end %>
-<% if site.description.present? %>
-<p>Level: <%= site.level %></p>
-<% end %>
 <% if current_admin %>
   <span id="edit_volunteer_site_button_<%=site.id%>">
     <%= link_to edit_volunteer_site_path(site), class: "btn btn-primary", id: "edit-volunteer-site" do %>

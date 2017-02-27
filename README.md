@@ -1,33 +1,5 @@
 #  Portland ESL Network
-## *By Stephanie Gurung*
-
-**Test Login for Admin Path**
-```
-Username: admin
-Password: admin
-```
-
-**Note: Google API Key Required**
-
-This project is dependent on the Google Maps JavaScript API and Google Static Maps API. To use this program, you must create a Google API Key.
-
-* Visit [console.developers.google.com](http://console.developers.google.com) and login to your Google account.
-
-* Select *Credentials* from menu on left.
-
-* Click on the *Create Credentials* dropdown menu and select *API Key*. Take note of your new API key and close the popup window.
-
-* Select *Dashboard* from menu on left.
-
-* Click *Enable API*.
-
-* Search for *Google Maps JavaScript API* and *Google Static Maps API* and make sure both libraries are enabled.
-
-Create a .env file in the project directory and save this code inside:
-```
-GOOGLE_API_KEY=YOUR TOKEN HERE
-
-```
+## *By Stephanie Roth*
 
 ## Description
 
@@ -85,4 +57,4 @@ Navigate to `localhost:3000` in your browser of choice.
 License
 -------
 _This software is licensed under the MIT license._<br>
-Copyright (c) 2016 **Stephanie Gurung**
+Copyright (c) 2017 **Stephanie Roth**
