@@ -8,6 +8,6 @@ class ClassUpdateMailer < ApplicationMailer
 
   def class_created(site)
     @site = site
-    mail(to: "heidi.dryden@gmail.com", subject: "Portland ESL Network - New Class Added")    
+    mail(to: "heidi.dryden@gmail.com", subject: "Portland ESL Network - New Class Added")
   end
 end

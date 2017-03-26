@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305000255) do
+ActiveRecord::Schema.define(version: 20170326041423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20170305000255) do
     t.string   "salt"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "edit_sites", force: :cascade do |t|
+    t.text     "user_name"
+    t.text     "user_email"
+    t.text     "site_updates"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "links", force: :cascade do |t|
@@ -65,6 +73,18 @@ ActiveRecord::Schema.define(version: 20170305000255) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "markers_url"
+  end
+
+  create_table "submit_sites", force: :cascade do |t|
+    t.text     "user_name"
+    t.text     "user_email"
+    t.text     "site_name"
+    t.text     "site_address"
+    t.text     "site_contact"
+    t.text     "site_url"
+    t.text     "site_description"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "volunteer_sites", force: :cascade do |t|

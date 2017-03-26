@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv='content-type' />
+    <style>
+    li {
+      list-style: none;
+    }
+
+    ul {
+      margin-left: 0;
+      padding-left: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <p>Hi Heidi,</p>
+    <p> This email is to notify you that a new class, <%=@site.site_name%> has been submitted by a public user. Here is the information for the class:</p>
+    <ul>
+      <li><b>Name of Submitter:</b> <%=@site.user_name%></li>
+      <li><b>Email of Submitter:</b> <%= @site.user_email %></li>
+      <li><b>Class Name:</b> <%= @site.site_name %></li>
+      <li><b>Class Address:</b> <%=@site.site_address%></li>
+      <li><b>Class Contact:</b> <%= @site.site_contact %></li>
+      <li><b>Class Url:</b> <%= @site.site_url %></li>
+      <li><b>Class Description:</b> <%= @site.site_description %></li>
+    </ul>
+    <p>Please email <%=@site.user_name%> at <%=@site.user_email%> with any questions and to confirm that you have added the class.</p>
+  </body>
+</html>

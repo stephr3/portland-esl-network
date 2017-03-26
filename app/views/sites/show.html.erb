@@ -35,6 +35,9 @@
   <p>Summer classes?: <%= @site.summer_classes %></p>
   <p>Students served?: <%= @site.students_served %></p>
   <% end %>
+  <% if !current_admin %>
+    <%= link_to 'Submit Updates to Class', edit_sites_path(site: @site), class: "btn btn-primary"  %>
+  <%end%>
 </div>
 <div id="site-map-container">
   <div id="site-map"></div>

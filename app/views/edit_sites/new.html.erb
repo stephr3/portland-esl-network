@@ -1,0 +1,14 @@
+<h1>Edit <%= @site.name %></h1>
+
+<%= render "layouts/errors", object: @edit_site %>
+
+<%= form_for @edit_site do |f| %>
+<%= f.hidden_field :site_id, :value => @site.id%>
+<%= f.label :user_name, 'What is your name?' %>
+<%= f.text_field :user_name, required: true, class: "form-control" %>
+<%= f.label :user_email, 'What is your email address?' %>
+<%= f.email_field :user_email, required: true, class: "form-control" %>
+<%= f.label :site_updates, 'Enter any updates you have for the class here.' %>
+<%= f.text_area :site_updates, required: true, class: "form-control" %>
+<%= f.submit 'Submit Updates', class: "btn btn-primary" %>
+<% end %>

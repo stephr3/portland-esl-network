@@ -1,0 +1,21 @@
+<h1>Submit a New ESL Class Site</h1>
+
+<%= render "layouts/errors", object: @submit_site %>
+
+<%= form_for @submit_site do |f| %>
+<%= f.label :user_name, 'What is your name?' %>
+<%= f.text_field :user_name, required: true, class: "form-control" %>
+<%= f.label :user_email, 'What is your email address?' %>
+<%= f.email_field :user_email, required: true, class: "form-control" %>
+<%= f.label :site_name, 'What is the name of the class and class location?' %>
+<%= f.text_field :site_name, required: true, class: "form-control" %>
+<%= f.label :site_address, 'What is the address of the class? Please include the full address, including zip code.', required: true %>
+<%= f.text_area :site_address, class: "form-control" %>
+<%= f.label :site_contact, 'What is the contact information for this class?' %>
+<%= f.text_field :site_contact, class: "form-control" %>
+<%= f.label :url, 'What is the website address, if any?' %>
+<%= f.url_field :site_url, placeholder: "http://", class: "form-control" %>
+<%= f.label :site_description, 'Please tell us more about your program. What are the dates and times of this class? Is it multi-level? Open entry? Is childcare available? Do students pay for the class? When can they register?' %>
+<%= f.text_area :site_description, class: "form-control" %>
+<%= f.submit 'Submit Class', class: "btn btn-primary" %>
+<% end %>
