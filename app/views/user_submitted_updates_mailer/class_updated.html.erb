@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv='content-type' />
+    <style>
+    li {
+      list-style: none;
+    }
+
+    ul {
+      margin-left: 0;
+      padding-left: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <p>Hi Heidi,</p>
+    <p> This email is to notify you that a public user has submitted updates for <%=@site.name%> in <%=@site.region%>. Here is the information for the class:</p>
+    <ul>
+      <li><b>Name of Submitter:</b> <%=@update.user_name%></li>
+      <li><b>Email of Submitter:</b> <%= @update.user_email %></li>
+      <li><b>Updates:</b> <%= @update.site_updates %></li>
+    </ul>
+    <p>Please email <%=@update.user_name%> at <%=@update.user_email%> with any questions and to confirm that you have updated the class.</p>
+  </body>
+</html>

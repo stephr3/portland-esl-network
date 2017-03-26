@@ -39,7 +39,7 @@ class Site < ActiveRecord::Base
   scope(:not_in_session, -> do
     where("happening_now=? OR happening_now=? OR happening_now=?", "No", "Don't Know", "")
   end)
-  
+
 # Set Region Scopes
   scope(:north_northeast, -> do
     where({region: "North/Northeast"})
