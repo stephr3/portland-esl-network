@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv='content-type' />
+    <style>
+    li {
+      list-style: none;
+    }
+
+    ul {
+      margin-left: 0;
+      padding-left: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <p>Hi Heidi,</p>
+    <p> This email is to notify you that <%=@site.name%> from <%=@site.region%> has been modified. Here is the updated information:</p>
+    <ul>
+      <li><b>Name:</b> <%=@site.name%></li>
+      <li><b>Address:</b> <%= @site.address %> <%= @site.city %>, <%= @site.state %> <%= @site.zip %></li>
+      <li><b>Phone:</b> <%= @site.phone %></li>
+      <li><b>Website:</b> <%=@site.url%></li>
+      <li><b>Description:</b> <%= simple_format(@site.description) %></li>
+      <li><b>Last updated:</b> <%= @site.updated_at.strftime('%B %d, %Y') %></li>
+      <li><b>Class or Resource:</b> <%= @site.class_resource %></li>
+      <li><b>Site type:</b> <%= @site.site_type %></li>
+      <li><b>Happening now?:</b> <%= @site.happening_now %></li>
+      <li><b>Notes:</b> <%= @site.notes %></li>
+      <li><b>Region:</b> <%= @site.region %></li>
+      <li><b>Summer classes?:</b> <%= @site.summer_classes %></li>
+      <li><b>Students served?:</b> <%= @site.students_served %></li>
+    </ul>
+  </body>
+</html>
