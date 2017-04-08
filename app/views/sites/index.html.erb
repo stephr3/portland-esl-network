@@ -38,9 +38,8 @@
 <div class="content-bg">
   <% if @sites.length > 0 %>
     <% if current_admin %>
-        <ul>
           <% @sites.each do |site| %>
-            <div class="col-sm-1" style="padding-right:0">
+            <div class="col-sm-1" style="padding-right:0;margin-top:5px;">
               <% if site.happening_now == 'Yes' %>
                 <i class="glyphicon glyphicon-ok" style="color:green"></i>
               <% else %>
@@ -48,17 +47,38 @@
               <% end %>
             </div>
             <div class="col-sm-11" style="padding-left:0">
-              <li><%= link_to site.name, site_path(site), class: 'site-link' %></li>
+              <h3 style="margin-top:0"><%= link_to site.name, site_path(site), class: 'site-link' %></h3>
+              <p>
+                Address: <%= site.address %> <%= site.city %>, <%= site.state %> <%= site.zip %>
+              </p>
+              <p>
+                <% if site.description.present? %>
+                <p>Description: <%= truncate(site.description, length: 75, separator: ' ')%> </p>
+                <p><%= link_to 'More Details', site_path(site), class: 'site-link' %></p>
+                <% else %>
+                <p>Description: No description provided yet.</p>
+                <p><%= link_to 'More Details', site_path(site), class: 'site-link' %></p>
+                <% end %>
+              </p>
             </div>
           <% end %>
-        </ul>
         <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
     <% else %>
-      <ul>
         <% @sites.each do |site| %>
-        <li><%= link_to site.name, site_path(site), class: 'site-link' %></li>
+        <h3><%= link_to site.name, site_path(site), class: 'site-link' %></h3>
+        <p>
+          Address: <%= site.address %> <%= site.city %>, <%= site.state %> <%= site.zip %>
+        </p>
+        <p>
+          <% if site.description.present? %>
+          <p>Description: <%= truncate(site.description, length: 75, separator: ' ') %></p>
+          <p><%= link_to 'More Details', site_path(site), class: 'site-link' %></p>
+          <% else %>
+          <p>Description: No description provided yet.</p>
+          <p><%= link_to 'More Details', site_path(site), class: 'site-link' %></p>
+          <% end %>
+        </p>
         <% end %>
-      </ul>
       <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
     <% end %>
   <% else %>
