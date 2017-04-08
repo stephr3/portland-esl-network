@@ -9,7 +9,7 @@ class EditSitesController < ApplicationController
     @site = Site.find(params[:edit_site][:site_id].to_i)
     @edit_site = EditSite.new(edit_site_params)
     if @edit_site.save
-      UserSubmittedUpdatesMailer.class_updated(@site, @edit_site).deliver!
+      # UserSubmittedUpdatesMailer.class_updated(@site, @edit_site).deliver!
       flash[:notice] = "Thank you for submitting your updates for this site. We will email you when we approve the changes."
       redirect_to site_path(@site)
     else

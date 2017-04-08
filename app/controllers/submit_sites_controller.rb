@@ -6,7 +6,7 @@ class SubmitSitesController < ApplicationController
   def create
     @submit_site = SubmitSite.new(submit_site_params)
     if @submit_site.save
-      UserSubmittedUpdatesMailer.class_submitted(@submit_site).deliver!
+      # UserSubmittedUpdatesMailer.class_submitted(@submit_site).deliver!
       flash[:notice] = "Thank you for submitting your site. We will email you when we approve it."
       redirect_to sites_path
     else

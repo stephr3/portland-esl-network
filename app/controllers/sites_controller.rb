@@ -113,7 +113,7 @@ class SitesController < ApplicationController
   def create
     @site = Site.new(site_params)
     if @site.save
-      ClassUpdateMailer.class_created(@site).deliver!
+      # ClassUpdateMailer.class_created(@site).deliver!
       flash[:notice] = "You have successfully submitted a class!"
       redirect_to sites_path
     else
@@ -129,7 +129,7 @@ class SitesController < ApplicationController
   def update
     @site = Site.find(params[:id])
     if @site.update(site_params)
-      ClassUpdateMailer.class_updated(@site).deliver!
+      # ClassUpdateMailer.class_updated(@site).deliver!
       flash[:notice] = "You have successfully submitted your updates for this class."
       redirect_to site_path(@site)
     else
