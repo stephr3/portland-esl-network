@@ -51,8 +51,9 @@ ul.bullets li {
   cursor: pointer;
 }
 
+
 .btn.admin {
-  min-width: 200px;
+  min-width: 150px;
 }
 
 .content-image {
@@ -78,6 +79,9 @@ ul.bullets li {
     .btn {
       background-color: $light-blue;
       color: white;
+    }
+    .btn:hover {
+      background-color: $blue;
     }
 }
 

@@ -36,8 +36,9 @@
   <p>Students served?: <%= @site.students_served %></p>
   <% end %>
   <% if !current_admin %>
-    <%= link_to 'Submit Updates to Class', edit_sites_path(site: @site), class: "btn btn-primary"  %>
+    <%= link_to 'Submit Updates to Class', edit_sites_path(site: @site), {style: "margin-right: 20px;", class: "btn btn-primary"}  %>
   <%end%>
+  <%= link_to 'Back to All Classes', sites_path, class: "btn btn-primary"  %>
 </div>
 <div id="site-map-container">
   <div id="site-map"></div>

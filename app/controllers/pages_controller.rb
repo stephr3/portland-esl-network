@@ -42,5 +42,7 @@ class PagesController < ApplicationController
   end
 
   def admin
+    @edit_sites = EditSite.all
+    @submit_sites = SubmitSite.all
   end
 end
