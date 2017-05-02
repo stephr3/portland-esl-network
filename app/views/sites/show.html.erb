@@ -13,11 +13,17 @@
       <%= @site.address %> <%= @site.city %>, <%= @site.state %> <%= @site.zip %>
     <% end %>
   </p>
+  <% if @site.url.present? %>
+  <p>Website: <%= link_to @site.url, url_with_protocol(@site.url), target: '_blank' %></p>
+  <% end %>
+  <% if @site.contact.present? %>
+  <p>Contact: <%= @site.contact %></p>
+  <% end %>
   <% if @site.phone.present? %>
   <p>Phone: <%= tel_to(@site.phone) %></p>
   <% end %>
-  <% if @site.url.present? %>
-  <p>Website: <%= link_to @site.url, url_with_protocol(@site.url), target: '_blank' %></p>
+  <% if @site.email.present? %>
+  <p>Email: <%= mail_to(@site.email) %></p>
   <% end %>
   <% if @site.description.present? %>
   <p>Description: <%= simple_format(@site.description) %></p>
