@@ -15,6 +15,17 @@ class SubmitSitesController < ApplicationController
     end
   end
 
+  def destroy
+    @submit_site = SubmitSite.find(params[:id])
+    if @submit_site.destroy
+      flash[:notice] = "You have successfully deleted this site request."
+      redirect_to admin_path
+    else
+      flash[:alert] = "There was a problem. The site request has not been deleted."
+      redirect_to admin_path
+    end
+  end
+
   private
     def submit_site_params
       params.require(:submit_site).permit(:user_name, :user_email, :site_name, :site_address, :site_contact, :site_url, :site_description)

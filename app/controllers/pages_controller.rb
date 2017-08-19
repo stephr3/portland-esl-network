@@ -42,7 +42,7 @@ class PagesController < ApplicationController
   end
 
   def admin
-    @edit_sites = EditSite.all
-    @submit_sites = SubmitSite.all
+    @edit_sites = EditSite.all.order(created_at: :desc).page(params[:page])
+    @submit_sites = SubmitSite.all.order(created_at: :desc).page(params[:page])
   end
 end

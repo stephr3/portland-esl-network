@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get '/submit_sites' => "submit_sites#new"
   post '/submit_sites' => "submit_sites#create"
+  delete '/submit_sites/:id' => "submit_sites#destroy"
   get '/edit_sites' => "edit_sites#new"
   post '/edit_sites' => "edit_sites#create"
+  delete '/edit_sites/:id' => "edit_sites#destroy"
 end

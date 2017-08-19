@@ -18,6 +18,17 @@ class EditSitesController < ApplicationController
     end
   end
 
+  def destroy
+    @edit_site = EditSite.find(params[:id])
+    if @edit_site.destroy
+      flash[:notice] = "You have successfully deleted this site update request."
+      redirect_to admin_path
+    else
+      flash[:alert] = "There was a problem. The site update request has not been deleted."
+      redirect_to admin_path
+    end
+  end
+
   private
     def edit_site_params
       params.require(:edit_site).permit(:user_name, :user_email, :site_updates)

@@ -7,13 +7,6 @@
     <%= link_to 'Log out', log_out_path, class: 'btn btn-danger admin' %>
   </div>
   <div class="content-bg" style="margin-top:20px;max-width:855px;">
-    <h2>Recent Site Update Requests</h2>
-      <% @edit_sites.each do |site| %>
-        <h3>Site submitted by: <%= site.user_name %></h3>
-        <p>On: <%= site.created_at.strftime('%B %d, %Y') %></p>
-        <p>Email: <%= site.user_email %></p>
-        <p>Updates: <%= simple_format(site.site_updates) %></p>
-      <% end %>
     <h2>Recent Site Submission Requests</h2>
       <% @submit_sites.each do |site| %>
         <h3>Site submitted by: <%= site.user_name %></h3>
@@ -24,5 +17,22 @@
         <p>Contact information: <%= site.site_contact %></p>
         <p>URL: <%= site.site_url %></p>
         <p>Description: <%= simple_format(site.site_description) %></p>
+        <%= link_to "submit_sites/#{site.id}", class: "btn btn-primary", id: "delete-site-request", data: {confirm: "Are you sure you'd like to delete this site request?", method: "delete"} do %>
+          <i class="glyphicon glyphicon-trash"></i>
+        <% end %>
       <% end %>
+      <%= paginate @submit_sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
+  </div>
+  <div class="content-bg" style="margin-top:20px;max-width:855px;">
+    <h2>Recent Site Update Requests</h2>
+      <% @edit_sites.each do |site| %>
+        <h3>Site submitted by: <%= site.user_name %></h3>
+        <p>On: <%= site.created_at.strftime('%B %d, %Y') %></p>
+        <p>Email: <%= site.user_email %></p>
+        <p>Updates: <%= simple_format(site.site_updates) %></p>
+        <%= link_to "edit_sites/#{site.id}", class: "btn btn-primary", id: "delete-edit-site", data: {confirm: "Are you sure you'd like to delete this update request?", method: "delete"} do %>
+          <i class="glyphicon glyphicon-trash"></i>
+        <% end %>
+      <% end %>
+      <%= paginate @edit_sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
   </div>
