@@ -21,18 +21,22 @@
           <i class="glyphicon glyphicon-trash"></i>
         <% end %>
       <% end %>
+      <br>
       <%= paginate @submit_sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
   </div>
   <div class="content-bg" style="margin-top:20px;max-width:855px;">
     <h2>Recent Site Update Requests</h2>
-      <% @edit_sites.each do |site| %>
-        <h3>Site submitted by: <%= site.user_name %></h3>
-        <p>On: <%= site.created_at.strftime('%B %d, %Y') %></p>
-        <p>Email: <%= site.user_email %></p>
-        <p>Updates: <%= simple_format(site.site_updates) %></p>
-        <%= link_to "edit_sites/#{site.id}", class: "btn btn-primary", id: "delete-edit-site", data: {confirm: "Are you sure you'd like to delete this update request?", method: "delete"} do %>
+      <% @edit_sites.each do |edit_site| %>
+        <h3>Site submitted by: <%= edit_site.user_name %></h3>
+        <p>On: <%= edit_site.created_at.strftime('%B %d, %Y') %></p>
+        <p>Site to Update: <%= edit_site.site.try(:name) %></p>
+        <p>Site Region: <%= edit_site.site.try(:region) %></p>
+        <p>Email: <%= edit_site.user_email %></p>
+        <p>Updates: <%= simple_format(edit_site.site_updates) %></p>
+        <%= link_to "edit_sites/#{edit_site.id}", class: "btn btn-primary", id: "delete-edit-site", data: {confirm: "Are you sure you'd like to delete this update request?", method: "delete"} do %>
           <i class="glyphicon glyphicon-trash"></i>
         <% end %>
       <% end %>
+      <br>
       <%= paginate @edit_sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
   </div>

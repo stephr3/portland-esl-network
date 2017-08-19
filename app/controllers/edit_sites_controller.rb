@@ -1,13 +1,14 @@
 class EditSitesController < ApplicationController
   attr_reader :site_id
   def new
-    @site = Site.find(55)
+    @site = Site.find(params[:site].to_i)
     @edit_site = EditSite.new
   end
 
   def create
     @site = Site.find(params[:edit_site][:site_id].to_i)
     @edit_site = EditSite.new(edit_site_params)
+    @edit_site.site_id = @site.id
     if @edit_site.save
       # UserSubmittedUpdatesMailer.class_updated(@site, @edit_site).deliver!
       flash[:notice] = "Thank you for submitting your updates for this site. We will email you when we approve the changes."
