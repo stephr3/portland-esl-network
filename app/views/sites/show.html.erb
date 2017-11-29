@@ -8,6 +8,7 @@
   <i class="glyphicon glyphicon-trash"></i>
   <% end %>
   <% end %>
+  <h4>Class Information</h4>
   <p>Address:
     <%= link_to "http://www.google.com/maps/search/#{@site.address}#{@site.city}#{@site.state}#{@site.zip}", target:"_blank" do %>
       <%= @site.address %> <%= @site.city %>, <%= @site.state %> <%= @site.zip %>
@@ -31,8 +32,33 @@
   <p>Description: No description provided yet.</p>
   <% end %>
   <p>Last updated: <%= @site.updated_at.strftime('%B %d, %Y') %></p>
+
+  <% if @site.volunteers_needed %>
+    <hr>
+    <h4>Volunteers Needed!</h4>
+    <% if @site.vol_coordinator_name.present? %>
+    <p>Volunteer Coordinator: <%= @site.vol_coordinator_name %></p>
+    <% end %>
+    <% if @site.vol_contact.present? %>
+    <p>Volunteer Contact: <%= @site.vol_contact %></p>
+    <% end %>
+    <% if @site.vol_assignment_type.present? %>
+    <p>Type of Assignment: <%= @site.vol_assignment_type %></p>
+    <% end %>
+    <% if @site.vol_time_slots.present? %>
+    <p>Time Slots Needed: <%= @site.vol_time_slots %></p>
+    <% end %>
+    <% if @site.vol_time_commitment.present? %>
+    <p>Time Commitment Requested: <%= @site.vol_time_commitment %></p>
+    <% end %>
+    <% if @site.vol_training_offered.present? %>
+    <p>Training Offered?: <%= @site.vol_training_offered ? 'Yes' : 'No' %></p>
+    <% end %>
+  <% end %>
+
   <% if current_admin %>
-  <h3>Admin Information</h3>
+  <hr>
+  <h4>Admin Information</h4>
   <p>Class or Resource: <%= @site.class_resource %></p>
   <p>Site type: <%= @site.site_type %></p>
   <p>Happening now?: <%= @site.happening_now %></p>
