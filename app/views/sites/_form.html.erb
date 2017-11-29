@@ -39,5 +39,20 @@
   <%= f.text_field :students_served, class: "form-control" %>
   <%= f.label :notes, 'Do you have anything else you want to add?' %>
   <%= f.text_area :notes, class: "form-control" %>
+  <h3>Volunteer Needs</h3>
+  <%= f.label :volunteers_needed, 'Would you like to include a request for volunteer tutors in your Portland ESL Network entry at this time?' %>
+  <%= f.select :volunteers_needed, options_for_select([['', ''], ['Yes', true], ['No', false]], selected: f.object.volunteers_needed), {}, {class: "form-control"} %>
+  <%= f.label :vol_coordinator_name, 'Name of contact for coordinating volunteers:' %>
+  <%= f.text_field :vol_coordinator_name, class: "form-control" %>
+  <%= f.label :vol_contact, 'Please list an email and phone number that is best for us to reach a volunteer coordinator.' %>
+  <%= f.text_field :vol_contact, class: "form-control" %>
+  <%= f.label :vol_time_commitment, 'What kind of time commitment would you like a volunteer to make to your program (ex. 3 hours a week over three months)' %>
+  <%= f.text_field :vol_time_commitment, class: "form-control" %>
+  <%= f.label :vol_time_slots, 'Which days and times do you need volunteers for? (ex. Monday and Wednesday 11:00 to 2:00))' %>
+  <%= f.text_field :vol_time_slots, class: "form-control" %>
+  <%= f.label :vol_assignment_type, 'What kind of assignments would you give to a volunteer tutor?' %>
+  <%= f.select :vol_assignment_type, options_for_select(['', 'one-to-one tutoring', 'small group tutoring', 'classroom aide/assistant'], selected: f.object.vol_assignment_type), {}, {class: "form-control"} %>
+  <%= f.label :vol_training_offered, 'Do you offer training for volunteer tutors?' %>
+  <%= f.select :vol_training_offered, options_for_select([['', ''], ['Yes', true], ['No', false]], selected: f.object.vol_training_offered), {}, {class: "form-control"} %>
   <%= f.submit 'Submit Class', class: "btn btn-primary" %>
 <% end %>

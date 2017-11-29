@@ -151,6 +151,6 @@ class SitesController < ApplicationController
 
 private
   def site_params
-    params.require(:site).permit(:name, :region, :address, :city, :state, :zip, :contact, :phone, :email, :url, :class_resource, :site_type, :description, :happening_now, :summer_classes, :students_served, :notes)
+    params.require(:site).permit(:name, :region, :address, :city, :state, :zip, :contact, :phone, :email, :url, :class_resource, :site_type, :description, :happening_now, :summer_classes, :students_served, :notes, :volunteers_needed, :vol_coordinator_name, :vol_contact, :vol_time_commitment, :vol_time_slots, :vol_assignment_type, :vol_training_offered)
   end
 end
