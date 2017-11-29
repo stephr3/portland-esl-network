@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819184115) do
+ActiveRecord::Schema.define(version: 20171129045434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,12 +68,19 @@ ActiveRecord::Schema.define(version: 20170819184115) do
     t.string   "region"
     t.string   "summer_classes"
     t.text     "students_served"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "state"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "markers_url"
+    t.boolean  "volunteers_needed"
+    t.string   "vol_coordinator_name"
+    t.string   "vol_contact"
+    t.string   "vol_time_commitment"
+    t.string   "vol_time_slots"
+    t.string   "vol_assignment_type"
+    t.boolean  "vol_training_offered"
   end
 
   create_table "submit_sites", force: :cascade do |t|
