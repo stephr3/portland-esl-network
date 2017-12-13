@@ -2,7 +2,6 @@ class SitesController < ApplicationController
   before_action :is_admin, only:[:new, :edit, :destroy]
 
   def index
-
     # Sort Sites by Region
     if params[:region].present?
       if params[:region] == 'north-northeast'
@@ -70,6 +69,9 @@ class SitesController < ApplicationController
       elsif params[:happening] == 'not-in-session'
         @sites = Site.not_in_session.order('name ASC').page(params[:page])
       end
+    elsif params[:volunteers_needed].present?
+      @selected_search = 'Choose a Region'
+      @sites = Site.where(volunteers_needed: true).order('name ASC').page(params[:page])
     else
       @selected_search = 'Choose a Region'
       if current_admin
