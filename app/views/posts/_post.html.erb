@@ -1,5 +1,4 @@
 <h3><%= post.title %></h3>
-<h5>By <%= post.admin.username %></h5>
 <h6>Posted <%= post.created_at.strftime('%B %d, %Y') %></h6>
 <article role="article">
   <p><%= simple_format(post.content) %></p>
