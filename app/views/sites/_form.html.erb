@@ -37,7 +37,7 @@
   <%= f.select :summer_classes, options_for_select(['', 'Yes', 'No'], selected: f.object.summer_classes), {}, {class: "form-control"} %>
   <%= f.label :students_served, 'How many students are served yearly at this site?' %>
   <%= f.text_field :students_served, class: "form-control" %>
-  <%= f.label :notes, 'Do you have anything else you want to add?' %>
+  <%= f.label :notes, 'Notes to self and future updaters - not visible to public, please initial and date notes.' %>
   <%= f.text_area :notes, class: "form-control" %>
   <h3>Volunteer Needs</h3>
   <%= f.label :volunteers_needed, 'Would you like to include a request for volunteer tutors in your Portland ESL Network entry at this time?' %>
