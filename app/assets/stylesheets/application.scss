@@ -80,9 +80,17 @@ ul.bullets li {
       background-color: $light-blue;
       color: white;
     }
+    .btn.btn-secondary {
+       background-color: $gray;
+        color: $blue;
+    }
     .btn:hover {
       background-color: $blue;
     }
+    .btn.btn-secondary:hover {
+    background-color: $dark-gray;
+    cursor: pointer;
+  }
 }
 
 .gray-link a {

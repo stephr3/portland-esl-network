@@ -92,6 +92,19 @@ class SitesController < ApplicationController
 
   def show
     @site = Site.find(params[:id])
+    regions_dict = {
+                    'North/Northeast':'north-northeast', 
+                    'South/Southeast':'south-southeast', 
+                    'Southwest':'southwest',
+                    'Downtown':'downtown',
+                    'Gresham':'gresham',
+                    'Washington County':'washington-county',
+                    'Clark County':'clark-county',
+                    'Other Areas':'other-areas'
+                  }.stringify_keys
+
+    @region_link = regions_dict[@site.region]
+
     #Init Gmaps
     @hash = Gmaps4rails.build_markers(@site) do |site, marker|
       if site.url != ""
