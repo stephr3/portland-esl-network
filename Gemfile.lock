@@ -294,6 +294,7 @@ DEPENDENCIES
   rails (~> 5.0.0, >= 5.0.0.1)
   rspec-rails
   sass-rails (~> 5.0)
+  sassc
   shoulda-matchers
   simplecov
   spring
@@ -308,4 +309,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.0.1
+   2.1.4
