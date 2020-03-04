@@ -9,12 +9,17 @@
 <br>
 <%= form_tag sites_path, method: 'get', role: 'search' do %>
   <%= text_field_tag :site, params[:site], class: 'form-control', id: 'site-search' %>
-  <%= submit_tag 'Search Classes', name: nil, class: 'btn btn-primary half-size' %>
-  <%= link_to 'See All Classes', sites_path, class: 'btn btn-success half-size' %>
+  <%= submit_tag 'Search Classes', name: nil, :class => params[:site] ? 'btn btn-success' : 'btn btn-primary' %>
+  <%= link_to 'See All Classes', sites_path, :class => params=={"controller"=>"sites", "action"=>"index"} ? 'btn btn-success' : 'btn btn-primary' %>
 <% end %>
 <div class="dropdown">
-  <button class="dropdown-toggle btn btn-primary" type="button" data-toggle="dropdown"><%= @selected_search %>
-  <span class="caret"></span></button>
+  <% if params[:region]%>
+    <button class="dropdown-toggle btn btn-success" type="button" data-toggle="dropdown"><%= @selected_search %>
+    <span class="caret"></span></button>
+  <% else %>
+    <button class="dropdown-toggle btn btn-primary" type="button" data-toggle="dropdown"><%= @selected_search %>
+    <span class="caret"></span></button>
+  <% end %>
   <ul class="dropdown-menu">
     <li><a href="/sites">All</a></li>
     <li><a href="?region=north-northeast">North/Northeast</a></li>
@@ -26,7 +31,7 @@
     <li><a href="?region=clark-county">Clark County</a></li>
     <li><a href="?region=other-areas">Other Areas</a></li>
   </ul>
-  <%= link_to 'Volunteers Needed', '?volunteers_needed=true', class: "btn btn-primary" %>
+  <%= link_to 'Volunteers Needed', '?volunteers_needed=true', :class => params[:volunteers_needed] ? 'btn btn-success' : 'btn btn-primary' %>
 </div>
 <br>
 <!-- <% if current_admin %>
