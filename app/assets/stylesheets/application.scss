@@ -5,6 +5,7 @@ $blue: #1E6B9F;
 $light-blue: #247EBB;
 $gray: #E5E5E5;
 $dark-gray: #CCCCCC;
+$light-red: #F8D7DA;
 
 // GENERAL STYLING
 body {
@@ -35,6 +36,17 @@ ul.bullets {
 
 ul.bullets li {
   list-style: circle;
+}
+
+.banner-announcement {
+  background-color: $light-red;
+  border-radius: 5px;
+  font-size: 1.2em;
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 80%;
 }
 
 .btn {

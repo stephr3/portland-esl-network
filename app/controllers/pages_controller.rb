@@ -45,4 +45,7 @@ class PagesController < ApplicationController
     @edit_sites = EditSite.all.order(created_at: :desc).page(params[:page])
     @submit_sites = SubmitSite.all.order(created_at: :desc).page(params[:page])
   end
+
+  def updates
+  end
 end

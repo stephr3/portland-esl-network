@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "/about" => "pages#about"
   get "/volunteer" => "pages#volunteer"
   get '/admin' => 'pages#admin'
+  get '/updates' => 'pages#updates'
 
   get '/submit_sites' => "submit_sites#new"
   post '/submit_sites' => "submit_sites#create"
