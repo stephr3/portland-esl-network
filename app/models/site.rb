@@ -12,25 +12,25 @@ class Site < ActiveRecord::Base
   paginates_per 10
 
   # Set Marker Colors
-  before_save :set_marker_color , if: ->(obj){ obj.site_type.present? and obj.site_type_changed? }
+  # before_save :set_marker_color , if: ->(obj){ obj.site_type.present? and obj.site_type_changed? }
 
-  def set_marker_color
-    if self.site_type === 'Church'
-      self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/red-circle.png'
-    elsif self.site_type === 'Community College or University'
-      self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/blu-circle.png'
-    elsif self.site_type === 'For-Profit Business'
-      self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/purple-circle.png'
-    elsif self.site_type === 'Library'
-      self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png'
-    elsif self.site_type === 'Public School'
-      self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png'
-    elsif self.site_type === 'Social Service/Government/Non-Profit'
-      self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/grn-circle.png'
-    else
-      self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/wht-circle.png'
-    end
-  end
+  # def set_marker_color
+  #   if self.site_type === 'Church'
+  #     self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/red-circle.png'
+  #   elsif self.site_type === 'Community College or University'
+  #     self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/blu-circle.png'
+  #   elsif self.site_type === 'For-Profit Business'
+  #     self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/purple-circle.png'
+  #   elsif self.site_type === 'Library'
+  #     self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png'
+  #   elsif self.site_type === 'Public School'
+  #     self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png'
+  #   elsif self.site_type === 'Social Service/Government/Non-Profit'
+  #     self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/grn-circle.png'
+  #   else
+  #     self.markers_url = 'http://maps.google.com/mapfiles/kml/paddle/wht-circle.png'
+  #   end
+  # end
 
 # Set In Session Scopes
   scope(:in_session, -> do
