@@ -26,11 +26,36 @@
   <% if @site.email.present? %>
   <p>Email: <%= mail_to(@site.email) %></p>
   <% end %>
+  <!-- Days -->
+  <% if @site.days_offered.length > 0 %>
+  <p>Days Offered: <%= @site.days_offered.join(",") %></p>
+  <% end %>
+  <!-- Time -->
+  <% if @site.time_of_day.length > 0 %>
+  <p>Time of Day: <%= @site.time_of_day.join(",") %></p>
+  <% end %>
+  <!-- Level -->
+  <% if @site.level.length > 0 %>
+  <p>Level(s): <%= @site.level.join(",") %></p>
+  <% end %>
+  <!-- Cost -->
+  <% if @site.cost.length > 0 %>
+  <p>Cost: <%= @site.cost.join(",") %></p>
+  <% end %>
   <% if @site.description.present? %>
   <p>Description: <%= simple_format(@site.description) %></p>
   <% else %>
   <p>Description: No description provided yet.</p>
   <% end %>
+  <!-- Registration -->
+  <% if @site.registration_required.present? %>
+  <p>Registration: <%= @site.registration_required %></p>
+  <% end %>
+  <!-- Childcare -->
+  <% if @site.childcare.present? %>
+  <p>Childcare: <%= @site.childcare %></p>
+  <% end %>
+
   <p>Last updated: <%= @site.updated_at.strftime('%B %d, %Y') %></p>
 
   <% if @site.volunteers_needed %>
@@ -60,7 +85,7 @@
   <hr>
   <h4>Admin Information</h4>
   <p>Class or Resource: <%= @site.class_resource %></p>
-  <p>Site type: <%= @site.site_type %></p>
+  <p>Site type(s): <%= @site.site_type.join(",") %></p>
   <p>Happening now?: <%= @site.happening_now %></p>
   <p>Notes: <%= @site.notes %></p>
   <p>Region: <%= @site.region %></p>
