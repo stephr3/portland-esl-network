@@ -1,58 +1,110 @@
  <%= render "layouts/errors", object: @site %>
 
 <%= form_for @site do |f| %>
+  
   <h3>Class Location</h3>
   <p>*All class location fields are required.</p>
   <%= f.label :name %>
   <%= f.text_field :name, class: "form-control" %>
+  
   <%= f.label :region %>
   <%= f.select :region, options_for_select(['', 'Clark County', 'Downtown', 'Gresham', 'North/Northeast', 'Other Areas', 'South/Southeast', 'Southwest', 'Washington County'], selected: f.object.region), {}, {class: "form-control"} %>
+  
   <%= f.label :address %>
   <%= f.text_field :address, class: "form-control" %>
+  
   <%= f.label :city %>
   <%= f.text_field :city, class: "form-control" %>
+  
   <%= f.label :state %>
   <%= f.select :state, options_for_select(['', 'OR', 'WA'], selected: f.object.state), {}, {class: "form-control"} %>
+  
   <%= f.label :zip, 'Zip Code' %>
   <%= f.text_field :zip, class: "form-control" %>
+  
   <h3>Contact Information</h3>
   <%= f.label :contact, 'Contact Name' %>
   <%= f.text_field :contact, class: "form-control" %>
+  
   <%= f.label :phone %>
   <%= f.telephone_field :phone, class: "form-control" %>
+  
   <%= f.label :email %>
   <%= f.email_field :email, class: "form-control" %>
+  
   <%= f.label :url, 'Website URL' %>
   <%= f.url_field :url, placeholder: "http://", class: "form-control" %>
+  
   <h3>About the Class</h3>
   <%= f.label :class_resource, 'Is this a class or resource?' %>
   <%= f.select :class_resource, options_for_select(['', 'Class', 'Resource'], selected: f.object.class_resource), {}, {class: "form-control"} %>
-  <%= f.label :site_type, 'What type of site is it?' %>
-  <%= f.select :site_type, options_for_select(['', 'Church', 'Community College or University', 'For-Profit Business', 'Library', 'Public School', 'Social Service/Government/Non-Profit'], selected: f.object.site_type), {}, {class: "form-control"} %>
+  
+  <!-- Site Type -->
+    <%= f.label :site_type, 'Site Type(s):' %>
+    <%= f.collection_check_boxes(:site_type, {'Church': 'Church', 'Community College or University': 'Community College or University', 'For-Profit Business': 'For-Profit Business', 'Library': 'Library', 'Public School': 'Public School', 'Social Service/Government/Non-Profit': 'Social Service/Government/Non-Profit'}, :last, :first) do |b| %>
+      <div class="form-check">
+        <%= b.check_box class: 'form-check-input' %>
+        <%= b.label class: 'form-check-label' %>
+      </div>
+    <% end %>
+
+  <!-- Days -->
+  <!-- Time -->
+  <!-- Level -->
+  <!-- Cost -->
+
   <%= f.label :description, 'Description of Class' %>
   <%= f.text_area :description, class: "form-control" %>
+  
   <%= f.label :happening_now, 'Is the class happening now?' %>
   <%= f.select :happening_now, options_for_select(['', 'Yes', 'No'], selected: f.object.happening_now), {}, {class: "form-control"} %>
+
+  <!-- Registration -->
+  <%= f.label :registration_required, 'Is registration required?' %>
+  <%= f.select :registration_required, options_for_select(['', 'Drop In', 'Registration Required'], selected: f.object.registration_required), {}, {class: "form-control"} %>
+
+  <!-- Childcare -->
+  <%= f.label :childcare, 'Is childcare offered?' %>
+  <%= f.select :childcare, options_for_select(['', 'Childcare Available', 'Children Welcome', 'No Childcare Available'], selected: f.object.childcare), {}, {class: "form-control"} %>
+
+  
   <%= f.label :summer_classes, 'Does this site offer classes during the summer?' %>
   <%= f.select :summer_classes, options_for_select(['', 'Yes', 'No'], selected: f.object.summer_classes), {}, {class: "form-control"} %>
+  
   <%= f.label :students_served, 'How many students are served yearly at this site?' %>
   <%= f.text_field :students_served, class: "form-control" %>
+
+  <!-- Organization -->
+    <% if current_admin %>
+      <%= f.label :organization, 'Please select the organization that runs this class if it is run by Goodwill, SOAR, Lutheran Community Service, Mult Co. Library, or Torus:' %>
+      <%= f.select :organization, options_for_select(['', 'Goodwill', 'SOAR', 'Lutheran Community Service', 'Multnomah County Library', 'Torus'], selected: f.object.organization), {}, {class: "form-control"} %>
+    <% end %>
+
+  
   <%= f.label :notes, 'Notes to self and future updaters - not visible to public, please initial and date notes.' %>
   <%= f.text_area :notes, class: "form-control" %>
+  
   <h3>Volunteer Needs</h3>
   <%= f.label :volunteers_needed, 'Would you like to include a request for volunteer tutors in your Portland ESL Network entry at this time?' %>
   <%= f.select :volunteers_needed, options_for_select([['', ''], ['Yes', true], ['No', false]], selected: f.object.volunteers_needed), {}, {class: "form-control"} %>
+  
   <%= f.label :vol_coordinator_name, 'Name of contact for coordinating volunteers:' %>
   <%= f.text_field :vol_coordinator_name, class: "form-control" %>
+ 
   <%= f.label :vol_contact, 'Please list an email and phone number that is best for us to reach a volunteer coordinator.' %>
   <%= f.text_field :vol_contact, class: "form-control" %>
+ 
   <%= f.label :vol_time_commitment, 'What kind of time commitment would you like a volunteer to make to your program (ex. 3 hours a week over three months)' %>
   <%= f.text_field :vol_time_commitment, class: "form-control" %>
+
   <%= f.label :vol_time_slots, 'Which days and times do you need volunteers for? (ex. Monday and Wednesday 11:00 to 2:00))' %>
   <%= f.text_field :vol_time_slots, class: "form-control" %>
+ 
   <%= f.label :vol_assignment_type, 'What kind of assignments would you give to a volunteer tutor?' %>
   <%= f.select :vol_assignment_type, options_for_select(['', 'one-to-one tutoring', 'small group tutoring', 'classroom aide/assistant'], selected: f.object.vol_assignment_type), {}, {class: "form-control"} %>
+
   <%= f.label :vol_training_offered, 'Do you offer training for volunteer tutors?' %>
   <%= f.select :vol_training_offered, options_for_select([['', ''], ['Yes', true], ['No', false]], selected: f.object.vol_training_offered), {}, {class: "form-control"} %>
+ 
   <%= f.submit 'Submit Class', class: "btn btn-primary" %>
 <% end %>

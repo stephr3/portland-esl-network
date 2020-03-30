@@ -27,20 +27,20 @@
   <p>Email: <%= mail_to(@site.email) %></p>
   <% end %>
   <!-- Days -->
-  <% if @site.days_offered.length > 0 %>
-  <p>Days Offered: <%= @site.days_offered.join(",") %></p>
+  <% if @site.days_offered.reject(&:empty?).length > 0 %>
+  <p>Days Offered: <%= @site.days_offered.join(", ") %></p>
   <% end %>
   <!-- Time -->
-  <% if @site.time_of_day.length > 0 %>
-  <p>Time of Day: <%= @site.time_of_day.join(",") %></p>
+  <% if @site.time_of_day.reject(&:empty?).length > 0 %>
+  <p>Time of Day: <%= @site.time_of_day.join(", ") %></p>
   <% end %>
   <!-- Level -->
-  <% if @site.level.length > 0 %>
-  <p>Level(s): <%= @site.level.join(",") %></p>
+  <% if @site.level.reject(&:empty?).length > 0 %>
+  <p>Level(s): <%= @site.level.join(", ") %></p>
   <% end %>
   <!-- Cost -->
-  <% if @site.cost.length > 0 %>
-  <p>Cost: <%= @site.cost.join(",") %></p>
+  <% if @site.cost.reject(&:empty?).length > 0 %>
+  <p>Cost: <%= @site.cost.join(", ") %></p>
   <% end %>
   <% if @site.description.present? %>
   <p>Description: <%= simple_format(@site.description) %></p>
@@ -85,7 +85,7 @@
   <hr>
   <h4>Admin Information</h4>
   <p>Class or Resource: <%= @site.class_resource %></p>
-  <p>Site type(s): <%= @site.site_type.join(",") %></p>
+  <p>Site type(s): <%= @site.site_type.join(", ") %></p>
   <p>Happening now?: <%= @site.happening_now %></p>
   <p>Notes: <%= @site.notes %></p>
   <p>Region: <%= @site.region %></p>
