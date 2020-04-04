@@ -190,12 +190,12 @@ private
                                  :vol_time_slots, 
                                  :vol_assignment_type, 
                                  :vol_training_offered,
-                                 :days_offered,
-                                 :time_of_day,
+                                 {:days_offered => []},
+                                 {:time_of_day => []},
                                  :childcare,
                                  :registration_required,
-                                 :level,
-                                 :cost,
+                                 {:level => []},
+                                 {:cost => []},
                                  :organization)
   end
 end
