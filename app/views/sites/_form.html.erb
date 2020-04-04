@@ -38,10 +38,13 @@
   <h3>About the Class</h3>
   <%= f.label :class_resource, 'Is this a class or resource?' %>
   <%= f.select :class_resource, options_for_select(['', 'Class', 'Resource'], selected: f.object.class_resource), {}, {class: "form-control"} %>
+
+  <%= f.label :site_type, 'What type of site is it?' %>
+  <%= f.select :site_type, options_for_select(['', 'Church', 'Community College or University', 'For-Profit Business', 'Library', 'Public School', 'Social Service/Government/Non-Profit'], selected: f.object.site_type), {}, {class: "form-control"} %>
   
-  <!-- Site Type -->
-    <%= f.label :site_type, 'Site Type(s):', {style: "margin-top: 10px;"} %>
-    <%= f.collection_check_boxes(:site_type, {'Church': 'Church', 'Community College or University': 'Community College or University', 'For-Profit Business': 'For-Profit Business', 'Library': 'Library', 'Public School': 'Public School', 'Social Service/Government/Non-Profit': 'Social Service/Government/Non-Profit'}, :last, :first) do |b| %>
+  <!-- Class Type -->
+    <%= f.label :class_type, 'Class Type(s):', {style: "margin-top: 10px;"} %>
+    <%= f.collection_check_boxes(:class_type, {'ESL': 'ESL', 'GED': 'GED', 'Citizenship': 'Citizenship', 'Conversation': 'Conversation', 'Spanish ABE': 'Spanish ABE', '1:1/Tutoring': '1:1/Tutoring', 'Intercambio': 'Intercambio', 'Workplace/ESP': 'Workplace/ESP', 'Excursion': 'Excursion', 'Language Specific': 'Language Specific', 'Other Resource': 'Other Resource', 'All': 'All'}, :last, :first) do |b| %>
       <div class="form-check">
         <%= b.check_box class: 'form-check-input' %>
         <%= b.label class: 'form-check-label' %>

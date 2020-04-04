@@ -1,5 +1,6 @@
 class AddFilterColsToSites < ActiveRecord::Migration[5.0]
   def change
+    add_column :sites, :class_type, :string, array: true, default: []  	
     add_column :sites, :days_offered, :string, array: true, default: []  	
     add_column :sites, :time_of_day, :string, array: true, default: []  	
     add_column :sites, :childcare, :string  	
