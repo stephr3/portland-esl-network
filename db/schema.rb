@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129045434) do
+ActiveRecord::Schema.define(version: 20200318100103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20171129045434) do
     t.string   "email"
     t.string   "url"
     t.string   "class_resource"
-    t.string   "site_type",
+    t.string   "site_type"
     t.string   "happening_now"
     t.text     "notes"
     t.string   "region"
@@ -81,6 +81,14 @@ ActiveRecord::Schema.define(version: 20171129045434) do
     t.string   "vol_time_slots"
     t.string   "vol_assignment_type"
     t.boolean  "vol_training_offered"
+    t.string   "class_type",            default: [],              array: true
+    t.string   "days_offered",          default: [],              array: true
+    t.string   "time_of_day",           default: [],              array: true
+    t.string   "childcare"
+    t.string   "registration_required"
+    t.string   "level",                 default: [],              array: true
+    t.string   "cost",                  default: [],              array: true
+    t.string   "organization"
   end
 
   create_table "submit_sites", force: :cascade do |t|

@@ -26,6 +26,10 @@
   <% if @site.email.present? %>
   <p>Email: <%= mail_to(@site.email) %></p>
   <% end %>
+  <!-- Class Type -->
+  <% if @site.class_type.reject(&:empty?).length > 0 %>
+  <p>Class Type(s): <%= @site.class_type.reject(&:empty?).join(", ") %></p>
+  <% end %>
   <!-- Days -->
   <% if @site.days_offered.reject(&:empty?).length > 0 %>
   <p>Days Offered: <%= @site.days_offered.reject(&:empty?).join(", ") %></p>
@@ -85,7 +89,8 @@
   <hr>
   <h4>Admin Information</h4>
   <p>Class or Resource: <%= @site.class_resource %></p>
-  <p>Site type(s): <%= @site.site_type.reject(&:empty?).join(", ") %></p>
+  <p>Site type: <%= @site.site_type %></p>
+  <p>Organization: <%= @site.organization %></p>
   <p>Happening now?: <%= @site.happening_now %></p>
   <p>Notes: <%= @site.notes %></p>
   <p>Region: <%= @site.region %></p>
