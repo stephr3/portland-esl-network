@@ -30,6 +30,10 @@
   <% if @site.class_type.reject(&:empty?).length > 0 %>
   <p>Class Type(s): <%= @site.class_type.reject(&:empty?).join(", ") %></p>
   <% end %>
+  <!-- Class Format -->
+  <% if @site.class_format.present? %>
+  <p>Class Format: <%= @site.class_format %></p>
+  <% end %>
   <!-- Days -->
   <% if @site.days_offered.reject(&:empty?).length > 0 %>
   <p>Days Offered: <%= @site.days_offered.reject(&:empty?).join(", ") %></p>

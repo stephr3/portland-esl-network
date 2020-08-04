@@ -41,6 +41,10 @@
 
   <%= f.label :site_type, 'What type of site is it?' %>
   <%= f.select :site_type, options_for_select(['', 'Church', 'Community College or University', 'For-Profit Business', 'Library', 'Public School', 'Social Service/Government/Non-Profit'], selected: f.object.site_type), {}, {class: "form-control"} %>
+
+  <!-- Class Format -->
+  <%= f.label :class_format, 'Is the class currently virtual, in-person, hybrid, or flexible?' %>
+  <%= f.select :class_format, options_for_select(['', 'Virtual', 'In-Person', 'Hybrid', 'Flexible'], selected: f.object.class_format), {}, {class: "form-control"} %>
   
   <!-- Class Type -->
     <%= f.label :class_type, 'Class Type(s):', {style: "margin-top: 10px;"} %>
