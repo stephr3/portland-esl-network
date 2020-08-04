@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200318100103) do
+ActiveRecord::Schema.define(version: 20200804120849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20200318100103) do
     t.string   "level",                 default: [],              array: true
     t.string   "cost",                  default: [],              array: true
     t.string   "organization"
+    t.string   "class_format"
   end
 
   create_table "submit_sites", force: :cascade do |t|
