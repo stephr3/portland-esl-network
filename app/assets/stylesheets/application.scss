@@ -4,7 +4,7 @@
 $blue: #1E6B9F;
 $light-blue: #247EBB;
 $gray: #E5E5E5;
-$dark-gray: #CCCCCC;
+$dark-gray: #d9d6d6;
 $light-red: #F8D7DA;
 
 // GENERAL STYLING
@@ -16,6 +16,10 @@ h1 {
   margin-top: 0;
   color: white;
   text-align: center;
+}
+
+h3 {
+  font-size: 22px;
 }
 
 li {
@@ -41,19 +45,24 @@ ul.bullets li {
   font-weight: 400;
 }
 
+.form-control {
+  border-radius: 3px;
+}
+
 .banner-announcement {
   background-color: $light-red;
-  border-radius: 5px;
-  font-size: 1.2em;
+  border-radius: 3px;
+  font-size: 1.1em;
   margin: auto;
   margin-bottom: 15px;
   padding: 10px;
   text-align: center;
-  width: 80%;
+  width: 60%;
 }
 
 .btn {
   margin: 10px 0;
+  border-radius: 3px;
 }
 
 .btn.btn-primary {
@@ -85,8 +94,10 @@ ul.bullets li {
 
 .content-bg {
   background-color: white;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
   max-width: 1080px;
   margin: auto;
   margin-bottom: 20px;
@@ -120,9 +131,12 @@ ul.bullets li {
 }
 
 .logo img{
-  width: 100%;
+  width: 60%;
   height: auto;
-  padding: 3%;
+  margin:auto;
+  display:block;
+  padding-bottom: 10px;
+  padding-top: 5px;
 }
 
 // MAP STYLING
@@ -132,7 +146,7 @@ ul.bullets li {
 }
 
 #map-container, #volunteer-map-container, #site-map-container {
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
@@ -154,7 +168,16 @@ ul.bullets li {
   input {
     display: inline-block;
   }
+  h1 {
+    font-size: 30px;
+  }
+  .logo img{
+    width: 80%;
+  }
   input#center-map.form-control {
+    width: 100%;
+  }
+  .banner-announcement {
     width: 100%;
   }
   .search-nav {

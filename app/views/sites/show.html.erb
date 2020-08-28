@@ -30,10 +30,23 @@
   <% if @site.class_type.reject(&:empty?).length > 0 %>
   <p>Class Type(s): <%= @site.class_type.reject(&:empty?).join(", ") %></p>
   <% end %>
+
   <!-- Class Format -->
   <% if @site.class_format.present? %>
-  <p>Class Format: <%= @site.class_format %></p>
+    <p>
+      Class Format: <%= @site.class_format %>
+    
+      <!-- Class Format Icon -->
+      <% if @site.class_format == 'Virtual' || @site.class_format == "Hybrid" || @site.class_format == "Flexible" %>
+        <i class="glyphicon glyphicon-globe" style="color:#484842"></i> 
+      <% end %>
+      <% if @site.class_format == 'In-Person' || @site.class_format == "Hybrid" || @site.class_format == "Flexible" %>
+        <i class="glyphicon glyphicon-user" style="color:#484842"></i>
+      <% end %>
+
+    </p>
   <% end %>
+
   <!-- Days -->
   <% if @site.days_offered.reject(&:empty?).length > 0 %>
   <p>Days Offered: <%= @site.days_offered.reject(&:empty?).join(", ") %></p>
@@ -101,9 +114,11 @@
   <p>Summer classes?: <%= @site.summer_classes %></p>
   <p>Students served?: <%= @site.students_served %></p>
   <% end %>
+
   <% if !current_admin %>
     <%= link_to 'Submit Updates to Class', edit_sites_path(site: @site), {style: "margin-right: 20px;", class: "btn btn-primary"}  %>
   <%end%>
+
   <%= link_to "Back to #{@site.region}", "/sites?region=#{@region_link}", class: "btn btn-primary"  %>
   <%= link_to 'Back to All Classes', sites_path, class: "btn btn-secondary"  %>
 </div>

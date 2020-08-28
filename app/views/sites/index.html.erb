@@ -1,5 +1,3 @@
-<h1>ESL Classes in the Portland Metro Area</h1>
-<br>
 <% if current_admin %>
   <%= link_to 'Add a New Class', new_site_path, class: "btn btn-primary"  %>
 <% end %>
@@ -54,6 +52,18 @@
             </div>
             <div class="col-sm-11" style="padding-left:0">
               <h3 style="margin-top:0"><%= link_to site.name, site_path(site), class: 'site-link' %></h3>
+
+              <% if site.class_format.present? %>
+              <p>
+                  <% if site.class_format == 'Virtual' || site.class_format == "Hybrid" || site.class_format == "Flexible" %>
+                  <i class="glyphicon glyphicon-globe" style="color:#484842"></i> 
+                  <% end %>
+                  <% if site.class_format == 'In-Person' || site.class_format == "Hybrid" || site.class_format == "Flexible" %>
+                  <i class="glyphicon glyphicon-user" style="color:#484842"></i> 
+                  <% end %>                  
+              </p>
+              <% end %>
+
               <p>
                 Address: <%= site.address %> <%= site.city %>, <%= site.state %> <%= site.zip %>
               </p>
@@ -72,6 +82,16 @@
     <% else %>
         <% @sites.each do |site| %>
         <h3><%= link_to site.name, site_path(site), class: 'site-link' %></h3>
+        <% if site.class_format.present? %>
+        <p>
+            <% if site.class_format == 'Virtual' || site.class_format == "Hybrid" || site.class_format == "Flexible" %>
+            <i class="glyphicon glyphicon-globe" style="color:#484842"></i> 
+            <% end %>
+            <% if site.class_format == 'In-Person' || site.class_format == "Hybrid" || site.class_format == "Flexible" %>
+            <i class="glyphicon glyphicon-user" style="color:#484842"></i> 
+            <% end %>                  
+        </p>
+        <% end %>
         <p>
           Address: <%= site.address %> <%= site.city %>, <%= site.state %> <%= site.zip %>
         </p>
