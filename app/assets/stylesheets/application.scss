@@ -22,6 +22,12 @@ h3 {
   font-size: 22px;
 }
 
+i.left {
+  float: left;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
 li {
   list-style: none;
 }
@@ -29,6 +35,11 @@ li {
 ul {
   margin-left: 0;
   padding-left: 0;
+}
+
+label {
+  font-weight: 500;
+  margin-top: 5px;
 }
 
 ul.bullets {
@@ -47,6 +58,15 @@ ul.bullets li {
 
 .form-control {
   border-radius: 3px;
+  width: 60%;
+}
+
+.eighty {
+  width: 82% !important;
+}
+
+.right {
+  float: right;
 }
 
 .banner-announcement {
@@ -171,11 +191,20 @@ ul.bullets li {
   h1 {
     font-size: 30px;
   }
+  .right {
+  float: none;
+  }
   .logo img{
     width: 80%;
   }
   input#center-map.form-control {
     width: 100%;
+  }
+  .form-control {
+    width: 100%;
+  }
+  .eighty {
+  width: 100% !important;
   }
   .banner-announcement {
     width: 100%;
