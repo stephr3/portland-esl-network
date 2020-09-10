@@ -61,6 +61,7 @@ class SitesController < ApplicationController
           @sites = Site.other_areas.where(happening_now: 'Yes').order('name ASC').page(params[:page])
         end
       end
+      
     # Sort Sites by In Session
     elsif params[:happening].present?
       @selected_search = 'Choose a Region'
