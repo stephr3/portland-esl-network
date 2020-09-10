@@ -1,33 +1,37 @@
 
-<div class="form-inline">
-  <%= form_tag sites_path, method: 'get', role: 'search' do %>
-    <%= text_field_tag :site, params[:site], class: 'form-control eighty', id: 'site-search' %>
-    <%= submit_tag 'Search Classes', name: nil, :class => params[:site] ? 'btn btn-success' : 'btn btn-primary' %>
-  <% end %>  
-</div>
-<div class="dropdown">
-  <% if params[:region]%>
-    <button class="dropdown-toggle btn btn-success" type="button" data-toggle="dropdown"><%= @selected_search %>
-    <span class="caret"></span></button>
-  <% else %>
-    <button class="dropdown-toggle btn btn-primary" type="button" data-toggle="dropdown"><%= @selected_search %>
-    <span class="caret"></span></button>
-  <% end %>
-  <ul class="dropdown-menu">
-    <li><a href="/sites">All</a></li>
-    <li><a href="?region=north-northeast">North/Northeast</a></li>
-    <li><a href="?region=south-southeast">South/Southeast</a></li>
-    <li><a href="?region=southwest">Southwest</a></li>
-    <li><a href="?region=downtown">Downtown</a></li>
-    <li><a href="?region=gresham">Gresham</a></li>
-    <li><a href="?region=washington-county">Washington County</a></li>
-    <li><a href="?region=clark-county">Clark County</a></li>
-    <li><a href="?region=other-areas">Other Areas</a></li>
-  </ul>
-  <%= link_to 'Volunteers Needed', '?volunteers_needed=true', :class => params[:volunteers_needed] ? 'btn btn-success' : 'btn btn-primary' %>
-  <% if params!={"controller"=>"sites", "action"=>"index"} %>
-  <%= link_to 'See All Classes', sites_path, :class => params=={"controller"=>"sites", "action"=>"index"} ? 'btn btn-success' : 'btn btn-primary' %> 
-  <% end %> 
+<div style="max-width: 1080px; margin: auto;">
+  
+  <div class="form-inline">
+    <%= form_tag sites_path, method: 'get', role: 'search' do %>
+      <%= text_field_tag :site, params[:site], class: 'form-control eighty', id: 'site-search' %>
+      <%= submit_tag 'Search Classes', name: nil, :class => params[:site] ? 'btn btn-success' : 'btn btn-primary' %>
+    <% end %>  
+  </div>
+  <div class="dropdown">
+    <% if params[:region]%>
+      <button class="dropdown-toggle btn btn-success" type="button" data-toggle="dropdown"><%= @selected_search %>
+      <span class="caret"></span></button>
+    <% else %>
+      <button class="dropdown-toggle btn btn-primary" type="button" data-toggle="dropdown"><%= @selected_search %>
+      <span class="caret"></span></button>
+    <% end %>
+    <ul class="dropdown-menu">
+      <li><a href="/sites">All</a></li>
+      <li><a href="?region=north-northeast">North/Northeast</a></li>
+      <li><a href="?region=south-southeast">South/Southeast</a></li>
+      <li><a href="?region=southwest">Southwest</a></li>
+      <li><a href="?region=downtown">Downtown</a></li>
+      <li><a href="?region=gresham">Gresham</a></li>
+      <li><a href="?region=washington-county">Washington County</a></li>
+      <li><a href="?region=clark-county">Clark County</a></li>
+      <li><a href="?region=other-areas">Other Areas</a></li>
+    </ul>
+    <%= link_to 'Volunteers Needed', '?volunteers_needed=true', :class => params[:volunteers_needed] ? 'btn btn-success' : 'btn btn-primary' %>
+    <% if params!={"controller"=>"sites", "action"=>"index"} %>
+    <%= link_to 'See All Classes', sites_path, :class => params=={"controller"=>"sites", "action"=>"index"} ? 'btn btn-success' : 'btn btn-primary' %> 
+    <% end %> 
+  </div>
+
 </div>
 <br>
 <!-- <% if current_admin %>
@@ -85,6 +89,7 @@
                 <p><%= link_to 'More Details', site_path(site), class: 'site-link' %></p>
                 <% end %>
               </p>
+              <hr>
           <% end %>
         <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
     <% else %>
@@ -114,6 +119,7 @@
           <p><%= link_to 'More Details', site_path(site), class: 'site-link' %></p>
           <% end %>
         </p>
+        <hr>
         <% end %>
       <%= paginate @sites, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-small pagination-centered' %>
     <% end %>
