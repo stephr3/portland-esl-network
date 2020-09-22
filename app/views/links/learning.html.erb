@@ -60,7 +60,7 @@
   </ul>
 <% end %>
 <% if @citizenship.length > 0 %>
-  <h3>Citizenship Classes</h3>
+  <h3>Citizenship Resources</h3>
   <ul class="links-display">
     <% @citizenship.each do |link| %>
     <li id="link_display_<%=link.id%>"><%= render partial: 'display_link', locals: { link: link } %></li>
