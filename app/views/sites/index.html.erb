@@ -77,6 +77,8 @@
                 <h3 style="margin-top:5px"><%= link_to site.name, site_path(site), class: 'site-link' %></h3>
               </div>
 
+              <p><b>Last Updated: <%= site.updated_at.strftime('%B %d, %Y') %></b></p>
+
               <p>
                 Address: <%= site.address %> <%= site.city %>, <%= site.state %> <%= site.zip %>
               </p>
